@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Design System - 年轻版设计系统</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--yds-font-family-base);
+            background-color: var(--yds-bg-default-gray);
+            color: var(--yds-text-default-default);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--yds-bg-default-white);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: var(--yds-radius-none);
+            margin-bottom: 30px;
+            border: 1px solid var(--yds-border-default-default);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: var(--yds-font-weight-medium);
+            margin-bottom: 10px;
+            color: var(--yds-text-brand-default);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--yds-text-default-secondary);
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--yds-bg-brand-secondary);
+            color: var(--yds-text-brand-default);
+            border-radius: var(--yds-radius-full);
+            font-size: 12px;
+            font-weight: var(--yds-font-weight-medium);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: var(--yds-bg-default-white);
+            padding: 20px;
+            border-radius: var(--yds-radius-none);
+            border: 1px solid var(--yds-border-default-default);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: var(--yds-font-weight-medium);
+            color: var(--yds-text-brand-default);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--yds-text-default-secondary);
+        }
+
+        .section {
+            background: var(--yds-bg-default-white);
+            padding: 30px;
+            border-radius: var(--yds-radius-none);
+            margin-bottom: 20px;
+            border: 1px solid var(--yds-border-default-default);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: var(--yds-font-weight-medium);
+            margin-bottom: 20px;
+            color: var(--yds-text-default-default);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .demo-card {
+            background: var(--yds-bg-default-white);
+            padding: 20px;
+            border-radius: var(--yds-radius-none);
+            border: 2px solid var(--yds-border-default-default);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .demo-card:hover {
+            border-color: var(--yds-bg-brand-default);
+            transform: translateY(-2px);
+        }
+
+        .demo-card-title {
+            font-size: 16px;
+            font-weight: var(--yds-font-weight-medium);
+            color: var(--yds-text-default-default);
+            margin-bottom: 8px;
+        }
+
+        .demo-card-desc {
+            font-size: 13px;
+            color: var(--yds-text-default-secondary);
+            line-height: 1.5;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .quick-link {
+            padding: 8px 16px;
+            background: var(--yds-bg-default-white);
+            border: 1px solid var(--yds-border-default-default);
+            border-radius: var(--yds-radius-full);
+            color: var(--yds-text-default-default);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background: var(--yds-bg-brand-secondary);
+            border-color: var(--yds-bg-brand-default);
+            color: var(--yds-text-brand-default);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--yds-text-default-tertiary);
+            font-size: 14px;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background: var(--yds-bg-default-white);
+            border: 1px solid var(--yds-border-default-default);
+            border-radius: var(--yds-radius-full);
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--yds-bg-brand-secondary);
+            border-color: var(--yds-bg-brand-default);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">切换主题</button>
+
+    <div class="container">
+        <header>
+            <h1>Young Design System</h1>
+            <p class="subtitle">年轻版设计系统 - 移动优先的企业级设计系统</p>
+            <span class="badge">v1.0.0</span>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">256</div>
+                    <div class="stat-label">CSS 颜色变量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">UI 组件</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">图标资源</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">开源免费</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">🎨 组件演示</h2>
+            <div class="demo-grid">
+                <a href="docs/colors-demo.html" class="demo-card">
+                    <div class="demo-card-title">颜色系统</div>
+                    <div class="demo-card-desc">256 个颜色变量，支持亮/暗主题切换</div>
+                </a>
+
+                <a href="docs/button-demo.html" class="demo-card">
+                    <div class="demo-card-title">按钮 Button</div>
+                    <div class="demo-card-desc">多种尺寸、颜色和状态的按钮组件</div>
+                </a>
+
+                <a href="docs/button-group-demo.html" class="demo-card">
+                    <div class="demo-card-title">按钮组 Button Group</div>
+                    <div class="demo-card-desc">按钮组合组件，支持多种布局</div>
+                </a>
+
+                <a href="docs/dialog-demo.html" class="demo-card">
+                    <div class="demo-card-title">对话框 Dialog</div>
+                    <div class="demo-card-desc">模态对话框组件，支持自定义操作</div>
+                </a>
+
+                <a href="docs/toast-demo.html" class="demo-card">
+                    <div class="demo-card-title">提示 Toast</div>
+                    <div class="demo-card-desc">轻量级消息提示组件</div>
+                </a>
+
+                <a href="docs/grid-demo.html" class="demo-card">
+                    <div class="demo-card-title">网格系统 Grid</div>
+                    <div class="demo-card-desc">12 列响应式栅格布局</div>
+                </a>
+
+                <a href="docs/navbar-demo.html" class="demo-card">
+                    <div class="demo-card-title">导航栏 Navbar</div>
+                    <div class="demo-card-desc">顶部导航栏组件</div>
+                </a>
+
+                <a href="docs/tabbar-demo.html" class="demo-card">
+                    <div class="demo-card-title">标签栏 Tabbar</div>
+                    <div class="demo-card-desc">底部标签导航组件</div>
+                </a>
+
+                <a href="docs/switch-demo.html" class="demo-card">
+                    <div class="demo-card-title">开关 Switch</div>
+                    <div class="demo-card-desc">开关切换组件</div>
+                </a>
+
+                <a href="docs/radio-checkbox-demo.html" class="demo-card">
+                    <div class="demo-card-title">单选/复选 Radio & Checkbox</div>
+                    <div class="demo-card-desc">单选框和复选框组件</div>
+                </a>
+
+                <a href="docs/icons-demo.html" class="demo-card">
+                    <div class="demo-card-title">图标 Icons</div>
+                    <div class="demo-card-desc">200+ 线性和面性图标</div>
+                </a>
+
+                <a href="docs/popup-demo.html" class="demo-card">
+                    <div class="demo-card-title">弹出层 Popup</div>
+                    <div class="demo-card-desc">弹出层容器组件</div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📚 文档指南</h2>
+            <div class="quick-links">
+                <a href="README.md" class="quick-link">快速开始</a>
+                <a href="docs/design-standards.md" class="quick-link">设计规范</a>
+                <a href="docs/colors-guide.md" class="quick-link">颜色使用指南</a>
+                <a href="docs/button-guide.md" class="quick-link">Button 组件文档</a>
+                <a href="docs/button-group-guide.md" class="quick-link">Button Group 组件文档</a>
+                <a href="docs/dialog-guide.md" class="quick-link">Dialog 组件文档</a>
+                <a href="docs/grid-guide.md" class="quick-link">Grid 系统文档</a>
+                <a href="docs/navbar-guide.md" class="quick-link">Navbar 组件文档</a>
+                <a href="docs/tabbar-guide.md" class="quick-link">Tabbar 组件文档</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🚀 快速使用</h2>
+            <pre style="background: var(--yds-bg-default-gray); padding: 16px; border-radius: var(--yds-radius-none); overflow-x: auto;"><code>&lt;!-- 引入 CSS --&gt;
+&lt;link rel="stylesheet" href="css/index.css"&gt;
+
+&lt;!-- 使用组件 --&gt;
+&lt;button class="yds-button yds-button--solid-dark yds-button--black yds-button--large"&gt;
+    确认
+&lt;/button&gt;</code></pre>
+        </section>
+
+        <footer>
+            <p>Young Design System by Vipshop</p>
+            <p style="margin-top: 10px;">
+                <a href="https://github.com/asialin007/young-design-system" style="color: var(--yds-text-brand-default); text-decoration: none;">GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 主题切换
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // 加载保存的主题
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>
