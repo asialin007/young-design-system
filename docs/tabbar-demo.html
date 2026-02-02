@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TabBar 底部标签栏 - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f5f5f5;
+      font-family: PingFang SC, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+    }
+
+    .demo-header {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .demo-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #1b1b1b;
+    }
+
+    .demo-description {
+      font-size: 16px;
+      color: #4e4f54;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1b1b1b;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+    }
+
+    .demo-card {
+      background: white;
+      padding: 24px;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #1b1b1b;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #7e828c;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .preview-wrapper {
+      border: 1px solid #e5e5e5;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 16px;
+      background: white;
+      overflow: hidden; /* 防止内容溢出 */
+    }
+
+    .preview-wrapper .yds-tabbar {
+      width: 100%; /* 确保 TabBar 填充容器宽度 */
+    }
+
+    /* 图标容器 */
+    .tabbar-icon {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .tabbar-icon img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1 class="demo-title">TabBar 底部标签栏</h1>
+    <p class="demo-description">
+      年轻版设计系统的底部标签栏组件，用于页面底部导航、标签切换等场景。
+      支持 2-5 个标签，带底部安全区域和主页指示器。
+    </p>
+  </div>
+
+  <!-- ==================== 2个标签 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">2个标签</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">基础2标签</h3>
+      <p class="card-description">第一个标签默认选中</p>
+      <div class="preview-wrapper">
+        <nav class="yds-tabbar">
+          <div class="yds-tabbar__content">
+            <button class="yds-tabbar__item yds-tabbar__item--active" aria-label="首页">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 16.999H7V14.999H17V16.999Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6045 2.46973C12.6075 2.47203 12.6112 2.47422 12.6143 2.47656L20.6143 8.69824C20.6197 8.70249 20.6245 8.70756 20.6299 8.71191L21 9V21H3V9L3.36914 8.71191C3.37469 8.7074 3.38008 8.70265 3.38574 8.69824L11.3857 2.47656C11.3886 2.47438 11.3917 2.47188 11.3945 2.46973L12 2L12.6045 2.46973ZM5 9.97754V18.999H19V9.97754L12 4.5332L5 9.97754Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">首页</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="我的">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 22.5C4 18.0817 7.58172 14.5 12 14.5C16.4183 14.5 20 18.0817 20 22.5H18C18 19.1863 15.3137 16.5 12 16.5C8.68629 16.5 6 19.1863 6 22.5H4ZM12 13.5C8.685 13.5 6 10.815 6 7.5C6 4.185 8.685 1.5 12 1.5C15.315 1.5 18 4.185 18 7.5C18 10.815 15.315 13.5 12 13.5ZM12 11.5C14.21 11.5 16 9.71 16 7.5C16 5.29 14.21 3.5 12 3.5C9.79 3.5 8 5.29 8 7.5C8 9.71 9.79 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">我的</span>
+            </button>
+          </div>
+          <div class="yds-tabbar__safe-area">
+            <div class="yds-tabbar__indicator"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <h3 class="card-title">第二个标签选中</h3>
+      <p class="card-description">第二个标签显示选中状态</p>
+      <div class="preview-wrapper">
+        <nav class="yds-tabbar">
+          <div class="yds-tabbar__content">
+            <button class="yds-tabbar__item" aria-label="首页">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 16.999H7V14.999H17V16.999Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6045 2.46973C12.6075 2.47203 12.6112 2.47422 12.6143 2.47656L20.6143 8.69824C20.6197 8.70249 20.6245 8.70756 20.6299 8.71191L21 9V21H3V9L3.36914 8.71191C3.37469 8.7074 3.38008 8.70265 3.38574 8.69824L11.3857 2.47656C11.3886 2.47438 11.3917 2.47188 11.3945 2.46973L12 2L12.6045 2.46973ZM5 9.97754V18.999H19V9.97754L12 4.5332L5 9.97754Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">首页</span>
+            </button>
+            <button class="yds-tabbar__item yds-tabbar__item--active" aria-label="我的">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 22.5C4 18.0817 7.58172 14.5 12 14.5C16.4183 14.5 20 18.0817 20 22.5H18C18 19.1863 15.3137 16.5 12 16.5C8.68629 16.5 6 19.1863 6 22.5H4ZM12 13.5C8.685 13.5 6 10.815 6 7.5C6 4.185 8.685 1.5 12 1.5C15.315 1.5 18 4.185 18 7.5C18 10.815 15.315 13.5 12 13.5ZM12 11.5C14.21 11.5 16 9.71 16 7.5C16 5.29 14.21 3.5 12 3.5C9.79 3.5 8 5.29 8 7.5C8 9.71 9.79 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">我的</span>
+            </button>
+          </div>
+          <div class="yds-tabbar__safe-area">
+            <div class="yds-tabbar__indicator"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 3个标签 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">3个标签</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">基础3标签</h3>
+      <p class="card-description">第一个标签默认选中</p>
+      <div class="preview-wrapper">
+        <nav class="yds-tabbar">
+          <div class="yds-tabbar__content">
+            <button class="yds-tabbar__item yds-tabbar__item--active" aria-label="首页">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 16.999H7V14.999H17V16.999Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6045 2.46973C12.6075 2.47203 12.6112 2.47422 12.6143 2.47656L20.6143 8.69824C20.6197 8.70249 20.6245 8.70756 20.6299 8.71191L21 9V21H3V9L3.36914 8.71191C3.37469 8.7074 3.38008 8.70265 3.38574 8.69824L11.3857 2.47656C11.3886 2.47438 11.3917 2.47188 11.3945 2.46973L12 2L12.6045 2.46973ZM5 9.97754V18.999H19V9.97754L12 4.5332L5 9.97754Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">首页</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="发现">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.91762 8.03672C3.32984 9.2334 3 10.5794 3 12C3 16.9705 7.02944 21 12 21C13.4216 21 14.7684 20.6697 15.9657 20.0812C16.8385 20.4545 17.6848 20.6993 18.4564 20.7622C19.3582 20.8357 20.3 20.6666 20.9818 19.9848C21.7339 19.2327 21.8625 18.169 21.7279 17.1728C21.6052 16.2639 21.2481 15.2539 20.726 14.2116C20.9051 13.5031 21 12.762 21 12C21 7.02942 16.9706 2.99998 12 2.99998C11.2389 2.99998 10.4987 3.09467 9.79103 3.27331C8.7474 2.74993 7.73605 2.39184 6.8261 2.26846C5.82897 2.13327 4.76406 2.26141 4.01121 3.01425C3.3287 3.69676 3.16001 4.63968 3.2341 5.54245C3.29752 6.31512 3.54313 7.16259 3.91762 8.03672ZM5.3224 5.96587C5.2734 5.75333 5.24204 5.55727 5.2274 5.37885C5.17928 4.79255 5.31727 4.53661 5.42543 4.42846C5.54452 4.30937 5.84797 4.15415 6.55739 4.25033C6.75482 4.2771 6.96951 4.32201 7.2 4.38559C6.50364 4.82539 5.87203 5.35796 5.3224 5.96587ZM19.6124 16.8031C19.6751 17.0317 19.7195 17.2446 19.7459 17.4405C19.8416 18.1487 19.6865 18.4516 19.5676 18.5706C19.4595 18.6786 19.204 18.8165 18.6189 18.7688C18.4419 18.7543 18.2475 18.7234 18.0368 18.6751C18.6427 18.1269 19.1736 17.4972 19.6124 16.8031ZM15.8812 17.8265C14.2046 16.9483 12.2571 15.5027 10.3752 13.6209C8.4954 11.7411 7.05092 9.79573 6.17241 8.1204C7.06357 6.78477 8.40124 5.77324 9.96933 5.29879C10.6108 5.10469 11.2923 4.99998 12 4.99998C15.866 4.99998 19 8.13399 19 12C19 12.7084 18.8951 13.3905 18.7006 14.0326C18.2261 15.5992 17.2155 16.9357 15.8812 17.8265ZM13.6052 18.8153C13.0901 18.9361 12.5528 19 12 19C8.13401 19 5 15.866 5 12C5 11.4478 5.06377 10.911 5.18429 10.3964C6.14883 11.9131 7.43475 13.5089 8.96096 15.0351C10.489 16.5631 12.0868 17.8503 13.6052 18.8153Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">发现</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="我的">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 22.5C4 18.0817 7.58172 14.5 12 14.5C16.4183 14.5 20 18.0817 20 22.5H18C18 19.1863 15.3137 16.5 12 16.5C8.68629 16.5 6 19.1863 6 22.5H4ZM12 13.5C8.685 13.5 6 10.815 6 7.5C6 4.185 8.685 1.5 12 1.5C15.315 1.5 18 4.185 18 7.5C18 10.815 15.315 13.5 12 13.5ZM12 11.5C14.21 11.5 16 9.71 16 7.5C16 5.29 14.21 3.5 12 3.5C9.79 3.5 8 5.29 8 7.5C8 9.71 9.79 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">我的</span>
+            </button>
+          </div>
+          <div class="yds-tabbar__safe-area">
+            <div class="yds-tabbar__indicator"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <h3 class="card-title">第二个标签选中</h3>
+      <div class="preview-wrapper">
+        <nav class="yds-tabbar">
+          <div class="yds-tabbar__content">
+            <button class="yds-tabbar__item" aria-label="首页">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 16.999H7V14.999H17V16.999Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6045 2.46973C12.6075 2.47203 12.6112 2.47422 12.6143 2.47656L20.6143 8.69824C20.6197 8.70249 20.6245 8.70756 20.6299 8.71191L21 9V21H3V9L3.36914 8.71191C3.37469 8.7074 3.38008 8.70265 3.38574 8.69824L11.3857 2.47656C11.3886 2.47438 11.3917 2.47188 11.3945 2.46973L12 2L12.6045 2.46973ZM5 9.97754V18.999H19V9.97754L12 4.5332L5 9.97754Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">首页</span>
+            </button>
+            <button class="yds-tabbar__item yds-tabbar__item--active" aria-label="发现">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.91762 8.03672C3.32984 9.2334 3 10.5794 3 12C3 16.9705 7.02944 21 12 21C13.4216 21 14.7684 20.6697 15.9657 20.0812C16.8385 20.4545 17.6848 20.6993 18.4564 20.7622C19.3582 20.8357 20.3 20.6666 20.9818 19.9848C21.7339 19.2327 21.8625 18.169 21.7279 17.1728C21.6052 16.2639 21.2481 15.2539 20.726 14.2116C20.9051 13.5031 21 12.762 21 12C21 7.02942 16.9706 2.99998 12 2.99998C11.2389 2.99998 10.4987 3.09467 9.79103 3.27331C8.7474 2.74993 7.73605 2.39184 6.8261 2.26846C5.82897 2.13327 4.76406 2.26141 4.01121 3.01425C3.3287 3.69676 3.16001 4.63968 3.2341 5.54245C3.29752 6.31512 3.54313 7.16259 3.91762 8.03672ZM5.3224 5.96587C5.2734 5.75333 5.24204 5.55727 5.2274 5.37885C5.17928 4.79255 5.31727 4.53661 5.42543 4.42846C5.54452 4.30937 5.84797 4.15415 6.55739 4.25033C6.75482 4.2771 6.96951 4.32201 7.2 4.38559C6.50364 4.82539 5.87203 5.35796 5.3224 5.96587ZM19.6124 16.8031C19.6751 17.0317 19.7195 17.2446 19.7459 17.4405C19.8416 18.1487 19.6865 18.4516 19.5676 18.5706C19.4595 18.6786 19.204 18.8165 18.6189 18.7688C18.4419 18.7543 18.2475 18.7234 18.0368 18.6751C18.6427 18.1269 19.1736 17.4972 19.6124 16.8031ZM15.8812 17.8265C14.2046 16.9483 12.2571 15.5027 10.3752 13.6209C8.4954 11.7411 7.05092 9.79573 6.17241 8.1204C7.06357 6.78477 8.40124 5.77324 9.96933 5.29879C10.6108 5.10469 11.2923 4.99998 12 4.99998C15.866 4.99998 19 8.13399 19 12C19 12.7084 18.8951 13.3905 18.7006 14.0326C18.2261 15.5992 17.2155 16.9357 15.8812 17.8265ZM13.6052 18.8153C13.0901 18.9361 12.5528 19 12 19C8.13401 19 5 15.866 5 12C5 11.4478 5.06377 10.911 5.18429 10.3964C6.14883 11.9131 7.43475 13.5089 8.96096 15.0351C10.489 16.5631 12.0868 17.8503 13.6052 18.8153Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">发现</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="我的">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 22.5C4 18.0817 7.58172 14.5 12 14.5C16.4183 14.5 20 18.0817 20 22.5H18C18 19.1863 15.3137 16.5 12 16.5C8.68629 16.5 6 19.1863 6 22.5H4ZM12 13.5C8.685 13.5 6 10.815 6 7.5C6 4.185 8.685 1.5 12 1.5C15.315 1.5 18 4.185 18 7.5C18 10.815 15.315 13.5 12 13.5ZM12 11.5C14.21 11.5 16 9.71 16 7.5C16 5.29 14.21 3.5 12 3.5C9.79 3.5 8 5.29 8 7.5C8 9.71 9.79 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">我的</span>
+            </button>
+          </div>
+          <div class="yds-tabbar__safe-area">
+            <div class="yds-tabbar__indicator"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <h3 class="card-title">第三个标签选中</h3>
+      <div class="preview-wrapper">
+        <nav class="yds-tabbar">
+          <div class="yds-tabbar__content">
+            <button class="yds-tabbar__item" aria-label="首页">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 16.999H7V14.999H17V16.999Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6045 2.46973C12.6075 2.47203 12.6112 2.47422 12.6143 2.47656L20.6143 8.69824C20.6197 8.70249 20.6245 8.70756 20.6299 8.71191L21 9V21H3V9L3.36914 8.71191C3.37469 8.7074 3.38008 8.70265 3.38574 8.69824L11.3857 2.47656C11.3886 2.47438 11.3917 2.47188 11.3945 2.46973L12 2L12.6045 2.46973ZM5 9.97754V18.999H19V9.97754L12 4.5332L5 9.97754Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">首页</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="发现">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.91762 8.03672C3.32984 9.2334 3 10.5794 3 12C3 16.9705 7.02944 21 12 21C13.4216 21 14.7684 20.6697 15.9657 20.0812C16.8385 20.4545 17.6848 20.6993 18.4564 20.7622C19.3582 20.8357 20.3 20.6666 20.9818 19.9848C21.7339 19.2327 21.8625 18.169 21.7279 17.1728C21.6052 16.2639 21.2481 15.2539 20.726 14.2116C20.9051 13.5031 21 12.762 21 12C21 7.02942 16.9706 2.99998 12 2.99998C11.2389 2.99998 10.4987 3.09467 9.79103 3.27331C8.7474 2.74993 7.73605 2.39184 6.8261 2.26846C5.82897 2.13327 4.76406 2.26141 4.01121 3.01425C3.3287 3.69676 3.16001 4.63968 3.2341 5.54245C3.29752 6.31512 3.54313 7.16259 3.91762 8.03672ZM5.3224 5.96587C5.2734 5.75333 5.24204 5.55727 5.2274 5.37885C5.17928 4.79255 5.31727 4.53661 5.42543 4.42846C5.54452 4.30937 5.84797 4.15415 6.55739 4.25033C6.75482 4.2771 6.96951 4.32201 7.2 4.38559C6.50364 4.82539 5.87203 5.35796 5.3224 5.96587ZM19.6124 16.8031C19.6751 17.0317 19.7195 17.2446 19.7459 17.4405C19.8416 18.1487 19.6865 18.4516 19.5676 18.5706C19.4595 18.6786 19.204 18.8165 18.6189 18.7688C18.4419 18.7543 18.2475 18.7234 18.0368 18.6751C18.6427 18.1269 19.1736 17.4972 19.6124 16.8031ZM15.8812 17.8265C14.2046 16.9483 12.2571 15.5027 10.3752 13.6209C8.4954 11.7411 7.05092 9.79573 6.17241 8.1204C7.06357 6.78477 8.40124 5.77324 9.96933 5.29879C10.6108 5.10469 11.2923 4.99998 12 4.99998C15.866 4.99998 19 8.13399 19 12C19 12.7084 18.8951 13.3905 18.7006 14.0326C18.2261 15.5992 17.2155 16.9357 15.8812 17.8265ZM13.6052 18.8153C13.0901 18.9361 12.5528 19 12 19C8.13401 19 5 15.866 5 12C5 11.4478 5.06377 10.911 5.18429 10.3964C6.14883 11.9131 7.43475 13.5089 8.96096 15.0351C10.489 16.5631 12.0868 17.8503 13.6052 18.8153Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">发现</span>
+            </button>
+            <button class="yds-tabbar__item yds-tabbar__item--active" aria-label="我的">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 22.5C4 18.0817 7.58172 14.5 12 14.5C16.4183 14.5 20 18.0817 20 22.5H18C18 19.1863 15.3137 16.5 12 16.5C8.68629 16.5 6 19.1863 6 22.5H4ZM12 13.5C8.685 13.5 6 10.815 6 7.5C6 4.185 8.685 1.5 12 1.5C15.315 1.5 18 4.185 18 7.5C18 10.815 15.315 13.5 12 13.5ZM12 11.5C14.21 11.5 16 9.71 16 7.5C16 5.29 14.21 3.5 12 3.5C9.79 3.5 8 5.29 8 7.5C8 9.71 9.79 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">我的</span>
+            </button>
+          </div>
+          <div class="yds-tabbar__safe-area">
+            <div class="yds-tabbar__indicator"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 4个标签 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">4个标签</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">基础4标签</h3>
+      <p class="card-description">第一个标签默认选中</p>
+      <div class="preview-wrapper">
+        <nav class="yds-tabbar">
+          <div class="yds-tabbar__content">
+            <button class="yds-tabbar__item yds-tabbar__item--active" aria-label="首页">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 16.999H7V14.999H17V16.999Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6045 2.46973C12.6075 2.47203 12.6112 2.47422 12.6143 2.47656L20.6143 8.69824C20.6197 8.70249 20.6245 8.70756 20.6299 8.71191L21 9V21H3V9L3.36914 8.71191C3.37469 8.7074 3.38008 8.70265 3.38574 8.69824L11.3857 2.47656C11.3886 2.47438 11.3917 2.47188 11.3945 2.46973L12 2L12.6045 2.46973ZM5 9.97754V18.999H19V9.97754L12 4.5332L5 9.97754Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">首页</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="发现">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.91762 8.03672C3.32984 9.2334 3 10.5794 3 12C3 16.9705 7.02944 21 12 21C13.4216 21 14.7684 20.6697 15.9657 20.0812C16.8385 20.4545 17.6848 20.6993 18.4564 20.7622C19.3582 20.8357 20.3 20.6666 20.9818 19.9848C21.7339 19.2327 21.8625 18.169 21.7279 17.1728C21.6052 16.2639 21.2481 15.2539 20.726 14.2116C20.9051 13.5031 21 12.762 21 12C21 7.02942 16.9706 2.99998 12 2.99998C11.2389 2.99998 10.4987 3.09467 9.79103 3.27331C8.7474 2.74993 7.73605 2.39184 6.8261 2.26846C5.82897 2.13327 4.76406 2.26141 4.01121 3.01425C3.3287 3.69676 3.16001 4.63968 3.2341 5.54245C3.29752 6.31512 3.54313 7.16259 3.91762 8.03672ZM5.3224 5.96587C5.2734 5.75333 5.24204 5.55727 5.2274 5.37885C5.17928 4.79255 5.31727 4.53661 5.42543 4.42846C5.54452 4.30937 5.84797 4.15415 6.55739 4.25033C6.75482 4.2771 6.96951 4.32201 7.2 4.38559C6.50364 4.82539 5.87203 5.35796 5.3224 5.96587ZM19.6124 16.8031C19.6751 17.0317 19.7195 17.2446 19.7459 17.4405C19.8416 18.1487 19.6865 18.4516 19.5676 18.5706C19.4595 18.6786 19.204 18.8165 18.6189 18.7688C18.4419 18.7543 18.2475 18.7234 18.0368 18.6751C18.6427 18.1269 19.1736 17.4972 19.6124 16.8031ZM15.8812 17.8265C14.2046 16.9483 12.2571 15.5027 10.3752 13.6209C8.4954 11.7411 7.05092 9.79573 6.17241 8.1204C7.06357 6.78477 8.40124 5.77324 9.96933 5.29879C10.6108 5.10469 11.2923 4.99998 12 4.99998C15.866 4.99998 19 8.13399 19 12C19 12.7084 18.8951 13.3905 18.7006 14.0326C18.2261 15.5992 17.2155 16.9357 15.8812 17.8265ZM13.6052 18.8153C13.0901 18.9361 12.5528 19 12 19C8.13401 19 5 15.866 5 12C5 11.4478 5.06377 10.911 5.18429 10.3964C6.14883 11.9131 7.43475 13.5089 8.96096 15.0351C10.489 16.5631 12.0868 17.8503 13.6052 18.8153Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">发现</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="消息">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 12H7V10H9V12Z" fill="currentColor"/>
+                  <path d="M13 12H11V10H13V12Z" fill="currentColor"/>
+                  <path d="M17 12H15V10H17V12Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22 3V19H6.4541L2.80893 21.8643C2.48087 22.1221 2 21.8884 2 21.4712V3H22ZM4 18.3848L5.7627 17H20V5H4V18.3848Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">消息</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="我的">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 22.5C4 18.0817 7.58172 14.5 12 14.5C16.4183 14.5 20 18.0817 20 22.5H18C18 19.1863 15.3137 16.5 12 16.5C8.68629 16.5 6 19.1863 6 22.5H4ZM12 13.5C8.685 13.5 6 10.815 6 7.5C6 4.185 8.685 1.5 12 1.5C15.315 1.5 18 4.185 18 7.5C18 10.815 15.315 13.5 12 13.5ZM12 11.5C14.21 11.5 16 9.71 16 7.5C16 5.29 14.21 3.5 12 3.5C9.79 3.5 8 5.29 8 7.5C8 9.71 9.79 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">我的</span>
+            </button>
+          </div>
+          <div class="yds-tabbar__safe-area">
+            <div class="yds-tabbar__indicator"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 5个标签 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">5个标签</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">基础5标签</h3>
+      <p class="card-description">第一个标签默认选中</p>
+      <div class="preview-wrapper">
+        <nav class="yds-tabbar">
+          <div class="yds-tabbar__content">
+            <button class="yds-tabbar__item yds-tabbar__item--active" aria-label="首页">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 16.999H7V14.999H17V16.999Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6045 2.46973C12.6075 2.47203 12.6112 2.47422 12.6143 2.47656L20.6143 8.69824C20.6197 8.70249 20.6245 8.70756 20.6299 8.71191L21 9V21H3V9L3.36914 8.71191C3.37469 8.7074 3.38008 8.70265 3.38574 8.69824L11.3857 2.47656C11.3886 2.47438 11.3917 2.47188 11.3945 2.46973L12 2L12.6045 2.46973ZM5 9.97754V18.999H19V9.97754L12 4.5332L5 9.97754Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">首页</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="发现">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.91762 8.03672C3.32984 9.2334 3 10.5794 3 12C3 16.9705 7.02944 21 12 21C13.4216 21 14.7684 20.6697 15.9657 20.0812C16.8385 20.4545 17.6848 20.6993 18.4564 20.7622C19.3582 20.8357 20.3 20.6666 20.9818 19.9848C21.7339 19.2327 21.8625 18.169 21.7279 17.1728C21.6052 16.2639 21.2481 15.2539 20.726 14.2116C20.9051 13.5031 21 12.762 21 12C21 7.02942 16.9706 2.99998 12 2.99998C11.2389 2.99998 10.4987 3.09467 9.79103 3.27331C8.7474 2.74993 7.73605 2.39184 6.8261 2.26846C5.82897 2.13327 4.76406 2.26141 4.01121 3.01425C3.3287 3.69676 3.16001 4.63968 3.2341 5.54245C3.29752 6.31512 3.54313 7.16259 3.91762 8.03672ZM5.3224 5.96587C5.2734 5.75333 5.24204 5.55727 5.2274 5.37885C5.17928 4.79255 5.31727 4.53661 5.42543 4.42846C5.54452 4.30937 5.84797 4.15415 6.55739 4.25033C6.75482 4.2771 6.96951 4.32201 7.2 4.38559C6.50364 4.82539 5.87203 5.35796 5.3224 5.96587ZM19.6124 16.8031C19.6751 17.0317 19.7195 17.2446 19.7459 17.4405C19.8416 18.1487 19.6865 18.4516 19.5676 18.5706C19.4595 18.6786 19.204 18.8165 18.6189 18.7688C18.4419 18.7543 18.2475 18.7234 18.0368 18.6751C18.6427 18.1269 19.1736 17.4972 19.6124 16.8031ZM15.8812 17.8265C14.2046 16.9483 12.2571 15.5027 10.3752 13.6209C8.4954 11.7411 7.05092 9.79573 6.17241 8.1204C7.06357 6.78477 8.40124 5.77324 9.96933 5.29879C10.6108 5.10469 11.2923 4.99998 12 4.99998C15.866 4.99998 19 8.13399 19 12C19 12.7084 18.8951 13.3905 18.7006 14.0326C18.2261 15.5992 17.2155 16.9357 15.8812 17.8265ZM13.6052 18.8153C13.0901 18.9361 12.5528 19 12 19C8.13401 19 5 15.866 5 12C5 11.4478 5.06377 10.911 5.18429 10.3964C6.14883 11.9131 7.43475 13.5089 8.96096 15.0351C10.489 16.5631 12.0868 17.8503 13.6052 18.8153Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">发现</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="消息">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 12H7V10H9V12Z" fill="currentColor"/>
+                  <path d="M13 12H11V10H13V12Z" fill="currentColor"/>
+                  <path d="M17 12H15V10H17V12Z" fill="currentColor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22 3V19H6.4541L2.80893 21.8643C2.48087 22.1221 2 21.8884 2 21.4712V3H22ZM4 18.3848L5.7627 17H20V5H4V18.3848Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">消息</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="购物">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 18.5C7.10457 18.5 8 19.3954 8 20.5C8 21.6046 7.10457 22.5 6 22.5C4.89543 22.5 4 21.6046 4 20.5C4 19.3954 4.89543 18.5 6 18.5Z" fill="currentColor"/>
+                  <path d="M18 18.5C19.1046 18.5 20 19.3954 20 20.5C20 21.6046 19.1046 22.5 18 22.5C16.8954 22.5 16 21.6046 16 20.5C16 19.3954 16.8954 18.5 18 18.5Z" fill="currentColor"/>
+                  <path d="M6 14.5H18.4385L20.4385 6.5H8V4.5H21.7188C22.271 4.5 22.7188 4.94772 22.7188 5.5C22.7188 5.58164 22.7093 5.66298 22.6895 5.74219L20.1895 15.7422C20.0783 16.1874 20 16.5 20 16.5H4V3.5H2V1.5H6V14.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">购物</span>
+            </button>
+            <button class="yds-tabbar__item" aria-label="我的">
+              <div class="yds-tabbar__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 22.5C4 18.0817 7.58172 14.5 12 14.5C16.4183 14.5 20 18.0817 20 22.5H18C18 19.1863 15.3137 16.5 12 16.5C8.68629 16.5 6 19.1863 6 22.5H4ZM12 13.5C8.685 13.5 6 10.815 6 7.5C6 4.185 8.685 1.5 12 1.5C15.315 1.5 18 4.185 18 7.5C18 10.815 15.315 13.5 12 13.5ZM12 11.5C14.21 11.5 16 9.71 16 7.5C16 5.29 14.21 3.5 12 3.5C9.79 3.5 8 5.29 8 7.5C8 9.71 9.79 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="yds-tabbar__label">我的</span>
+            </button>
+          </div>
+          <div class="yds-tabbar__safe-area">
+            <div class="yds-tabbar__indicator"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // TabBar 切换交互
+    document.querySelectorAll('.yds-tabbar__content').forEach(content => {
+      content.querySelectorAll('.yds-tabbar__item').forEach(item => {
+        item.addEventListener('click', function() {
+          // 移除所有项的选中状态
+          content.querySelectorAll('.yds-tabbar__item').forEach(i => {
+            i.classList.remove('yds-tabbar__item--active');
+          });
+          // 添加当前项的选中状态
+          this.classList.add('yds-tabbar__item--active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

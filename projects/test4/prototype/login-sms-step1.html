@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>登录 - 唯品会</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <script src="radio-interactive.js"></script>
+  <style>
+    /* ========== 移动端基础样式 ========== */
+    html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      /* 禁止垂直滚动条 */
+    }
+
+    body {
+      background-color: var(--yds-bg-default-white);
+      height: 100vh;
+      font-family: var(--yds-font-family-base);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      /* 禁止垂直滚动条 */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: var(--yds-screen-mobile);
+      margin: 0 auto;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      /* 禁止垂直滚动条 */
+      position: relative;
+    }
+
+    /* ========== 页面特定样式 ========== */
+    .login-header {
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 200px;
+    }
+
+    .login-logo {
+      width: 250px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      margin-bottom: var(--yds-spacing-16);
+    }
+
+    .input-label {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-secondary);
+      margin-bottom: var(--yds-spacing-8);
+      display: block;
+    }
+
+    .input-field {
+      width: 100%;
+      height: 48px;
+      border: none;
+      border-bottom: 1px solid var(--yds-border-default-tertiary);
+      font-size: var(--yds-font-size-15);
+      color: var(--yds-text-default-default);
+      padding: 0;
+      background: transparent;
+      outline: none;
+      transition: border-color 0.3s;
+      box-sizing: border-box;
+      /* 确保padding包含在宽度内 */
+      transition: border-color 0.3s;
+    }
+
+    .input-field:focus {
+      border-bottom-color: var(--yds-border-default-default);
+    }
+
+    .input-field::placeholder {
+      color: var(--yds-text-default-disabled);
+    }
+
+    .input-field.error {
+      border-bottom-color: var(--yds-bg-danger-default);
+    }
+
+    .error-message {
+      font-size: var(--yds-font-size-12);
+      color: var(--yds-text-danger-default);
+      margin-top: var(--yds-spacing-4);
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    .agreement-section {
+      margin-top: var(--yds-spacing-16);
+      margin-bottom: var(--yds-spacing-24);
+      display: flex;
+      align-items: center;
+      /* 确保单选框和文字垂直居中对齐 */
+    }
+
+    .agreement-text {
+      font-size: var(--yds-font-size-12);
+      color: var(--yds-text-default-secondary);
+      margin-left: var(--yds-spacing-8);
+    }
+
+    .agreement-link {
+      color: var(--yds-text-utils-03-default);
+      /* 使用Text/Utils/03/Default颜色（蓝色）*/
+      text-decoration: none;
+      /* 无下划线 */
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: var(--yds-spacing-32) 0;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background-color: var(--yds-border-default-tertiary);
+    }
+
+    .divider-text {
+      padding: 0 var(--yds-spacing-16);
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-tertiary);
+    }
+
+    .third-party-login {
+      display: flex;
+      justify-content: center;
+      gap: var(--yds-spacing-32);
+      margin-bottom: var(--yds-spacing-32);
+    }
+
+    .third-party-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--yds-radius-full);
+      background-color: var(--yds-bg-transp-black-4-pct);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .third-party-icon:active {
+      background-color: var(--yds-bg-transp-black-8-pct);
+    }
+
+    .third-party-icon img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .third-party-label {
+      font-size: var(--yds-font-size-11);
+      color: var(--yds-text-default-tertiary);
+      text-align: center;
+      margin-top: var(--yds-spacing-4);
+    }
+
+    .other-login-methods {
+      display: flex;
+      justify-content: center;
+      gap: var(--yds-spacing-24);
+      margin-bottom: var(--yds-spacing-48);
+    }
+
+    .other-login-link {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-secondary);
+      text-decoration: none;
+      /* 无下划线 */
+    }
+
+    .cannot-login-top {
+      position: absolute;
+      top: var(--yds-spacing-16);
+      right: var(--yds-spacing-16);
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-brand-default);
+      text-decoration: none;
+      z-index: 10;
+    }
+
+    .third-party-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    /* ========== 按钮禁用状态 ========== */
+    .yds-button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* ========== Popup 模板隐藏 ========== */
+    .popup-hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 移动端容器 -->
+  <div class="mobile-container">
+    <!-- 栅格系统 -->
+    <div class="yds-grid">
+      <div class="yds-grid__cell yds-grid__cell--12">
+        <div class="yds-grid__cell-content">
+
+          <!-- 无法登录入口（右上角） -->
+          <a href="javascript:void(0)" class="cannot-login-top" onclick="showCannotLoginSheet()">无法登录</a>
+
+          <!-- Logo -->
+          <div class="login-header">
+            <img src="../images/logo.png" alt="唯品会" class="login-logo">
+          </div>
+
+          <!-- 手机号输入 -->
+          <div class="input-group">
+            <label class="input-label" for="phone">手机号</label>
+            <input type="tel" id="phone" class="input-field" placeholder="请输入手机号" maxlength="11"
+              oninput="validatePhone()">
+            <div class="error-message" id="phone-error">请输入正确的手机号</div>
+          </div>
+
+          <!-- 协议勾选 -->
+          <div class="agreement-section">
+            <label class="yds-radio yds-radio--small">
+              <input type="radio" class="yds-radio__input" id="agreement" name="agreement" value="agree"
+                data-radio-toggle>
+              <span class="yds-radio__circle"></span>
+            </label>
+            <span class="agreement-text">
+              我已阅读并同意
+              <a href="javascript:void(0)" class="agreement-link">《用户协议》</a>
+              和
+              <a href="javascript:void(0)" class="agreement-link">《隐私政策》</a>
+            </span>
+          </div>
+
+          <!-- 登录按钮 -->
+          <button id="login-btn" class="yds-button yds-button--solid-dark yds-button--black yds-button--xl"
+            style="width: 100%;" onclick="handleLogin()">
+            获取验证码
+          </button>
+
+          <!-- 分割线 -->
+          <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-text">其他登录方式</div>
+            <div class="divider-line"></div>
+          </div>
+
+          <!-- 第三方登录 -->
+          <div class="third-party-login">
+            <div class="third-party-item" onclick="showToast('微信登录功能开发中')">
+              <div class="third-party-icon">
+                <img src="../images/wechat.png" alt="微信">
+              </div>
+              <div class="third-party-label">微信</div>
+            </div>
+            <div class="third-party-item" onclick="showToast('QQ登录功能开发中')">
+              <div class="third-party-icon">
+                <img src="../images/QQ.png" alt="QQ">
+              </div>
+              <div class="third-party-label">QQ</div>
+            </div>
+            <div class="third-party-item" onclick="showToast('Apple登录功能开发中')">
+              <div class="third-party-icon">
+                <img src="../images/apple.png" alt="Apple">
+              </div>
+              <div class="third-party-label">Apple</div>
+            </div>
+          </div>
+
+          <!-- 其他登录方式 -->
+          <div class="other-login-methods">
+            <a href="login-password.html" class="other-login-link">账号密码登录</a>
+            <a href="register-step1.html" class="other-login-link">新用户注册</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast 组件 -->
+  <div id="yds-toast" class="yds-toast yds-toast--default" style="display: none;">
+    <div class="yds-toast__text"></div>
+  </div>
+
+  <!-- 底部浮层：无法登录（使用 YDS Popup 组件） -->
+  <div id="cannot-login-popup" class="popup-hidden">
+    <div class="yds-popup-overlay">
+      <div class="yds-popup yds-popup--bottom">
+        <div class="yds-popup__navbar">
+          <div class="yds-popup__title">
+            <div class="yds-popup__title-main">选择问题类型</div>
+          </div>
+          <button class="yds-popup__close">
+            <img src="../icons/y_icon_line_edit_close.svg" alt="关闭">
+          </button>
+        </div>
+        <div class="yds-popup__content">
+          <div
+            style="padding: var(--yds-spacing-16); display: flex; flex-direction: column; gap: var(--yds-spacing-12);">
+            <button class="yds-button yds-button--solid-light yds-button--black yds-button--xl"
+              onclick="handleForgotPassword()">
+              忘记密码
+            </button>
+            <button class="yds-button yds-button--solid-light yds-button--black yds-button--xl"
+              onclick="handleRetrieveAccount()">
+              找回账号
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ========== 手机号验证 ==========
+    function validatePhone() {
+      const phone = document.getElementById('phone').value;
+      const phoneRegex = /^1[3-9]\d{9}$/;
+      const phoneError = document.getElementById('phone-error');
+
+      if (phone.length === 0) {
+        phoneError.classList.remove('show');
+        return false;
+      }
+
+      if (phone.length === 11 && phoneRegex.test(phone)) {
+        phoneError.classList.remove('show');
+        return true;
+      } else {
+        phoneError.classList.add('show');
+        return false;
+      }
+    }
+
+    // ========== 登录处理 ==========
+    function handleLogin() {
+      const phone = document.getElementById('phone').value;
+      const agreement = document.getElementById('agreement');
+      const phoneRegex = /^1[3-9]\d{9}$/;
+
+      // 验证手机号
+      if (!phone || phone.length !== 11 || !phoneRegex.test(phone)) {
+        showToast('请输入正确的手机号');
+        return;
+      }
+
+      // 验证协议勾选
+      if (!agreement.checked) {
+        showToast('请先阅读并同意用户协议和隐私政策');
+        return;
+      }
+
+      // 跳转到验证码页面
+      window.location.href = 'login-sms-step2.html?phone=' + phone;
+    }
+
+    // ========== 显示/隐藏底部浮层（使用 YDS Popup 组件）==========
+    function showCannotLoginSheet() {
+      openPopup('cannot-login-popup');
+    }
+
+    function closeCannotLoginSheet() {
+      closePopup('cannot-login-popup');
+    }
+
+    function handleForgotPassword() {
+      closePopup('cannot-login-popup');
+      showToast('忘记密码功能开发中');
+    }
+
+    function handleRetrieveAccount() {
+      closePopup('cannot-login-popup');
+      showToast('找回账号功能开发中');
+    }
+
+    // ========== YDS Popup 组件函数 ==========
+    // 打开弹出层函数
+    function openPopup(popupId) {
+      const popupTemplate = document.getElementById(popupId);
+      const popupOverlay = popupTemplate.querySelector('.yds-popup-overlay');
+
+      // 克隆弹出层
+      const clonedOverlay = popupOverlay.cloneNode(true);
+
+      // 添加到 body
+      document.body.appendChild(clonedOverlay);
+
+      // 显示弹出层
+      clonedOverlay.style.display = 'block';
+
+      // 添加关闭事件
+      const popup = clonedOverlay.querySelector('.yds-popup');
+      const backBtn = clonedOverlay.querySelector('.yds-popup__back');
+      const closeBtn = clonedOverlay.querySelector('.yds-popup__close');
+
+      // 点击蒙层关闭
+      clonedOverlay.addEventListener('click', function (e) {
+        if (e.target === clonedOverlay) {
+          closePopupOverlay(clonedOverlay, popup);
+        }
+      });
+
+      // 返回按钮关闭
+      if (backBtn) {
+        backBtn.addEventListener('click', function () {
+          closePopupOverlay(clonedOverlay, popup);
+        });
+      }
+
+      // 关闭按钮关闭
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          closePopupOverlay(clonedOverlay, popup);
+        });
+      }
+    }
+
+    // 关闭弹出层函数
+    function closePopup(popupId) {
+      // 查找显示的弹出层
+      const overlays = document.querySelectorAll('.yds-popup-overlay');
+      overlays.forEach(overlay => {
+        if (overlay.parentNode !== document.getElementById(popupId)) {
+          const popup = overlay.querySelector('.yds-popup');
+          closePopupOverlay(overlay, popup);
+        }
+      });
+    }
+
+    // 关闭弹出层动画
+    function closePopupOverlay(overlay, popup) {
+      // 添加关闭动画类
+      popup.classList.add('yds-popup--closing');
+
+      // 等待动画结束后移除（250ms 匹配 CSS 动画时长）
+      setTimeout(() => {
+        if (overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+      }, 250);
+    }
+
+    // ========== Toast 提示 ==========
+    function showToast(message, duration = 2000) {
+      const toast = document.getElementById('yds-toast');
+      const toastText = toast.querySelector('.yds-toast__text');
+
+      toastText.textContent = message;
+      toast.style.display = 'flex';
+      toast.classList.add('yds-toast--fade-in');
+
+      setTimeout(() => {
+        toast.classList.remove('yds-toast--fade-in');
+        toast.classList.add('yds-toast--fade-out');
+
+        setTimeout(() => {
+          toast.style.display = 'none';
+          toast.classList.remove('yds-toast--fade-out');
+        }, 300);
+      }, duration);
+    }
+  </script>
+</body>
+
+</html>

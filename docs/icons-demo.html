@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>图标库 - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0 0 32px 0;
+      color: #1b1b1b;
+    }
+
+    .demo-section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: #1b1b1b;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .icon-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .icon-item:active {
+      transform: translateY(0);
+    }
+
+    .icon-preview {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F4F5F7;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .icon-name {
+      font-size: 12px;
+      color: #4E4F54;
+      text-align: center;
+      word-break: break-all;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    .icon-code {
+      font-size: 10px;
+      color: #7E828C;
+      font-family: monospace;
+      margin-top: 4px;
+      text-align: center;
+      word-break: break-all;
+    }
+
+    .icon-hint {
+      font-size: 10px;
+      color: #7E828C;
+      margin-top: 4px;
+    }
+
+    .badge-demo {
+      position: relative;
+      display: inline-flex;
+    }
+
+    .size-demo, .color-demo {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .size-item, .color-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .size-label {
+      font-size: 12px;
+      color: #4E4F54;
+    }
+  </style>
+</head>
+<body>
+  <h1>图标库 - 年轻版设计系统</h1>
+
+  <!-- 线性图标 -->
+  <div class="demo-section">
+    <h2 class="section-title">线性图标</h2>
+
+    <div class="icon-grid">
+      <div class="icon-item" onclick="copyIcon('y_icon_line_direction_arrow_left.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon" alt="返回">
+        </div>
+        <span class="icon-name">返回</span>
+        <span class="icon-code">y_icon_line_direction_arrow_left.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_direction_arrow_down.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_direction_arrow_down.svg" class="yds-icon" alt="下拉箭头">
+        </div>
+        <span class="icon-name">下拉箭头</span>
+        <span class="icon-code">y_icon_line_direction_arrow_down.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('icon_line_generality_end.svg')">
+        <div class="icon-preview">
+          <img src="../icons/icon_line_generality_end.svg" class="yds-icon" alt="关闭">
+        </div>
+        <span class="icon-name">关闭</span>
+        <span class="icon-code">y_icon_line_generality_end.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('icon_planarity_edit_send.svg')">
+        <div class="icon-preview">
+          <img src="../icons/icon_planarity_edit_send.svg" class="yds-icon" alt="发送">
+        </div>
+        <span class="icon-name">发送</span>
+        <span class="icon-code">y_icon_planarity_edit_send.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_direction_arrow_down_double.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_direction_arrow_down_double.svg" class="yds-icon" alt="双箭头向下">
+        </div>
+        <span class="icon-name">双箭头向下</span>
+        <span class="icon-code">y_icon_line_direction_arrow_down_double.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_direction_arrow_skip_right.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_direction_arrow_skip_right.svg" class="yds-icon" alt="跳过">
+        </div>
+        <span class="icon-name">跳过</span>
+        <span class="icon-code">y_icon_line_direction_arrow_skip_right.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_direction_arrow_up_double.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_direction_arrow_up_double.svg" class="yds-icon" alt="双箭头向上">
+        </div>
+        <span class="icon-name">双箭头向上</span>
+        <span class="icon-code">y_icon_line_direction_arrow_up_double.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_add.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_add.svg" class="yds-icon" alt="添加">
+        </div>
+        <span class="icon-name">添加</span>
+        <span class="icon-code">y_icon_line_edit_add.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_addfavorite.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_addfavorite.svg" class="yds-icon" alt="添加收藏">
+        </div>
+        <span class="icon-name">添加收藏</span>
+        <span class="icon-code">y_icon_line_edit_addfavorite.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_adduser.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_adduser.svg" class="yds-icon" alt="添加用户">
+        </div>
+        <span class="icon-name">添加用户</span>
+        <span class="icon-code">y_icon_line_edit_adduser.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_advice.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_advice.svg" class="yds-icon" alt="客服">
+        </div>
+        <span class="icon-name">客服</span>
+        <span class="icon-code">y_icon_line_edit_advice.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_appointmentremind.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_appointmentremind.svg" class="yds-icon" alt="提醒">
+        </div>
+        <span class="icon-name">提醒</span>
+        <span class="icon-code">y_icon_line_edit_appointmentremind.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_backtotop.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_backtotop.svg" class="yds-icon" alt="返回顶部">
+        </div>
+        <span class="icon-name">返回顶部</span>
+        <span class="icon-code">y_icon_line_edit_backtotop.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_customerservice.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_customerservice.svg" class="yds-icon" alt="客服">
+        </div>
+        <span class="icon-name">客服</span>
+        <span class="icon-code">y_icon_line_edit_customerservice.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 面性图标 -->
+  <div class="demo-section">
+    <h2 class="section-title">面性图标</h2>
+
+    <div class="icon-grid">
+      <div class="icon-item" onclick="copyIcon('y_icon_planarity_edit_favorites.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_planarity_edit_favorites.svg" class="yds-icon" alt="收藏">
+        </div>
+        <span class="icon-name">收藏</span>
+        <span class="icon-code">y_icon_planarity_edit_favorites.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_planarity_generality_shoppingcart.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_planarity_generality_shoppingcart.svg" class="yds-icon" alt="购物车">
+        </div>
+        <span class="icon-name">购物车</span>
+        <span class="icon-code">y_icon_planarity_generality_shoppingcart.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_planarity_generality_brand.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_planarity_generality_brand.svg" class="yds-icon" alt="品牌">
+        </div>
+        <span class="icon-name">品牌</span>
+        <span class="icon-code">y_icon_planarity_generality_brand.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_planarity_generality_coupon.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_planarity_generality_coupon.svg" class="yds-icon" alt="优惠券">
+        </div>
+        <span class="icon-name">优惠券</span>
+        <span class="icon-code">y_icon_planarity_generality_coupon.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_search.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_search.svg" class="yds-icon" alt="搜索">
+        </div>
+        <span class="icon-name">搜索</span>
+        <span class="icon-code">y_icon_line_edit_search.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_scan.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_scan.svg" class="yds-icon" alt="扫一扫">
+        </div>
+        <span class="icon-name">扫一扫</span>
+        <span class="icon-code">y_icon_line_edit_scan.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_share.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_share.svg" class="yds-icon" alt="分享">
+        </div>
+        <span class="icon-name">分享</span>
+        <span class="icon-code">y_icon_line_edit_share.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_like.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_like.svg" class="yds-icon" alt="点赞">
+        </div>
+        <span class="icon-name">点赞</span>
+        <span class="icon-code">y_icon_line_edit_like.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_generality_more.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_generality_more.svg" class="yds-icon" alt="更多">
+        </div>
+        <span class="icon-name">更多</span>
+        <span class="icon-code">y_icon_line_edit_more.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_generality_shoppingcart.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_generality_shoppingcart.svg" class="yds-icon" alt="购物车">
+        </div>
+        <span class="icon-name">购物车</span>
+        <span class="icon-code">y_icon_line_generality_shoppingcart.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_generality_message.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_generality_message.svg" class="yds-icon" alt="消息">
+        </div>
+        <span class="icon-name">消息</span>
+        <span class="icon-code">y_icon_line_generality_message.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_generality_index.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_generality_index.svg" class="yds-icon" alt="首页">
+        </div>
+        <span class="icon-name">首页</span>
+        <span class="icon-code">y_icon_line_edit_home.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 尺寸示例 -->
+  <div class="demo-section">
+    <h2 class="section-title">尺寸示例</h2>
+
+    <div class="size-demo">
+      <div class="size-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon yds-icon--xs" alt="返回">
+        <span class="size-label">XS 16px</span>
+      </div>
+
+      <div class="size-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon yds-icon--sm" alt="返回">
+        <span class="size-label">SM 20px</span>
+      </div>
+
+      <div class="size-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon yds-icon--md" alt="返回">
+        <span class="size-label">MD 24px</span>
+      </div>
+
+      <div class="size-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon yds-icon--lg" alt="返回">
+        <span class="size-label">LG 28px</span>
+      </div>
+
+      <div class="size-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon yds-icon--xl" alt="返回">
+        <span class="size-label">XL 32px</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 颜色示例 -->
+  <div class="demo-section">
+    <h2 class="section-title">颜色示例</h2>
+
+    <div class="color-demo">
+      <div class="color-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon" alt="返回">
+        <span class="size-label">默认色</span>
+      </div>
+
+      <div class="color-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon" alt="返回" style="opacity: 0.5;">
+        <span class="size-label">次要色</span>
+      </div>
+
+      <div class="color-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon" alt="返回" style="filter: hue-rotate(90deg);">
+        <span class="size-label">品牌色</span>
+      </div>
+
+      <div class="color-item">
+        <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon" alt="返回" style="filter: brightness(0) invert(1);">
+        <span class="size-label">白色</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 徽标标的图标 -->
+  <div class="demo-section">
+    <h2 class="section-title">带徽标的图标</h2>
+
+    <div class="icon-grid">
+      <div class="icon-item">
+        <div class="icon-preview badge-demo">
+          <img src="../icons/y_icon_line_generality_message.svg" class="yds-icon" alt="消息">
+          <span class="yds-icon-badge">5</span>
+        </div>
+        <span class="icon-name">消息(5)</span>
+        <span class="icon-code">y_icon_line_generality_message.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-preview badge-demo">
+          <img src="../icons/y_icon_line_generality_message.svg" class="yds-icon" alt="消息">
+          <span class="yds-icon-badge yds-icon-badge--dot"></span>
+        </div>
+        <span class="icon-name">消息(小红点)</span>
+        <span class="icon-code">y_icon_line_generality_message.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 更多图标 -->
+  <div class="demo-section">
+    <h2 class="section-title">更多图标</h2>
+
+    <div class="icon-grid">
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_error.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_error.svg" class="yds-icon" alt="错误">
+        </div>
+        <span class="icon-name">错误</span>
+        <span class="icon-code">y_icon_line_edit_error.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_close.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_close.svg" class="yds-icon" alt="关闭">
+        </div>
+        <span class="icon-name">关闭</span>
+        <span class="icon-code">y_icon_line_edit_close.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_directory.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_directory.svg" class="yds-icon" alt="目录">
+        </div>
+        <span class="icon-name">目录</span>
+        <span class="icon-code">y_icon_line_edit_directory.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_filter.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_filter.svg" class="yds-icon" alt="筛选">
+        </div>
+        <span class="icon-name">筛选</span>
+        <span class="icon-code">y_icon_line_edit_filter.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_sort.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_sort.svg" class="yds-icon" alt="排序">
+        </div>
+        <span class="icon-name">排序</span>
+        <span class="icon-code">y_icon_line_edit_sort.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_setup.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_setup.svg" class="yds-icon" alt="设置">
+        </div>
+        <span class="icon-name">设置</span>
+        <span class="icon-code">y_icon_line_edit_setup.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_refresh.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_refresh.svg" class="yds-icon" alt="刷新">
+        </div>
+        <span class="icon-name">刷新</span>
+        <span class="icon-code">y_icon_line_edit_refresh.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+
+      <div class="icon-item" onclick="copyIcon('y_icon_line_edit_help.svg')">
+        <div class="icon-preview">
+          <img src="../icons/y_icon_line_edit_help.svg" class="yds-icon" alt="帮助">
+        </div>
+        <span class="icon-name">帮助</span>
+        <span class="icon-code">y_icon_line_edit_help.svg</span>
+        <span class="icon-hint">点击复制代码</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 图标复制功能
+    function copyIcon(iconName) {
+      const code = `<img src="../icons/${iconName}" class="yds-icon" alt="${iconName}">`;
+
+      navigator.clipboard.writeText(code).then(() => {
+        alert(`已复制图标代码！\n图标名称: ${iconName}\n\n代码: ${code}`);
+      }).catch(err => {
+        console.error('复制失败:', err);
+      });
+    }
+
+    // 添加点击反馈
+    document.querySelectorAll('.icon-item').forEach(item => {
+      item.addEventListener('click', function() {
+        // 0.1秒后移除
+        setTimeout(() => {
+          this.classList.remove('icon-item:active');
+        }, 100);
+      });
+    });
+  </script>
+</body>
+</html>

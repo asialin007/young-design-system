@@ -1,0 +1,168 @@
+/**
+ * 年轻版设计系统 2.0 - Checkbox 复选框组件样式
+ * 用于在多个选项中选择一个或多个
+ *
+ * 基于 Figma 设计规范：
+ * - 未选中：白色背景 + 灰色边框
+ * - 选中（黑色）：黑色背景 + 白色对勾
+ * - 选中（品牌色）：品牌色背景 + 白色对勾
+ * - 禁用：半透明遮罩层
+ */
+
+/* ==================== 复选框容器 ==================== */
+
+.yds-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.yds-checkbox:focus-visible {
+  outline: 2px solid #006AFF;
+  outline-offset: 2px;
+}
+
+/* ==================== 尺寸变体 ==================== */
+
+/* 大尺寸：20px - 应用到方框 */
+.yds-checkbox--large .yds-checkbox__box {
+  width: 20px;
+  height: 20px;
+}
+
+/* 小尺寸：16px - 应用到方框 */
+.yds-checkbox--small .yds-checkbox__box {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==================== 复选框外观 ==================== */
+
+.yds-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.yds-checkbox__box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--yds-radius-none, 0); /* 年轻版设计系统：直角设计 */
+  background-color: var(--yds-bg-default-white);
+  border: 1px solid var(--yds-border-default-tertiary);
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 小尺寸边框 */
+.yds-checkbox--small .yds-checkbox__box {
+  border-width: 0.75px;
+}
+
+/* ==================== 悬停状态 ==================== */
+
+.yds-checkbox:hover:not(.yds-checkbox--disabled) .yds-checkbox__box {
+  border-color: var(--yds-border-default-secondary);
+}
+
+/* ==================== 选中状态 ==================== */
+
+.yds-checkbox--checked .yds-checkbox__box {
+  background-color: var(--yds-btn-bg-default-primary02, #1B1B1B);
+  border-color: var(--yds-btn-bg-default-primary02, #1B1B1B);
+}
+
+/* 品牌色选中 */
+.yds-checkbox--checked.yds-checkbox--brand .yds-checkbox__box {
+  background-color: var(--yds-bg-brand-default02, #F74AD9);
+  border-color: var(--yds-bg-brand-default02, #F74AD9);
+}
+
+/* ==================== 对勾标记（伪元素） ==================== */
+
+.yds-checkbox--checked .yds-checkbox__box::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 9px;
+  border-style: solid;
+  border-color: var(--yds-bg-default-white);
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -65%) rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* 小尺寸对勾 */
+.yds-checkbox--small.yds-checkbox--checked .yds-checkbox__box::before {
+  width: 4px;
+  height: 7px;
+  border-width: 0 1.6px 1.6px 0;
+}
+
+/* ==================== 禁用状态 ==================== */
+
+.yds-checkbox--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 禁用状态遮罩层 - 应用到方框上 */
+.yds-checkbox--disabled.yds-checkbox--checked .yds-checkbox__box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--yds-btn-bg-default-disabled02, rgba(27, 27, 27, 0.24));
+  border-radius: 2px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* 禁用品牌色遮罩层 */
+.yds-checkbox--disabled.yds-checkbox--checked.yds-checkbox--brand .yds-checkbox__box::after {
+  background-color: var(--yds-icon-transp-brand-50, rgba(255, 119, 231, 0.5));
+}
+
+/* ==================== 标签样式 ==================== */
+
+.yds-checkbox__label {
+  margin-left: var(--yds-spacing-12);
+  font-size: var(--yds-font-size-14);
+  line-height: var(--yds-line-height-20);
+  color: var(--yds-text-default-default);
+  cursor: pointer;
+}
+
+.yds-checkbox--disabled .yds-checkbox__label {
+  cursor: not-allowed;
+  color: var(--yds-text-default-disabled);
+}
+
+/* ==================== 错误状态 ==================== */
+
+.yds-checkbox--error .yds-checkbox__box {
+  border-color: var(--yds-bg-danger-default);
+}
+
+.yds-checkbox--error.yds-checkbox--checked .yds-checkbox__box {
+  background-color: var(--yds-bg-danger-default);
+  border-color: var(--yds-bg-danger-default);
+}
+
+.yds-checkbox--error.yds-checkbox--checked .yds-checkbox__box {
+  background-color: var(--yds-bg-danger-default);
+  border-color: var(--yds-bg-danger-default);
+}

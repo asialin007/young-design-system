@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup 弹出层组件演示 - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/popup.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--yds-bg-default-gray, #F4F5F7);
+    }
+
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: var(--yds-text-default-default, #1B1B1B);
+      margin-bottom: 24px;
+    }
+
+    .demo-section {
+      background: white;
+      padding: 24px;
+      margin-bottom: 16px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .demo-section h2 {
+      margin-top: 0;
+      color: var(--yds-text-default-default, #1B1B1B);
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .demo-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .demo-description {
+      color: var(--yds-text-default-secondary, #4E4F54);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .code-example {
+      background-color: #F4F5F7;
+      padding: 16px;
+      border-radius: 0;
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+
+    .code-example code {
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #1B1B1B;
+    }
+
+    .popup-hidden {
+      display: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background-color: var(--yds-bg-brand-secondary, #FFF2FF);
+      color: var(--yds-text-brand-default, #E52EC5);
+      font-size: 12px;
+      border-radius: 0;
+      margin-left: 8px;
+    }
+
+    .badge-new {
+      background-color: var(--yds-bg-positive-secondary, #E8F5E9);
+      color: var(--yds-text-positive-default, #2AA764);
+    }
+
+    .badge-warning {
+      background-color: var(--yds-bg-warning-secondary, #FFF3E0);
+      color: var(--yds-text-warning-default, #F29800);
+    }
+
+    .height-info {
+      background-color: #F4F5F7;
+      padding: 8px 12px;
+      border-radius: 0;
+      font-size: 13px;
+      color: var(--yds-text-default-secondary, #4E4F54);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h1>Popup 弹出层组件演示 <span class="badge badge-new">直角设计</span></h1>
+
+    <!-- 右侧关闭按钮（默认） -->
+    <div class="demo-section">
+      <h2>1. 右侧关闭按钮（默认配置）<span class="badge badge-new">推荐</span></h2>
+      <p class="demo-description">
+        从底部向上滑出的弹出层，使用<strong>右侧关闭按钮</strong>。这是最常用的配置，适合一级页面、独立弹窗等场景。
+      </p>
+      <div class="height-info">
+        导航栏高度：54px（只有主标题）
+      </div>
+      <div class="demo-buttons">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large" onclick="openBottomPopupClose()">
+          打开（右侧关闭）
+        </button>
+      </div>
+    </div>
+
+    <!-- 左侧返回 + 右侧关闭（二级页面） -->
+    <div class="demo-section">
+      <h2>2. 左侧返回 + 右侧关闭（二级页面）<span class="badge badge-new">推荐</span></h2>
+      <p class="demo-description">
+        从底部向上滑出的弹出层，同时使用<strong>左侧返回按钮</strong>和<strong>右侧关闭按钮</strong>。适合二级页面、详情页、筛选页等场景。
+      </p>
+      <div class="height-info">
+        导航栏高度：58px（有主副标题）
+      </div>
+      <div class="demo-buttons">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large" onclick="openBottomPopupBoth()">
+          打开（两个按钮）
+        </button>
+      </div>
+    </div>
+
+    <!-- 顶部弹出 -->
+    <div class="demo-section">
+      <h2>3. 顶部弹出 - 右侧关闭按钮</h2>
+      <p class="demo-description">
+        从顶部向下滑出的弹出层，使用右侧关闭按钮。适合通知、快捷操作等场景。
+      </p>
+      <div class="height-info">
+        导航栏高度：54px（只有主标题）
+      </div>
+      <div class="demo-buttons">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large" onclick="openTopPopup()">
+          打开顶部弹出层
+        </button>
+      </div>
+    </div>
+
+    <!-- 右侧弹出 - 两个按钮 -->
+    <div class="demo-section">
+      <h2>4. 右侧弹出 - 左侧返回 + 右侧关闭（侧边栏）</h2>
+      <p class="demo-description">
+        从右侧滑出的弹出层，同时使用左侧返回和右侧关闭按钮。常用于设置面板、详情展示等场景。
+      </p>
+      <div class="height-info">
+        导航栏高度：54px（只有主标题）
+      </div>
+      <div class="demo-buttons">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large" onclick="openRightPopup()">
+          打开右侧弹出层
+        </button>
+      </div>
+    </div>
+
+    <!-- 左侧弹出 - 右侧关闭 -->
+    <div class="demo-section">
+      <h2>5. 左侧弹出 - 右侧关闭按钮（侧边菜单）</h2>
+      <p class="demo-description">
+        从左侧滑出的弹出层，使用右侧关闭按钮。常用于菜单导航、筛选面板等场景。
+      </p>
+      <div class="height-info">
+        导航栏高度：54px（只有主标题）
+      </div>
+      <div class="demo-buttons">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large" onclick="openLeftPopup()">
+          打开左侧弹出层
+        </button>
+      </div>
+    </div>
+
+    <!-- 带底部操作栏 -->
+    <div class="demo-section">
+      <h2>6. 带底部操作栏的弹出层（右侧关闭）</h2>
+      <p class="demo-description">
+        包含导航栏、内容区域和底部操作栏的完整弹出层，使用右侧关闭按钮。
+        底部操作栏包含分隔线（视觉装饰）和主次按钮组。
+      </p>
+      <div class="height-info">
+        导航栏高度：54px（只有主标题）<br>
+        底部操作栏：分隔线（135px × 5px）+ 按钮组（次按钮 + 主按钮）<br>
+        按钮容器内边距：12px 8px 8px（左右 8px，按钮根据屏幕宽度自动等宽分配）
+      </div>
+      <div class="demo-buttons">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large" onclick="openPopupWithFooter()">
+          打开完整弹出层
+        </button>
+      </div>
+    </div>
+
+    <!-- 表单示例 - 两个按钮 -->
+    <div class="demo-section">
+      <h2>7. 表单示例（左侧返回 + 右侧关闭）</h2>
+      <p class="demo-description">
+        在弹出层中展示表单的完整示例，同时使用左侧返回和右侧关闭按钮，适合二级页面场景。
+      </p>
+      <div class="height-info">
+        导航栏高度：54px（只有主标题）
+      </div>
+      <div class="demo-buttons">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large" onclick="openFormPopup()">
+          打开表单弹出层
+        </button>
+      </div>
+    </div>
+
+    <!-- 导航栏说明 -->
+    <div class="demo-section">
+      <h2>导航栏按钮使用说明</h2>
+      <p class="demo-description">
+        <strong>核心规则：</strong><br>
+        1. ✅ <strong>默认使用右侧关闭按钮</strong>（独立使用，最常用）<br>
+        2. ✅ <strong>左侧返回必须和右侧关闭同时存在</strong>（二级页面场景）<br>
+        3. ❌ <strong>禁止单独使用左侧返回按钮</strong>（必须搭配右侧关闭）<br><br>
+        <strong>导航栏高度规则：</strong><br>
+        - 只有主标题：<strong>54px</strong><br>
+        - 有主副标题：<strong>58px</strong>（自动增高 4px）<br><br>
+        <strong>标题宽度自适应：</strong><br>
+        - 无按钮：280px<br>
+        - 仅右侧关闭：200px（默认）<br>
+        - 左侧返回 + 右侧关闭：160px
+      </p>
+    </div>
+
+    <!-- 错误示例 -->
+    <div class="demo-section">
+      <h2>❌ 错误示例：单独使用左侧返回按钮</h2>
+      <p class="demo-description">
+        <strong>为什么这是错误的？</strong><br>
+        - 违反了年轻版设计系统的规范<br>
+        - 用户习惯右侧有关闭按钮（X）<br>
+        - 左侧返回应该用于"返回上一层"的场景<br>
+        - 单独左侧返回会让用户不知道如何关闭弹窗<br><br>
+        <strong>正确做法：</strong>左侧返回必须和右侧关闭同时使用
+      </p>
+    </div>
+  </div>
+
+  <!-- 右侧关闭按钮（默认） -->
+  <div id="bottomPopupClose" class="popup-hidden">
+    <div class="yds-popup-overlay">
+      <div class="yds-popup yds-popup--bottom">
+        <div class="yds-popup__navbar">
+          <div class="yds-popup__title">
+            <div class="yds-popup__title-main">一级页面</div>
+          </div>
+          <button class="yds-popup__close">
+            <img src="../icons/y_icon_line_edit_close.svg" alt="关闭">
+          </button>
+        </div>
+        <div class="yds-popup__content">
+          <div style="padding: 24px;">
+            <h3 style="margin-top: 0;">使用右侧关闭按钮</h3>
+            <p>这是从底部弹出的弹出层内容。</p>
+            <p>适合一级页面、独立弹窗等直接关闭的场景。</p>
+            <p><strong>特点：</strong></p>
+            <ul>
+              <li>右上角显示关闭按钮（X）</li>
+              <li>标题居中显示</li>
+              <li><strong>导航栏高度：54px（只有主标题）</strong></li>
+              <li><strong>标题宽度：200px（有关闭按钮时）</strong></li>
+              <li>点击关闭按钮或蒙层关闭</li>
+            </ul>
+            <p>这是年轻版设计系统的直角设计，没有任何圆角。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 左侧返回 + 右侧关闭（二级页面） -->
+  <div id="bottomPopupBoth" class="popup-hidden">
+    <div class="yds-popup-overlay">
+      <div class="yds-popup yds-popup--bottom">
+        <div class="yds-popup__navbar">
+          <button class="yds-popup__back">
+            <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回">
+          </button>
+          <div class="yds-popup__title">
+            <div class="yds-popup__title-main">二级页面</div>
+            <div class="yds-popup__title-sub">导航栏高度：58px（有副标题）</div>
+          </div>
+          <button class="yds-popup__close">
+            <img src="../icons/y_icon_line_edit_close.svg" alt="关闭">
+          </button>
+        </div>
+        <div class="yds-popup__content">
+          <div style="padding: 24px;">
+            <h3 style="margin-top: 0;">同时使用两个按钮</h3>
+            <p>这个弹出层同时使用了左侧返回按钮和右侧关闭按钮。</p>
+            <p>适合二级页面、详情页、筛选页等场景。</p>
+            <p><strong>特点：</strong></p>
+            <ul>
+              <li>左上角显示返回箭头</li>
+              <li>右上角显示关闭按钮（X）</li>
+              <li>标题居中显示</li>
+              <li><strong>导航栏高度：58px（因为有副标题）</strong></li>
+              <li><strong>标题宽度：160px（有两个按钮时）</strong></li>
+              <li>点击任一按钮或蒙层关闭</li>
+            </ul>
+            <p><strong>导航栏高度自动调整：</strong></p>
+            <ul>
+              <li>只有主标题：54px</li>
+              <li>有主副标题：58px（自动增高 4px）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 顶部弹出层模板（右侧关闭） -->
+  <div id="topPopup" class="popup-hidden">
+    <div class="yds-popup-overlay">
+      <div class="yds-popup yds-popup--top">
+        <div class="yds-popup__navbar">
+          <div class="yds-popup__title">
+            <div class="yds-popup__title-main">顶部通知</div>
+          </div>
+          <button class="yds-popup__close">
+            <img src="../icons/y_icon_line_edit_close.svg" alt="关闭">
+          </button>
+        </div>
+        <div class="yds-popup__content">
+          <div style="padding: 24px;">
+            <h3 style="margin-top: 0;">顶部弹出层</h3>
+            <p>这是从顶部弹出的内容。</p>
+            <p>适合展示通知、快捷操作等。</p>
+            <p>使用直角设计，无圆角。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右侧弹出层模板（两个按钮） -->
+  <div id="rightPopup" class="popup-hidden">
+    <div class="yds-popup-overlay">
+      <div class="yds-popup yds-popup--right">
+        <div class="yds-popup__navbar">
+          <button class="yds-popup__back">
+            <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回">
+          </button>
+          <div class="yds-popup__title">
+            <div class="yds-popup__title-main">设置</div>
+          </div>
+          <button class="yds-popup__close">
+            <img src="../icons/y_icon_line_edit_close.svg" alt="关闭">
+          </button>
+        </div>
+        <div class="yds-popup__content">
+          <div style="padding: 16px;">
+            <h3>侧边栏内容</h3>
+            <p>这是从右侧弹出的侧边栏。</p>
+            <p>同时使用左侧返回和右侧关闭按钮。</p>
+            <p>导航栏高度：54px（只有主标题）</p>
+            <hr style="border: none; border-top: 1px solid rgba(27,27,27,0.08); margin: 16px 0;">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <label style="display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" checked>
+                选项 1
+              </label>
+              <label style="display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox">
+                选项 2
+              </label>
+              <label style="display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox">
+                选项 3
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 左侧弹出层模板（右侧关闭） -->
+  <div id="leftPopup" class="popup-hidden">
+    <div class="yds-popup-overlay">
+      <div class="yds-popup yds-popup--left">
+        <div class="yds-popup__navbar">
+          <div class="yds-popup__title">
+            <div class="yds-popup__title-main">菜单</div>
+          </div>
+          <button class="yds-popup__close">
+            <img src="../icons/y_icon_line_edit_close.svg" alt="关闭">
+          </button>
+        </div>
+        <div class="yds-popup__content">
+          <div style="padding: 16px;">
+            <h3 style="margin-top: 0;">侧边菜单</h3>
+            <p>使用右侧关闭按钮，直角设计。</p>
+            <nav style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+              <a href="#" style="color: var(--yds-text-default-default); text-decoration: none; font-size: 16px;">首页</a>
+              <a href="#" style="color: var(--yds-text-default-default); text-decoration: none; font-size: 16px;">分类</a>
+              <a href="#" style="color: var(--yds-text-default-default); text-decoration: none; font-size: 16px;">购物车</a>
+              <a href="#" style="color: var(--yds-text-default-default); text-decoration: none; font-size: 16px;">我的</a>
+              <a href="#" style="color: var(--yds-text-default-default); text-decoration: none; font-size: 16px;">设置</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 带底部操作栏的弹出层模板（右侧关闭） -->
+  <div id="popupWithFooter" class="popup-hidden">
+    <div class="yds-popup-overlay">
+      <div class="yds-popup yds-popup--bottom">
+        <div class="yds-popup__navbar">
+          <div class="yds-popup__title">
+            <div class="yds-popup__title-main">确认操作</div>
+          </div>
+          <button class="yds-popup__close">
+            <img src="../icons/y_icon_line_edit_close.svg" alt="关闭">
+          </button>
+        </div>
+        <div class="yds-popup__content">
+          <div style="padding: 24px;">
+            <h3 style="margin-top: 0;">完整弹出层示例</h3>
+            <p>这是一个包含导航栏、内容区域和底部操作栏的完整弹出层。</p>
+            <p>使用右侧关闭按钮，直角设计。</p>
+            <p>导航栏高度：54px</p>
+            <p>底部操作栏通常用于放置确认、取消等操作按钮。</p>
+          </div>
+        </div>
+        <div class="yds-popup__footer">
+          <!-- 按钮容器 -->
+          <div class="yds-popup__footer-buttons">
+            <button class="yds-popup__button yds-popup__button--secondary" onclick="closePopup('popupWithFooter')">
+              取消
+            </button>
+            <button class="yds-popup__button yds-popup__button--primary" onclick="closePopup('popupWithFooter')">
+              确认
+            </button>
+          </div>
+
+          <!-- 底部分隔线（视觉装饰，在最底部） -->
+          <div class="yds-popup__footer-divider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 表单弹出层模板（两个按钮） -->
+  <div id="formPopup" class="popup-hidden">
+    <div class="yds-popup-overlay">
+      <div class="yds-popup yds-popup--bottom">
+        <div class="yds-popup__navbar">
+          <button class="yds-popup__back">
+            <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回">
+          </button>
+          <div class="yds-popup__title">
+            <div class="yds-popup__title-main">筛选</div>
+          </div>
+          <button class="yds-popup__close">
+            <img src="../icons/y_icon_line_edit_close.svg" alt="关闭">
+          </button>
+        </div>
+        <div class="yds-popup__content">
+          <div style="padding: 24px;">
+            <h3 style="margin-top: 0;">商品筛选</h3>
+            <p>同时使用左侧返回和右侧关闭按钮。</p>
+
+            <div style="margin-bottom: 24px;">
+              <label style="display: block; margin-bottom: 8px; font-weight: 500;">价格区间</label>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <input type="number" placeholder="最低价" style="flex: 1; padding: 8px; border: 1px solid rgba(27,27,27,0.08); border-radius: 0;">
+                <span>至</span>
+                <input type="number" placeholder="最高价" style="flex: 1; padding: 8px; border: 1px solid rgba(27,27,27,0.08); border-radius: 0;">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <label style="display: block; margin-bottom: 12px; font-weight: 500;">品牌</label>
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <label style="display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" checked>
+                  唯品会
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox">
+                  维多利亚的秘密
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox">
+                  耐克
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <label style="display: block; margin-bottom: 12px; font-weight: 500;">尺码</label>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <button class="yds-button yds-button--solid-light yds-button--white yds-button--medium-small">XS</button>
+                <button class="yds-button yds-button--solid-dark yds-button--black yds-button--medium-small">S</button>
+                <button class="yds-button yds-button--solid-light yds-button--white yds-button--medium-small">M</button>
+                <button class="yds-button yds-button--solid-light yds-button--white yds-button--medium-small">L</button>
+                <button class="yds-button yds-button--solid-light yds-button--white yds-button--medium-small">XL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="yds-popup__footer">
+          <!-- 按钮容器 -->
+          <div class="yds-popup__footer-buttons">
+            <button class="yds-popup__button yds-popup__button--secondary" onclick="closePopup('formPopup')">
+              重置
+            </button>
+            <button class="yds-popup__button yds-popup__button--primary" onclick="closePopup('formPopup')">
+              确定
+            </button>
+          </div>
+
+          <!-- 底部分隔线（视觉装饰，在最底部） -->
+          <div class="yds-popup__footer-divider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 打开弹出层函数
+    function openPopup(popupId) {
+      const popupTemplate = document.getElementById(popupId);
+      const popupOverlay = popupTemplate.querySelector('.yds-popup-overlay');
+
+      // 克隆弹出层
+      const clonedOverlay = popupOverlay.cloneNode(true);
+
+      // 添加到 body
+      document.body.appendChild(clonedOverlay);
+
+      // 动态添加底部操作栏的间距样式
+      const footer = clonedOverlay.querySelector('.yds-popup__footer');
+      if (footer) {
+        footer.style.paddingLeft = '8px';
+        footer.style.paddingRight = '8px';
+      }
+
+      // 显示弹出层
+      clonedOverlay.style.display = 'block';
+
+      // 添加关闭事件
+      const popup = clonedOverlay.querySelector('.yds-popup');
+      const backBtn = clonedOverlay.querySelector('.yds-popup__back');
+      const closeBtn = clonedOverlay.querySelector('.yds-popup__close');
+
+      // 点击蒙层关闭
+      clonedOverlay.addEventListener('click', function(e) {
+        if (e.target === clonedOverlay) {
+          closePopupOverlay(clonedOverlay, popup);
+        }
+      });
+
+      // 返回按钮关闭
+      if (backBtn) {
+        backBtn.addEventListener('click', function() {
+          closePopupOverlay(clonedOverlay, popup);
+        });
+      }
+
+      // 关闭按钮关闭
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+          closePopupOverlay(clonedOverlay, popup);
+        });
+      }
+
+      // ESC 键关闭
+      document.addEventListener('keydown', handleEsc);
+    }
+
+    // 关闭弹出层函数
+    function closePopup(popupId) {
+      // 查找显示的弹出层
+      const overlays = document.querySelectorAll('.yds-popup-overlay');
+      overlays.forEach(overlay => {
+        if (overlay.parentNode !== document.getElementById(popupId)) {
+          const popup = overlay.querySelector('.yds-popup');
+          closePopupOverlay(overlay, popup);
+        }
+      });
+    }
+
+    // 关闭弹出层动画
+    function closePopupOverlay(overlay, popup) {
+      // 添加关闭动画类
+      popup.classList.add('yds-popup--closing');
+
+      // 等待动画结束后移除（250ms 匹配 CSS 动画时长）
+      setTimeout(() => {
+        if (overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+      }, 250);
+
+      // 移除 ESC 键监听
+      document.removeEventListener('keydown', handleEsc);
+    }
+
+    // ESC 键处理
+    function handleEsc(e) {
+      if (e.key === 'Escape') {
+        const overlays = document.querySelectorAll('.yds-popup-overlay');
+        overlays.forEach(overlay => {
+          if (overlay.parentNode && overlay.parentNode.id === '') {
+            const popup = overlay.querySelector('.yds-popup');
+            closePopupOverlay(overlay, popup);
+          }
+        });
+      }
+    }
+
+    // 各个弹出层的打开函数
+    function openBottomPopupClose() {
+      openPopup('bottomPopupClose');
+    }
+
+    function openBottomPopupBoth() {
+      openPopup('bottomPopupBoth');
+    }
+
+    function openTopPopup() {
+      openPopup('topPopup');
+    }
+
+    function openRightPopup() {
+      openPopup('rightPopup');
+    }
+
+    function openLeftPopup() {
+      openPopup('leftPopup');
+    }
+
+    function openPopupWithFooter() {
+      openPopup('popupWithFooter');
+    }
+
+    function openFormPopup() {
+      openPopup('formPopup');
+    }
+
+    // 阻止模板中的弹出层显示
+    document.addEventListener('DOMContentLoaded', function() {
+      const templates = document.querySelectorAll('.popup-hidden');
+      templates.forEach(template => {
+        template.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "@vipshop/young-design-system",
+  "version": "2.0.0",
+  "description": "年轻版设计系统 2.0 - Design Tokens",
+  "tokens": {
+    "colors": "./colors.json",
+    "typography": "./typography.json",
+    "spacing": "./spacing.json",
+    "button": "./button.json"
+  }
+}

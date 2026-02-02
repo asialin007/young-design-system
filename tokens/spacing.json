@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "年轻版设计系统 2.0 - 间距变量",
+  "spacing": {
+    "0": {
+      "value": "0px",
+      "type": "spacing"
+    },
+    "4": {
+      "value": "4px",
+      "type": "spacing"
+    },
+    "8": {
+      "value": "8px",
+      "type": "spacing"
+    },
+    "12": {
+      "value": "12px",
+      "type": "spacing"
+    },
+    "14": {
+      "value": "14px",
+      "type": "spacing"
+    },
+    "16": {
+      "value": "16px",
+      "type": "spacing"
+    },
+    "20": {
+      "value": "20px",
+      "type": "spacing"
+    },
+    "24": {
+      "value": "24px",
+      "type": "spacing"
+    },
+    "32": {
+      "value": "32px",
+      "type": "spacing"
+    },
+    "40": {
+      "value": "40px",
+      "type": "spacing"
+    },
+    "48": {
+      "value": "48px",
+      "type": "spacing"
+    },
+    "56": {
+      "value": "56px",
+      "type": "spacing"
+    },
+    "64": {
+      "value": "64px",
+      "type": "spacing"
+    },
+    "72": {
+      "value": "72px",
+      "type": "spacing"
+    },
+    "84": {
+      "value": "84px",
+      "type": "spacing"
+    },
+    "96": {
+      "value": "96px",
+      "type": "spacing"
+    }
+  },
+  "grid": {
+    "columns": {
+      "value": 12,
+      "type": "number",
+      "description": "12 栅格体系"
+    },
+    "columnWidth": {
+      "value": "8px",
+      "type": "dimension",
+      "description": "单栅格宽度 (1x)"
+    },
+    "containerWidth": {
+      "value": "96px",
+      "type": "dimension",
+      "description": "12 栅格容器宽度"
+    },
+    "gutter": {
+      "min": {
+        "value": "2px",
+        "type": "dimension",
+        "description": "最小间距 (0.25栅格)"
+      },
+      "small": {
+        "value": "4px",
+        "type": "dimension",
+        "description": "小间距 (0.5栅格)"
+      },
+      "base": {
+        "value": "8px",
+        "type": "dimension",
+        "description": "基础间距 (1栅格)"
+      },
+      "large": {
+        "value": "16px",
+        "type": "dimension",
+        "description": "大间距 (2栅格)"
+      }
+    }
+  },
+  "layout": {
+    "screenWidth": {
+      "mobile": {
+        "value": "375px",
+        "type": "dimension",
+        "description": "移动端屏幕宽度 (边距8)"
+      },
+      "tablet": {
+        "value": "768px",
+        "type": "dimension",
+        "description": "平板屏幕宽度"
+      },
+      "desktop": {
+        "value": "1440px",
+        "type": "dimension",
+        "description": "桌面屏幕宽度"
+      }
+    },
+    "safeArea": {
+      "bottom": {
+        "value": "34px",
+        "type": "dimension",
+        "description": "底部安全距离"
+      },
+      "top": {
+        "value": "44px",
+        "type": "dimension",
+        "description": "顶部安全距离"
+      }
+    },
+    "navigationBar": {
+      "height": {
+        "value": "44px",
+        "type": "dimension",
+        "description": "导航栏高度"
+      },
+      "tabBar": {
+        "value": "54px",
+        "type": "dimension",
+        "description": "底部标签栏高度"
+      },
+      "statusBar": {
+        "value": "44px",
+        "type": "dimension",
+        "description": "状态栏高度"
+      }
+    }
+  }
+  },
+  "borderRadius": {
+    "none": {
+      "value": "0px",
+      "type": "borderRadius",
+      "description": "无圆角"
+    },
+    "sm": {
+      "value": "2px",
+      "type": "borderRadius",
+      "description": "小圆角"
+    },
+    "md": {
+      "value": "4px",
+      "type": "borderRadius",
+      "description": "中圆角"
+    },
+    "lg": {
+      "value": "8px",
+      "type": "borderRadius",
+      "description": "大圆角"
+    },
+    "xl": {
+      "value": "12px",
+      "type": "borderRadius",
+      "description": "超大圆角"
+    },
+    "full": {
+      "value": "9999px",
+      "type": "borderRadius",
+      "description": "完全圆角"
+    }
+  }
+}

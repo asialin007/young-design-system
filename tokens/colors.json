@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "年轻版设计系统 2.0 - 颜色变量（基于 Button 组件提取，等待完整颜色页面补充）",
+  "colors": {
+    "brand": {
+      "primary": {
+        "value": "#ff77e7",
+        "type": "color",
+        "description": "品牌主色"
+      },
+      "secondary": {
+        "value": "#fff2ff",
+        "type": "color",
+        "description": "品牌辅助色"
+      },
+      "hover": {
+        "value": "#f74ad9",
+        "type": "color",
+        "description": "品牌悬停色/边框色"
+      },
+      "active": {
+        "value": "#e52ec5",
+        "type": "color",
+        "description": "品牌激活色/文字色"
+      }
+    },
+    "neutral": {
+      "black": {
+        "value": "#1b1b1b",
+        "type": "color",
+        "description": "黑色"
+      },
+      "white": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "白色"
+      }
+    },
+    "opacity": {
+      "black-4": {
+        "value": "rgba(27, 27, 27, 0.04)",
+        "type": "color",
+        "description": "黑色 4% 不透明度"
+      },
+      "black-24": {
+        "value": "rgba(27, 27, 27, 0.24)",
+        "type": "color",
+        "description": "黑色 24% 不透明度"
+      },
+      "black-95": {
+        "value": "rgba(27, 27, 27, 0.95)",
+        "type": "color",
+        "description": "黑色 95% 不透明度"
+      },
+      "white-24": {
+        "value": "rgba(255, 255, 255, 0.24)",
+        "type": "color",
+        "description": "白色 24% 不透明度"
+      },
+      "white-50": {
+        "value": "rgba(255, 255, 255, 0.5)",
+        "type": "color",
+        "description": "白色 50% 不透明度"
+      },
+      "white-95": {
+        "value": "rgba(255, 255, 255, 0.95)",
+        "type": "color",
+        "description": "白色 95% 不透明度"
+      }
+    }
+  }
+}

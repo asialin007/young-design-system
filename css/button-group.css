@@ -1,0 +1,221 @@
+/**
+ * 年轻版设计系统 2.0 - ButtonGroup 按钮组合组件样式
+ */
+
+/* ==================== 基础样式 ==================== */
+
+.yds-button-group {
+  /* 布局 */
+  display: flex;
+  box-sizing: border-box;
+
+  /* 尺寸 */
+  gap: var(--yds-spacing-12);
+
+  /* 对齐 */
+  align-items: center;
+}
+
+/* ==================== 黑色按钮样式 ==================== */
+
+.yds-button--black {
+  background-color: var(--yds-bg-default-black);
+}
+
+.yds-button-group--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.yds-button-group--vertical {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+/* ==================== 对齐方式变体 ==================== */
+
+/* 均分对齐 */
+.yds-button-group--equal {
+  justify-content: center;
+}
+
+/* 右侧对齐 */
+.yds-button-group--right {
+  justify-content: flex-end;
+}
+
+/* 文字混合对齐 */
+.yds-button-group--text-mix {
+  justify-content: space-between;
+}
+
+/* 图标混合对齐 */
+.yds-button-group--icon-mix {
+  justify-content: space-between;
+}
+
+/* ==================== 尺寸变体 ==================== */
+
+/* 小尺寸 */
+.yds-button-group--small .yds-button {
+  --yds-button-height: var(--yds-button-medium-height);
+  --yds-button-min-width: var(--yds-button-medium-min-width);
+  --yds-button-padding-x: var(--yds-button-medium-padding-x);
+  --yds-button-padding-y: var(--yds-button-medium-padding-y);
+  --yds-button-font-size: var(--yds-button-medium-font-size);
+}
+
+/* 大尺寸 */
+.yds-button-group--large .yds-button {
+  --yds-button-height: var(--yds-button-large-height);
+  --yds-button-min-width: var(--yds-button-large-min-width);
+  --yds-button-padding-x: var(--yds-button-large-padding-x);
+  --yds-button-padding-y: var(--yds-button-large-padding-y);
+  --yds-button-font-size: var(--yds-button-large-font-size);
+}
+
+/* ==================== 按钮容器 ==================== */
+
+.yds-button-group__item {
+  box-sizing: border-box;
+}
+
+/* 均分：主按钮占满宽 */
+.yds-button-group--equal .yds-button-group__item--full {
+  flex: 1;
+}
+
+/* 右侧对齐：主按钮占满宽 */
+.yds-button-group--right .yds-button-group__item--full {
+  flex: 1;
+}
+
+/* 文字混合：主按钮占满宽 */
+.yds-button-group--text-mix .yds-button-group__item--primary,
+.yds-button-group--text-mix .yds-button-group__item--more {
+  flex: 1;
+}
+
+/* 图标混合：主按钮占满宽 */
+.yds-button-group--icon-mix .yds-button-group__item--primary,
+.yds-button-group--icon-mix .yds-button-group__item--more {
+  flex: 1;
+}
+
+/* 次按钮和更多按钮 */
+.yds-button-group__item--secondary,
+.yds-button-group__item--more {
+  flex-shrink: 0;
+}
+
+/* ==================== 垂直布局特殊样式 ==================== */
+
+.yds-button-group--vertical {
+  gap: var(--yds-spacing-8);
+}
+
+.yds-button-group--vertical .yds-button-group__item {
+  width: 100%;
+}
+
+/* ==================== 分割线 ==================== */
+
+.yds-button-group__divider {
+  width: 1px;
+  height: 1px;
+  background-color: var(--yds-border-default-default);
+  flex-shrink: 0;
+}
+
+/* 水平布局下的分割线 */
+.yds-button-group--horizontal .yds-button-group__divider {
+  height: 100%;
+}
+
+/* 垂直布局下的分割线 */
+.yds-button-group--vertical .yds-button-group__divider {
+  width: 100%;
+  height: 1px;
+  margin: var(--yds-spacing-8) 0;
+}
+
+/* ==================== 图标和文本 ==================== */
+
+.yds-button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.yds-button__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==================== 按钮间距 ==================== */
+
+/* 两个按钮之间的间距 */
+.yds-button-group--horizontal .yds-button + .yds-button {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* 文字混合对齐的间距处理 */
+.yds-button-group--text-mix .yds-button-group__item--primary .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--primary .yds-button {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.yds-button-group--text-mix .yds-button-group__item--secondary .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--secondary .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--more .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--more .yds-button {
+  margin-left: var(--yds-spacing-4);
+  margin-right: var(--yds-spacing-4);
+}
+
+.yds-button-group--text-mix .yds-button-group__item--more .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--more .yds-button {
+  margin-left: var(--yds-spacing-4);
+  margin-right: 0;
+}
+
+/* 图标混合对齐的间距处理 */
+.yds-button-group--icon-mix .yds-button-group__item--primary .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--primary .yds-button {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.yds-button-group--icon-mix .yds-button-group__item--secondary .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--secondary .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--more .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--more .yds-button {
+  margin-left: var(--yds-spacing-4);
+  margin-right: 0;
+}
+
+.yds-button-group--icon-mix .yds-button-group__item--more .yds-button,
+.yds-button-group--icon-mix .yds-button-group__item--more .yds-button {
+  margin-left: var(--yds-spacing-4);
+  margin-right: var(--yds-spacing-4);
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 平板及以上：增加间距 */
+@media (min-width: 768px) {
+  .yds-button-group {
+    gap: var(--yds-spacing-16);
+  }
+}
+
+/* 桌面：更大间距 */
+@media (min-width: 1440px) {
+  .yds-button-group {
+    gap: var(--yds-spacing-20);
+  }
+}

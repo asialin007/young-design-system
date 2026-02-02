@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar 导航栏 - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f5f5f5;
+      font-family: PingFang SC, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+    }
+
+    .demo-header {
+      max-width: 375px;
+      margin: 0 auto 40px;
+    }
+
+    .demo-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #1b1b1b;
+    }
+
+    .demo-description {
+      font-size: 16px;
+      color: #4e4f54;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      max-width: 375px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1b1b1b;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+    }
+
+    .demo-card {
+      background: white;
+      padding: 24px;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 24px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #1b1b1b;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #7e828c;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .preview-wrapper {
+      border: 1px solid #e5e5e5;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 16px;
+      background: white;
+    }
+
+    /* 图标容器 - 已在 navbar.css 中定义 */
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1 class="demo-title">Navbar 导航栏</h1>
+    <p class="demo-description">
+      年轻版设计系统的导航栏组件，用于页面顶部导航、标题栏、选项卡等场景。
+      支持基础导航栏、搜索导航栏、选项卡导航栏等多种类型。
+    </p>
+  </div>
+
+  <!-- ==================== 基础导航栏 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">基础导航栏</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">返回按钮 + 标题</h3>
+      <p class="card-description">最基础的导航栏，左侧返回按钮，中间显示标题</p>
+      <div class="preview-wrapper">
+        <nav class="yds-navbar yds-navbar--basic">
+          <div class="yds-navbar__statusbar"></div>
+          <div class="yds-navbar__content">
+            <div class="yds-navbar__left">
+              <button class="yds-navbar__back" aria-label="返回">
+                <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回" width="24" height="24">
+              </button>
+            </div>
+            <div class="yds-navbar__title">
+              <div class="yds-navbar__title-main">页面标题</div>
+            </div>
+            <div class="yds-navbar__right"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <h3 class="card-title">标题 + 辅助说明 + 下拉箭头</h3>
+      <p class="card-description">标题下方显示辅助说明，右侧有下拉箭头</p>
+      <div class="preview-wrapper">
+        <nav class="yds-navbar yds-navbar--basic">
+          <div class="yds-navbar__statusbar"></div>
+          <div class="yds-navbar__content">
+            <div class="yds-navbar__left">
+              <button class="yds-navbar__back" aria-label="返回">
+                <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回" width="24" height="24">
+              </button>
+            </div>
+            <div class="yds-navbar__title">
+              <div class="yds-navbar__title-main">
+                页面标题
+                <div class="yds-navbar__title-arrow" aria-label="展开">
+                  <img src="../icons/y_icon_line_direction_arrow_down.svg" alt="展开" width="16" height="16">
+                </div>
+              </div>
+              <div class="yds-navbar__title-sub">辅助说明文字</div>
+            </div>
+            <div class="yds-navbar__right"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <h3 class="card-title">右侧图标操作</h3>
+      <p class="card-description">右侧显示操作图标</p>
+      <div class="preview-wrapper">
+        <nav class="yds-navbar yds-navbar--basic">
+          <div class="yds-navbar__statusbar"></div>
+          <div class="yds-navbar__content">
+            <div class="yds-navbar__left">
+              <button class="yds-navbar__back" aria-label="返回">
+                <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回" width="24" height="24">
+              </button>
+            </div>
+            <div class="yds-navbar__title">
+              <div class="yds-navbar__title-main">页面标题</div>
+            </div>
+            <div class="yds-navbar__right">
+              <button class="yds-navbar__action-icon" aria-label="分享">
+                <img src="../icons/y_icon_line_edit_share.svg" alt="分享" width="24" height="24">
+              </button>
+              <button class="yds-navbar__action-icon" aria-label="更多">
+                <img src="../icons/y_icon_line_generality_more.svg" alt="更多" width="24" height="24">
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <h3 class="card-title">右侧文字操作</h3>
+      <p class="card-description">右侧显示操作文字按钮</p>
+      <div class="preview-wrapper">
+        <nav class="yds-navbar yds-navbar--basic">
+          <div class="yds-navbar__statusbar"></div>
+          <div class="yds-navbar__content">
+            <div class="yds-navbar__left">
+              <button class="yds-navbar__back" aria-label="返回">
+                <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回" width="24" height="24">
+              </button>
+            </div>
+            <div class="yds-navbar__title">
+              <div class="yds-navbar__title-main">页面标题</div>
+            </div>
+            <div class="yds-navbar__right">
+              <button class="yds-navbar__action-text">完成</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 搜索导航栏 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">搜索导航栏</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">基础搜索导航栏</h3>
+      <p class="card-description">左侧显示搜索框</p>
+      <div class="preview-wrapper">
+        <nav class="yds-navbar">
+          <div class="yds-navbar__statusbar"></div>
+          <div class="yds-navbar__content">
+            <div class="yds-navbar__search-box">
+              <div class="yds-navbar__search-icon" aria-label="搜索">
+                <img src="../icons/y_icon_line_edit_search.svg" alt="搜索" width="16" height="16">
+              </div>
+              <input type="text" class="yds-navbar__search-input" placeholder="搜索">
+            </div>
+            <div class="yds-navbar__right">
+              <button class="yds-navbar__action-text">取消</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <h3 class="card-title">搜索 + 右侧操作</h3>
+      <p class="card-description">搜索框和右侧操作组合</p>
+      <div class="preview-wrapper">
+        <nav class="yds-navbar">
+          <div class="yds-navbar__statusbar"></div>
+          <div class="yds-navbar__content">
+            <div class="yds-navbar__search-box">
+              <div class="yds-navbar__search-icon" aria-label="搜索">
+                <img src="../icons/y_icon_line_edit_search.svg" alt="搜索" width="16" height="16">
+              </div>
+              <input type="text" class="yds-navbar__search-input" placeholder="搜索">
+            </div>
+            <div class="yds-navbar__right">
+              <button class="yds-navbar__action-icon" aria-label="分享">
+                <img src="../icons/y_icon_line_edit_share.svg" alt="分享" width="24" height="24">
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 选项卡导航栏 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">选项卡导航栏</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">基础选项卡</h3>
+      <p class="card-description">显示多个选项卡，当前选中项高亮</p>
+      <div class="preview-wrapper">
+        <nav class="yds-navbar">
+          <div class="yds-navbar__statusbar"></div>
+          <div class="yds-navbar__content">
+            <div class="yds-navbar__left">
+              <button class="yds-navbar__back" aria-label="返回">
+                <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回" width="24" height="24">
+              </button>
+            </div>
+            <div class="yds-navbar__tabs">
+              <button class="yds-navbar__tab yds-navbar__tab--active">推荐</button>
+              <button class="yds-navbar__tab">热门</button>
+              <button class="yds-navbar__tab">最新</button>
+            </div>
+            <div class="yds-navbar__right">
+              <button class="yds-navbar__action-icon" aria-label="更多">
+                <img src="../icons/y_icon_line_generality_more.svg" alt="更多" width="24" height="24">
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 选项卡切换交互
+    document.querySelectorAll('.yds-navbar__tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        const tabs = this.closest('.yds-navbar__tabs');
+        tabs.querySelectorAll('.yds-navbar__tab').forEach(t => {
+          t.classList.remove('yds-navbar__tab--active');
+        });
+        this.classList.add('yds-navbar__tab--active');
+      });
+    });
+  </script>
+</body>
+</html>

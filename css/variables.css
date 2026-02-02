@@ -1,0 +1,231 @@
+/**
+ * 年轻版设计系统 2.0 - CSS 变量
+ * 自动生成自 Design Tokens
+ * 可在任何框架中使用（React、Vue、Angular、原生 HTML 等）
+ */
+
+:root {
+  /* ==================== 颜色 Colors ==================== */
+
+  /* 品牌色 */
+  --yds-color-brand-primary: #ff77e7;
+  --yds-color-brand-secondary: #fff2ff;
+  --yds-color-brand-hover: #f74ad9;
+  --yds-color-brand-active: #e52ec5;
+
+  /* 中性色 */
+  --yds-color-neutral-black: #1b1b1b;
+  --yds-color-neutral-white: #ffffff;
+
+  /* 透明度颜色 */
+  --yds-color-opacity-black-4: rgba(27, 27, 27, 0.04);
+  --yds-color-opacity-black-24: rgba(27, 27, 27, 0.24);
+  --yds-color-opacity-black-95: rgba(27, 27, 27, 0.95);
+  --yds-color-opacity-white-24: rgba(255, 255, 255, 0.24);
+  --yds-color-opacity-white-50: rgba(255, 255, 255, 0.5);
+  --yds-color-opacity-white-95: rgba(255, 255, 255, 0.95);
+
+  /* ==================== 字体 Typography ==================== */
+
+  /* 字体家族 */
+  --yds-font-family-base: PingFang SC, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+
+  /* 字号 */
+  --yds-font-size-11: 11px;
+  --yds-font-size-12: 12px;
+  --yds-font-size-13: 13px;
+  --yds-font-size-14: 14px;
+  --yds-font-size-15: 15px;
+
+  /* 字重 */
+  --yds-font-weight-regular: 400;
+  --yds-font-weight-medium: 500;
+
+  /* 行高 */
+  --yds-line-height-16: 16px;
+  --yds-line-height-18: 18px;
+  --yds-line-height-20: 20px;
+
+  /* ==================== 间距 Spacing ==================== */
+
+  --yds-spacing-0: 0px;
+  --yds-spacing-2: 2px;
+  --yds-spacing-4: 4px;
+  --yds-spacing-8: 8px;
+  --yds-spacing-12: 12px;
+  --yds-spacing-14: 14px;
+  --yds-spacing-16: 16px;
+  --yds-spacing-20: 20px;
+  --yds-spacing-24: 24px;
+  --yds-spacing-28: 28px;
+  --yds-spacing-32: 32px;
+  --yds-spacing-40: 40px;
+  --yds-spacing-48: 48px;
+  --yds-spacing-56: 56px;
+  --yds-spacing-64: 64px;
+  --yds-spacing-72: 72px;
+  --yds-spacing-84: 84px;
+  --yds-spacing-96: 96px;
+
+  /* ==================== 圆角 Border Radius ==================== */
+
+  --yds-radius-none: 0px;
+  --yds-radius-sm: 2px;
+  --yds-radius-md: 4px;
+  --yds-radius-lg: 8px;
+  --yds-radius-xl: 12px;
+  --yds-radius-full: 9999px;
+
+  /* ==================== Button 组件变量 ==================== */
+
+  /* Button 尺寸 - XL */
+  --yds-button-xl-height: 48px;
+  --yds-button-xl-min-width: 359px;
+  --yds-button-xl-padding-x: 32px;
+  --yds-button-xl-padding-y: 14px;
+  --yds-button-xl-font-size: var(--yds-font-size-15);
+  --yds-button-xl-icon-size: 48px;
+
+  /* Button 尺寸 - Large */
+  --yds-button-large-height: 38px;
+  --yds-button-large-min-width: 72px;
+  --yds-button-large-padding-x: 16px;
+  --yds-button-large-padding-y: 10px;
+  --yds-button-large-font-size: var(--yds-font-size-14);
+  --yds-button-large-icon-size: 40px;
+
+  /* Button 尺寸 - Medium */
+  --yds-button-medium-height: 32px;
+  --yds-button-medium-min-width: 60px;
+  --yds-button-medium-padding-x: 14px;
+  --yds-button-medium-padding-y: 8px;
+  --yds-button-medium-font-size: var(--yds-font-size-14);
+  --yds-button-medium-icon-size: 32px;
+
+  /* Button 尺寸 - Medium Small */
+  --yds-button-medium-small-height: 28px;
+  --yds-button-medium-small-min-width: 60px;
+  --yds-button-medium-small-padding-x: 12px;
+  --yds-button-medium-small-padding-y: 6px;
+  --yds-button-medium-small-font-size: var(--yds-font-size-13);
+
+  /* Button 尺寸 - Small */
+  --yds-button-small-height: 24px;
+  --yds-button-small-min-width: 48px;
+  --yds-button-small-padding-x: 10px;
+  --yds-button-small-padding-y: 4px;
+  --yds-button-small-font-size: var(--yds-font-size-12);
+  --yds-button-small-icon-size: 24px;
+
+  /* Button 尺寸 - Mini */
+  --yds-button-mini-height: 20px;
+  --yds-button-mini-min-width: 38px;
+  --yds-button-mini-padding-x: 8px;
+  --yds-button-mini-padding-y: 2px;
+  --yds-button-mini-font-size: var(--yds-font-size-11);
+  --yds-button-mini-icon-size: 20px;
+
+  /* ==================== Navbar 组件变量 ==================== */
+
+  /* Navbar 高度 */
+  --yds-navbar-height: 56px;
+  --yds-navbar-height-small: 48px;
+  --yds-navbar-height-large: 64px;
+  --yds-navbar-height-xl: 72px;
+
+  /* Navbar 内边距 */
+  --yds-navbar-padding-x: var(--yds-spacing-16);
+  --yds-navbar-padding-y: 0;
+
+  /* Navbar Logo */
+  --yds-navbar-logo-size: 32px;
+  --yds-navbar-logo-size-large: 40px;
+
+  /* Navbar 菜单 */
+  --yds-navbar-menu-spacing: var(--yds-spacing-8);
+  --yds-navbar-menu-spacing-large: var(--yds-spacing-16);
+
+  /* Navbar 链接 */
+  --yds-navbar-link-font-size: var(--yds-font-size-14);
+  --yds-navbar-link-padding-x: var(--yds-spacing-12);
+  --yds-navbar-link-padding-y: 8px;
+
+  /* Navbar 搜索框 */
+  --yds-navbar-search-height: 32px;
+  --yds-navbar-search-min-width: 200px;
+  --yds-navbar-search-max-width: 400px;
+
+  /* Navbar 菜单切换按钮 */
+  --yds-navbar-toggle-size: 36px;
+
+  /* Navbar 层级 */
+  --yds-navbar-z-index: 100;
+
+  /* ==================== 移动端导航栏变量 ==================== */
+
+  /* 移动端顶部导航 */
+  --yds-navbar-mobile-height: 44px;
+  --yds-navbar-mobile-padding-x: 12px;
+
+  /* 移动端底部 Tab 导航 */
+  --yds-tabbar-height: 50px;
+  --yds-tabbar-padding-y: 6px;
+  --yds-tabbar-padding-x: 0;
+  --yds-tabbar-z-index: 100;
+
+  /* 浮动操作按钮 */
+  --yds-tabbar-fab-size: 48px;
+
+  /* ==================== 栅格系统 Grid System ==================== */
+
+  /* 栅格配置 - 12栅格体系（基于 Figma 设计稿） */
+  --yds-grid-columns: 12;                    /* 12 列均分 */
+  --yds-grid-template: repeat(12, 1fr);     /* 使用 fr 单位均分屏幕宽度 */
+  --yds-grid-gap: 3px;                      /* 栅格间距 3px（1倍设计稿） */
+  --yds-grid-gap-2x: 6px;                   /* 栅格间距 6px（2倍设计稿） */
+
+  /* 栅格边距 */
+  --yds-grid-padding-default: 8px;          /* 默认边距 8px（主流程页面） */
+  --yds-grid-padding-compact: 4px;          /* 紧凑边距 4px（商品列表） */
+
+  /* 栅格间距变体 */
+  --yds-grid-gutter-min: 2px;
+  --yds-grid-gutter-small: 4px;
+  --yds-grid-gutter-base: 3px;              /* 基础栅格间距（1倍设计稿） */
+  --yds-grid-gutter-large: 6px;             /* 大栅格间距（2倍设计稿） */
+
+  /* 布局尺寸 */
+  --yds-screen-mobile: 375px;               /* 移动端标准宽度（1倍设计稿） */
+  --yds-screen-tablet: 768px;
+  --yds-screen-desktop: 1440px;
+
+  /* 安全区域 */
+  --yds-safe-area-bottom: 34px;
+  --yds-safe-area-top: 44px;
+
+  /* 导航栏 */
+  --yds-nav-height: 44px;
+  --yds-tabbar-height: 54px;
+  --yds-statusbar-height: 44px;
+
+  /* ==================== Toast 组件变量 ==================== */
+
+  /* Toast 尺寸 */
+  --yds-toast-min-width: 120px;
+  --yds-toast-max-width: 240px;
+  --yds-toast-padding-x: 16px;
+  --yds-toast-padding-y: 16px;
+
+  /* Toast 头像 */
+  --yds-toast-avatar-size: 56px;
+
+  /* Toast 字体 */
+  --yds-toast-font-size: var(--yds-font-size-14);
+  --yds-toast-line-height: var(--yds-line-height-18);
+  --yds-toast-subtitle-font-size: var(--yds-font-size-12);
+  --yds-toast-subtitle-line-height: var(--yds-line-height-16);
+
+  /* Toast 间距 */
+  --yds-toast-gap: 8px;
+  --yds-toast-brand-gap: 12px;
+}

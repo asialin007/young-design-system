@@ -1,0 +1,63 @@
+{
+  "name": "@vipshop/young-design-system",
+  "version": "2.0.3",
+  "description": "年轻版设计系统 2.0 - 多框架通用组件库，包含 TabBar、Button、Switch、Toast 等组件",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "tokens",
+    "css"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tokens": "./tokens/index.json",
+    "./tokens/*": "./tokens/*.json",
+    "./css": "./css/index.css",
+    "./css/*": "./css/*.css"
+  },
+  "scripts": {
+    "build": "npm run build:tokens && npm run build:css && npm run build:js",
+    "build:tokens": "node scripts/build-tokens.js",
+    "build:css": "node scripts/build-css.js",
+    "build:js": "rollup -c",
+    "dev": "rollup -c -w",
+    "extract:components": "node scripts/extract-components.js",
+    "extract:colors": "node scripts/extract-colors.js && node scripts/generate-color-css.js",
+    "extract:all": "npm run extract:colors && npm run extract:components",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "design-system",
+    "vipshop",
+    "ui-components",
+    "css-variables",
+    "design-tokens"
+  ],
+  "author": "Vipshop UED",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup": "^4.9.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}

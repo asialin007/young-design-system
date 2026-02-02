@@ -1,0 +1,462 @@
+/**
+ * 年轻版设计系统 - Popup 弹出层组件样式
+ * 用于从屏幕边缘弹出的大型浮层
+ *
+ * 基于 Figma 设计规范：
+ * - 支持四个方向：底部、顶部、左侧、右侧
+ * - 包含蒙层遮罩
+ * - 可选导航栏（标题 + 左侧返回/右侧关闭）
+ * - 内容区域自适应
+ * - 直角设计（无圆角）
+ */
+
+/* ==================== 全局设置 ==================== */
+
+.yds-popup *,
+.yds-popup *::before,
+.yds-popup *::after {
+  box-sizing: border-box;
+}
+
+/* ==================== 蒙层 ==================== */
+
+.yds-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(27, 27, 27, 0.6);
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==================== Popup 容器 ==================== */
+
+.yds-popup {
+  position: fixed;
+  background-color: var(--yds-bg-default-white, #FFFFFF);
+  box-shadow: none; /* 年轻版规范：扁平化设计，无阴影 */
+  z-index: 10000;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 底部弹出 */
+.yds-popup--bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 375px;
+  border-radius: 0; /* 年轻版规范：直角设计 */
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 顶部弹出 */
+.yds-popup--top {
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  min-width: 375px;
+  border-radius: 0; /* 年轻版规范：直角设计 */
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 左侧弹出 */
+.yds-popup--left {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  border-radius: 0; /* 年轻版规范：直角设计 */
+  animation: slideRight 0.3s ease-out;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* 右侧弹出 */
+.yds-popup--right {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  border-radius: 0; /* 年轻版规范：直角设计 */
+  animation: slideLeft 0.3s ease-out;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ==================== Popup 导航栏 ==================== */
+
+.yds-popup__navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  padding: 0 12px;
+  background-color: var(--yds-bg-default-white, #FFFFFF);
+  border-bottom: 1px solid rgba(27, 27, 27, 0.08);
+  flex-shrink: 0;
+}
+
+/* 当有副标题时，导航栏高度为 58px */
+.yds-popup__navbar:has(.yds-popup__title-sub) {
+  height: 58px;
+}
+
+.yds-popup__back {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.yds-popup__back img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.yds-popup__back:hover {
+  opacity: 0.7;
+}
+
+.yds-popup__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 2px 0;
+  width: 280px;
+  overflow: hidden;
+}
+
+.yds-popup__title-main {
+  font-family: var(--yds-font-family-base, 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--yds-text-default-default, #1B1B1B);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.yds-popup__title-sub {
+  font-family: var(--yds-font-family-base, 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--yds-text-default-tertiary, #7E828C);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* 右侧关闭按钮（默认） */
+.yds-popup__close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.yds-popup__close img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.yds-popup__close:hover {
+  opacity: 0.7;
+}
+
+/* 当有关闭按钮时，标题宽度调整 */
+.yds-popup__navbar:has(.yds-popup__close) .yds-popup__title {
+  width: 200px;
+}
+
+/* 当同时有返回和关闭按钮时，标题宽度进一步缩小 */
+.yds-popup__navbar:has(.yds-popup__back):has(.yds-popup__close) .yds-popup__title {
+  width: 160px;
+}
+
+/* ==================== Popup 内容区域 ==================== */
+
+.yds-popup__content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--yds-bg-default-white, #FFFFFF);
+}
+
+.yds-popup__content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.yds-popup__content::-webkit-scrollbar-thumb {
+  background-color: rgba(27, 27, 27, 0.2);
+  border-radius: 2px;
+}
+
+.yds-popup__content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* ==================== Popup 底部操作栏（可选） ==================== */
+
+.yds-popup__footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px 8px 8px; /* 上0，左右8px，下8px - 确保按钮距离屏幕边框有间距 */
+  background-color: var(--yds-bg-default-white, #FFFFFF);
+  border-top: 1px solid rgba(27, 27, 27, 0.08);
+  flex-shrink: 0;
+  width: 100%; /* 确保填满整个宽度 */
+}
+
+/* 按钮容器 */
+.yds-popup__footer-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 0; /* 上下各12px - 按钮和指示器之间有12px间距 */
+}
+
+.yds-popup__footer-buttons--vertical {
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 底部分隔线（可选，用于视觉装饰） */
+.yds-popup__footer-divider {
+  width: 135px;
+  height: 5px;
+  background-color: rgba(27, 27, 27, 0.6);
+  border-radius: 100px;
+  margin: 0 0 8px 0; /* 上0，左右0，下8px（距离底部） */
+  flex-shrink: 0;
+}
+
+/* 底部按钮 */
+.yds-popup__button {
+  display: flex;
+  flex: 1 1 0; /* 重要：确保按钮等宽分配，flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-align: center;
+  font-family: var(--yds-font-family-base, 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 15px;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.2s;
+}
+
+/* 次按钮样式 */
+.yds-popup__button--secondary {
+  background-color: rgba(27, 27, 27, 0.04);
+  color: var(--yds-text-default-default, #1B1B1B);
+}
+
+.yds-popup__button--secondary:hover {
+  opacity: 0.7;
+}
+
+/* 主按钮样式 */
+.yds-popup__button--primary {
+  background-color: var(--yds-text-default-default, #1B1B1B);
+  color: var(--yds-bg-default-white, #FFFFFF);
+}
+
+.yds-popup__button--primary:hover {
+  opacity: 0.9;
+}
+
+/* 禁用状态 */
+.yds-popup__button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.yds__popup__footer--center {
+  justify-content: center;
+}
+
+/* ==================== 变体 ==================== */
+
+/* 无圆角 */
+.yds-popup--no-radius {
+  border-radius: 0 !important;
+}
+
+/* 紧凑型导航栏 */
+.yds-popup__navbar--compact {
+  min-height: 44px;
+  padding: 6px 12px;
+}
+
+/* 大型导航栏 */
+.yds-popup__navbar--large {
+  min-height: 64px;
+  padding: 12px 16px;
+}
+
+/* 无边框导航栏 */
+.yds-popup__navbar--borderless {
+  border-bottom: none;
+}
+
+/* ==================== 关闭动画（反向退场） ==================== */
+
+/* 底部弹出 - 向下滑出 */
+.yds-popup--closing.yds-popup--bottom {
+  animation: slideOutUp 0.25s ease-in forwards;
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0.8;
+  }
+}
+
+/* 顶部弹出 - 向上滑出 */
+.yds-popup--closing.yds-popup--top {
+  animation: slideOutDown 0.25s ease-in forwards;
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0.8;
+  }
+}
+
+/* 左侧弹出 - 向左滑出 */
+.yds-popup--closing.yds-popup--left {
+  animation: slideOutRight 0.25s ease-in forwards;
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0.8;
+  }
+}
+
+/* 右侧弹出 - 向右滑出 */
+.yds-popup--closing.yds-popup--right {
+  animation: slideOutLeft 0.25s ease-in forwards;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0.8;
+  }
+}
+
+/* ==================== 响应式 ==================== */
+
+@media (max-width: 768px) {
+  .yds-popup__title {
+    width: 200px;
+  }
+}
+
+/* 移除小屏幕下左右侧弹出层填满屏幕的设置，保持 300px 固定宽度 */

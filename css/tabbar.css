@@ -1,0 +1,156 @@
+/**
+ * 年轻版设计系统 2.0 - TabBar 底部标签栏组件样式
+ * 用于页面底部导航、标签切换等
+ *
+ * 基于 Figma 设计规范：
+ * - 支持 2-5 个标签
+ * - 标签项包含图标和文字
+ * - 底部安全区域（主页指示器）
+ */
+
+/* ==================== TabBar 容器 ==================== */
+
+.yds-tabbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--yds-bg-default-white);
+  border-top: 0.5px solid var(--yds-border-transp-black-8, rgba(27, 27, 27, 0.08));
+  box-sizing: border-box;
+}
+
+/* ==================== 标签内容区域 ==================== */
+
+.yds-tabbar__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  height: 49px;
+}
+
+/* ==================== 标签项 ==================== */
+
+.yds-tabbar__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 49px;
+  padding: 6px 16px;
+  gap: 3px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+}
+
+.yds-tabbar__item:hover {
+  opacity: 0.7;
+}
+
+/* ==================== 标签图标 ==================== */
+
+.yds-tabbar__icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--yds-icon-default-default, #1b1b1b);
+}
+
+.yds-tabbar__icon img,
+.yds-tabbar__icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.yds-tabbar__icon svg {
+  fill: currentColor;
+}
+
+/* ==================== 标签文字 ==================== */
+
+.yds-tabbar__label {
+  font-family: var(--yds-font-family-base, "PingFang SC", sans-serif);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13px;
+  color: var(--yds-text-default-default, #1b1b1b);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* ==================== 选中状态 ==================== */
+
+.yds-tabbar__item--active .yds-tabbar__label {
+  color: var(--yds-text-brand-default, #E52EC5);
+}
+
+/* 选中状态的图标颜色 - 使用 Icon/Brand/Default */
+.yds-tabbar__item--active .yds-tabbar__icon {
+  color: var(--yds-icon-brand-default, #F74AD9);
+}
+
+/* 未选中状态的图标颜色 - 使用 Icon/Default/Default */
+.yds-tabbar__item:not(.yds-tabbar__item--active) .yds-tabbar__icon {
+  color: var(--yds-icon-default-default, #1b1b1b);
+}
+
+/* ==================== 底部安全区域 ==================== */
+
+.yds-tabbar__safe-area {
+  position: relative;
+  width: 100%;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yds-tabbar__indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 135px;
+  height: 5px;
+  background-color: var(--yds-icon-default-default, #1b1b1b);
+  border-radius: 100px;
+}
+
+/* ==================== 变体 ==================== */
+
+/* 固定底部 */
+.yds-tabbar--fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* 无边框 */
+.yds-tabbar--borderless {
+  border-top: none;
+}
+
+/* ==================== 响应式 ==================== */
+
+@media (min-width: 768px) {
+  /* 桌面端保持全宽，自适应屏幕宽度 */
+  .yds-tabbar {
+    width: 100vw;
+  }
+}

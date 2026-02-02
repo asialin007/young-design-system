@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>登录成功 - 唯品会</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    /* ========== 移动端基础样式 ========== */
+    html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;  /* 禁止垂直滚动条 */
+    }
+
+    body {
+      background-color: var(--yds-bg-default-white);
+      height: 100vh;
+      font-family: var(--yds-font-family-base);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;  /* 禁止垂直滚动条 */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: var(--yds-screen-mobile);
+      margin: 0 auto;
+      overflow-x: hidden;
+      overflow-y: hidden;  /* 禁止垂直滚动条 */
+      position: relative;
+    }
+
+    /* ========== 页面特定样式 ========== */
+    .success-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: var(--yds-spacing-48) 0;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: var(--yds-spacing-32);
+      position: relative;
+    }
+
+    .success-icon-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: var(--yds-bg-positive-default);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .success-icon-circle svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--yds-text-default-white);
+      stroke-width: 3;
+      fill: none;
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: drawCheck 0.5s ease-out 0.3s forwards;
+    }
+
+    @keyframes drawCheck {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .success-title {
+      font-size: var(--yds-font-size-20);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+      margin-bottom: var(--yds-spacing-8);
+      text-align: center;
+    }
+
+    .success-message {
+      font-size: var(--yds-font-size-14);
+      color: var(--yds-text-default-secondary);
+      text-align: center;
+      margin-bottom: var(--yds-spacing-48);
+    }
+
+    .button-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--yds-spacing-12);
+    }
+
+    .countdown-section {
+      text-align: center;
+      margin-top: var(--yds-spacing-24);
+    }
+
+    .countdown-text {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-tertiary);
+    }
+
+    .countdown-text span {
+      color: var(--yds-text-brand-default);
+    }
+  </style>
+</head>
+<body>
+  <!-- 移动端容器 -->
+  <div class="mobile-container">
+    <!-- 栅格系统 -->
+    <div class="yds-grid">
+      <div class="yds-grid__cell yds-grid__cell--12">
+        <div class="yds-grid__cell-content">
+
+          <!-- 成功页面内容 -->
+          <div class="success-container">
+            <!-- 成功图标 -->
+            <div class="success-icon">
+              <div class="success-icon-circle">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 成功标题 -->
+            <div class="success-title">登录成功</div>
+            <div class="success-message">欢迎回到唯品会</div>
+
+            <!-- 按钮组 -->
+            <div class="button-group">
+              <button
+                class="yds-button yds-button--solid-dark yds-button--black yds-button--xl"
+                style="width: 100%;"
+                onclick="goToHome()"
+              >
+                进入首页
+              </button>
+              <button
+                class="yds-button yds-button--solid-light yds-button--white yds-button--large"
+                style="width: 100%;"
+                onclick="logout()"
+              >
+                退出登录
+              </button>
+            </div>
+
+            <!-- 自动跳转倒计时 -->
+            <div class="countdown-section">
+              <div class="countdown-text">
+                <span id="countdown">3</span> 秒后自动跳转至首页
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast 组件 -->
+  <div id="yds-toast" class="yds-toast yds-toast--default" style="display: none;">
+    <div class="yds-toast__text"></div>
+  </div>
+
+  <script>
+    let countdown = 3;
+    let countdownTimer = null;
+
+    // ========== 初始化 ==========
+    document.addEventListener('DOMContentLoaded', function() {
+      // 启动倒计时
+      startCountdown();
+    });
+
+    // ========== 倒计时 ==========
+    function startCountdown() {
+      const countdownEl = document.getElementById('countdown');
+
+      countdownTimer = setInterval(() => {
+        countdown--;
+        countdownEl.textContent = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(countdownTimer);
+          goToHome();
+        }
+      }, 1000);
+    }
+
+    // ========== 进入首页 ==========
+    function goToHome() {
+      if (countdownTimer) {
+        clearInterval(countdownTimer);
+      }
+
+      showToast('跳转至首页');
+
+      // 这里应该跳转到实际的首页
+      // window.location.href = '/home';
+
+      // 演示用：跳转回登录页面一
+      setTimeout(() => {
+        window.location.href = 'login-sms-step1.html';
+      }, 1000);
+    }
+
+    // ========== 退出登录 ==========
+    function logout() {
+      if (countdownTimer) {
+        clearInterval(countdownTimer);
+      }
+
+      showToast('已退出登录');
+
+      setTimeout(() => {
+        window.location.href = 'login-sms-step1.html';
+      }, 1000);
+    }
+
+    // ========== Toast 提示 ==========
+    function showToast(message, duration = 2000) {
+      const toast = document.getElementById('yds-toast');
+      const toastText = toast.querySelector('.yds-toast__text');
+
+      toastText.textContent = message;
+      toast.style.display = 'flex';
+      toast.classList.add('yds-toast--fade-in');
+
+      setTimeout(() => {
+        toast.classList.remove('yds-toast--fade-in');
+        toast.classList.add('yds-toast--fade-out');
+
+        setTimeout(() => {
+          toast.style.display = 'none';
+          toast.classList.remove('yds-toast--fade-out');
+        }, 300);
+      }, duration);
+    }
+  </script>
+</body>
+</html>

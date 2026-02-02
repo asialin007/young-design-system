@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Grid 栅格系统 Figma 映射",
+  "component": "Grid",
+  "figmaNodeId": "548:3165",
+  "figmaFileKey": "BepKKgfdECcLIBi5bvkMbp",
+  "figmaUrl": "https://www.figma.com/design/BepKKgfdECcLIBi5bvkMbp/年轻版设计系统V2.0-草稿-?node-id=548-3165",
+  "specs": {
+    "system": "12栅格体系",
+    "columnWidth": "8px",
+    "minWidth": "375px",
+    "columns": 12,
+    "gutter": {
+      "min": "2px",
+      "small": "4px",
+      "base": "8px",
+      "large": "16px"
+    }
+  },
+  "spacing": [
+    2, 4, 8, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64, 72, 84, 96
+  ],
+  "layout": {
+    "screenWidth": {
+      "mobile": "375px",
+      "tablet": "768px",
+      "desktop": "1440px"
+    },
+    "safeArea": {
+      "bottom": "34px",
+      "top": "44px"
+    },
+    "navigation": {
+      "top": "44px",
+      "bottom": "54px",
+      "statusBar": "44px"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 测试</title>
+  <link rel="stylesheet" href="../../../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .test-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>年轻版设计系统 CSS 测试</h1>
+
+  <div class="test-section">
+    <h2>1. 颜色变量测试</h2>
+    <p style="color: var(--yds-text-default-default);">主要文字颜色（黑色 #1B1B1B）</p>
+    <p style="color: var(--yds-text-default-secondary);">次要文字颜色</p>
+    <p style="color: var(--yds-text-brand-default);">品牌色文字（粉色 #E52EC5）</p>
+    <p style="background-color: var(--yds-bg-brand-secondary); padding: 10px;">品牌色背景（浅粉色 #FFF2FF）</p>
+  </div>
+
+  <div class="test-section">
+    <h2>2. 按钮组件测试</h2>
+    <div style="margin: 10px 0;">
+      <button class="yds-button yds-button--solid-dark yds-button--black yds-button--xl">
+        黑色按钮（XL）
+      </button>
+    </div>
+    <div style="margin: 10px 0;">
+      <button class="yds-button yds-button--solid-light yds-button--white yds-button--large">
+        白色按钮
+      </button>
+    </div>
+    <div style="margin: 10px 0;">
+      <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large">
+        品牌色按钮
+      </button>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>3. 复选框组件测试</h2>
+    <label class="yds-checkbox yds-checkbox--small">
+      <input type="checkbox" class="yds-checkbox__input" id="test1">
+      <span class="yds-checkbox__box"></span>
+      复选框选项
+    </label>
+    <br><br>
+    <label class="yds-checkbox yds-checkbox--small yds-checkbox--brand">
+      <input type="checkbox" class="yds-checkbox__input" id="test2" checked>
+      <span class="yds-checkbox__box"></span>
+      品牌色复选框（已选中）
+    </label>
+  </div>
+
+  <div class="test-section">
+    <h2>4. Toast 组件测试</h2>
+    <button onclick="showToast()">显示 Toast</button>
+    <div id="yds-toast" class="yds-toast yds-toast--default" style="display: none;">
+      <div class="yds-toast__text">这是一个 Toast 提示</div>
+    </div>
+  </div>
+
+  <script>
+    // 复选框视觉状态切换
+    document.querySelectorAll('.yds-checkbox__input').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          this.closest('.yds-checkbox').classList.add('yds-checkbox--checked');
+        } else {
+          this.closest('.yds-checkbox').classList.remove('yds-checkbox--checked');
+        }
+      });
+      // 初始化状态
+      if (checkbox.checked) {
+        checkbox.closest('.yds-checkbox').classList.add('yds-checkbox--checked');
+      }
+    });
+
+    // Toast 显示
+    function showToast() {
+      const toast = document.getElementById('yds-toast');
+      toast.style.display = 'flex';
+      toast.classList.add('yds-toast--fade-in');
+
+      setTimeout(() => {
+        toast.classList.remove('yds-toast--fade-in');
+        toast.classList.add('yds-toast--fade-out');
+
+        setTimeout(() => {
+          toast.style.display = 'none';
+          toast.classList.remove('yds-toast--fade-out');
+        }, 300);
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

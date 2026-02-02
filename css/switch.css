@@ -1,0 +1,122 @@
+/**
+ * 年轻版设计系统 2.0 - Switch 开关组件样式
+ * 用于控制某个功能的开启和关闭
+ */
+
+/* ==================== 开关容器 ==================== */
+
+.yds-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(27, 27, 27, 0.16);
+  border: none;
+  border-radius: 72px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.yds-switch:focus-visible {
+  outline: 2px solid #006AFF;
+  outline-offset: 2px;
+}
+
+/* ==================== 尺寸变体 ==================== */
+
+/* 小尺寸 */
+.yds-switch--small {
+  width: 38px;
+  height: 24px;
+  border-radius: 24px;
+}
+
+/* 中尺寸 */
+.yds-switch--medium {
+  width: 46px;
+  height: 28px;
+  border-radius: 48px;
+}
+
+/* 大尺寸 */
+.yds-switch--large {
+  width: 52px;
+  height: 32px;
+  border-radius: 72px;
+}
+
+/* ==================== 开启状态 ==================== */
+
+.yds-switch--checked {
+  background-color: var(--yds-bg-brand-default, #FF77E7);
+}
+
+/* ==================== 禁用状态 ==================== */
+
+.yds-switch--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==================== 开关圆点 ==================== */
+
+.yds-switch__dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  transition: transform 0.2s ease, left 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 小尺寸圆点 */
+.yds-switch--small .yds-switch__dot {
+  width: 18px;
+  height: 18px;
+  left: 3px;
+}
+
+.yds-switch--small.yds-switch--checked .yds-switch__dot {
+  left: 17px;
+}
+
+/* 中尺寸圆点 */
+.yds-switch--medium .yds-switch__dot {
+  width: 20px;
+  height: 20px;
+  left: 4px;
+}
+
+.yds-switch--medium.yds-switch--checked .yds-switch__dot {
+  left: 22px;
+}
+
+/* 大尺寸圆点 */
+.yds-switch--large .yds-switch__dot {
+  width: 24px;
+  height: 24px;
+  left: 4px;
+}
+
+.yds-switch--large.yds-switch--checked .yds-switch__dot {
+  left: 24px;
+}
+
+/* ==================== 激活状态 ==================== */
+
+.yds-switch:active:not(.yds-switch--disabled) .yds-switch__dot {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* ==================== Hover 状态 ==================== */
+
+.yds-switch:hover:not(.yds-switch--disabled) {
+  background-color: rgba(27, 27, 27, 0.24);
+}
+
+.yds-switch--checked:hover:not(.yds-switch--disabled) {
+  background-color: #FF88E9;
+}

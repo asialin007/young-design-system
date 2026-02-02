@@ -1,0 +1,385 @@
+/**
+ * 年轻版设计系统 2.0 - Navbar 导航栏组件样式
+ * 用于页面顶部导航、标题栏、选项卡等
+ *
+ * 基于 Figma 设计规范：
+ * - 基础导航栏：返回/关闭按钮 + 标题 + 右侧操作
+ * - 搜索导航栏：搜索框 + 标题 + 右侧操作
+ * - 选项卡导航栏：选项卡 + 标题 + 右侧操作
+ */
+
+/* ==================== 导航栏容器 ==================== */
+
+.yds-navbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--yds-bg-default-white);
+  border-bottom: 1px solid var(--yds-border-default-tertiary);
+  box-sizing: border-box;
+}
+
+/* ==================== 状态栏 ==================== */
+
+.yds-navbar__statusbar {
+  height: 44px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ==================== 内容区域 ==================== */
+
+.yds-navbar__content {
+  position: relative;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 12px;
+  flex-shrink: 0;
+}
+
+/* ==================== 左侧区域 ==================== */
+
+.yds-navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.yds-navbar__back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.yds-navbar__back img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.yds-navbar__close {
+  font-family: var(--yds-font-family-base);
+  font-size: var(--yds-font-size-14);
+  line-height: var(--yds-line-height-20);
+  color: var(--yds-text-default-default);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.yds-navbar__back:hover {
+  opacity: 0.7;
+}
+
+.yds-navbar__close:hover {
+  opacity: 0.7;
+}
+
+/* ==================== 中间标题区域 ==================== */
+
+.yds-navbar__title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 0;
+}
+
+.yds-navbar__title-main {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--yds-font-family-base);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--yds-text-default-default);
+}
+
+.yds-navbar__title-arrow {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yds-navbar__title-arrow img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.yds-navbar__title-sub {
+  font-family: var(--yds-font-family-base);
+  font-size: 10px;
+  line-height: 13px;
+  color: var(--yds-text-default-tertiary);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+}
+
+/* ==================== 右侧区域 ==================== */
+
+.yds-navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* 基础导航栏（有标题）的右侧区域使用绝对定位 */
+.yds-navbar--basic .yds-navbar__right {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.yds-navbar__action {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.yds-navbar__action-text {
+  display: flex;
+  align-items: flex-start;
+  padding: 2px 0;
+  font-family: var(--yds-font-family-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--yds-text-default-default, #1b1b1b);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.yds-navbar__action-text:hover {
+  opacity: 0.7;
+}
+
+.yds-navbar__action-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.yds-navbar__action-icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* ==================== 搜索导航栏 ==================== */
+
+.yds-navbar__search-box {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 0;
+  gap: 4px;
+  height: 32px;
+  min-height: 32px;
+  padding: 3px 3px 3px 8px;
+  background-color: var(--yds-bg-default-gray, #f4f5f7);
+  overflow: hidden;
+}
+
+.yds-navbar__search-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.yds-navbar__search-icon img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.yds-navbar__search-input {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 100%;
+  font-family: var(--yds-font-family-base);
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--yds-text-default-disabled, #b9bbbf);
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.yds-navbar__search-input::placeholder {
+  color: var(--yds-text-default-disabled);
+}
+
+.yds-navbar__search-input:focus {
+  outline: none;
+}
+
+/* ==================== 选项卡导航栏 ==================== */
+
+.yds-navbar__tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1 0 0;
+  min-width: 0;
+  padding-left: 12px;
+  overflow: hidden;
+}
+
+.yds-navbar__tab {
+  position: relative;
+  height: 44px;
+  padding: 11px 0;
+  font-family: var(--yds-font-family-base);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--yds-text-default-secondary, #4e4f54);
+  cursor: pointer;
+  border: none;
+  background: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yds-navbar__tab--active {
+  padding-top: 1px;
+  padding-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: var(--yds-text-default-default, #1b1b1b);
+}
+
+.yds-navbar__tab--active::after {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background-color: var(--yds-bg-brand-default, #FF77E7);
+}
+
+/* ==================== 图标带字操作 ==================== */
+
+.yds-navbar__action-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.yds-navbar__action-icon-small {
+  width: 16px;
+  height: 16px;
+}
+
+.yds-navbar__action-badge {
+  position: relative;
+}
+
+.yds-navbar__badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--yds-font-family-base);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--yds-bg-default-white);
+  background-color: var(--yds-bg-danger-default);
+  border-radius: 9999px;
+  border: 1px solid var(--yds-bg-danger-default);
+}
+
+/* ==================== 变体 ==================== */
+
+/* 紧凑型导航栏 */
+.yds-navbar--compact {
+  height: 44px;
+}
+
+.yds-navbar--compact .yds-navbar__content {
+  height: 44px;
+}
+
+/* 大标题导航栏 */
+.yds-navbar--large .yds-navbar__content {
+  height: 56px;
+}
+
+/* 无边框导航栏 */
+.yds-navbar--borderless {
+  border-bottom: none;
+}
+
+/* 固定顶部导航栏 */
+.yds-navbar--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* ==================== 响应式 ==================== */
+
+@media (max-width: 768px) {
+  .yds-navbar__title-sub {
+    max-width: 200px;
+  }
+
+  .yds-navbar__right {
+    gap: 12px;
+  }
+}

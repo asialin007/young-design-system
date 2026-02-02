@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>一键登录 - 唯品会</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <script src="radio-interactive.js"></script>
+  <style>
+    /* ========== 移动端基础样式 ========== */
+    html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      /* 禁止垂直滚动条 */
+    }
+
+    body {
+      background-color: var(--yds-bg-default-white);
+      height: 100vh;
+      font-family: var(--yds-font-family-base);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      /* 禁止垂直滚动条 */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: var(--yds-screen-mobile);
+      margin: 0 auto;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      /* 禁止垂直滚动条 */
+      position: relative;
+    }
+
+    /* ========== 页面特定样式 ========== */
+    .login-header {
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 200px;
+    }
+
+    .login-logo {
+      width: 250px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .phone-number-section {
+      text-align: center;
+      margin-bottom: var(--yds-spacing-48);
+    }
+
+    .phone-label {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-tertiary);
+      margin-bottom: var(--yds-spacing-8);
+    }
+
+    .phone-number {
+      font-size: var(--yds-font-size-28);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--yds-spacing-4);
+      cursor: pointer;
+    }
+
+    .phone-number img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .agreement-section {
+      margin-top: var(--yds-spacing-16);
+      margin-bottom: var(--yds-spacing-24);
+      display: flex;
+      align-items: center;
+      /* 确保单选框和文字垂直居中对齐 */
+    }
+
+    .agreement-text {
+      font-size: var(--yds-font-size-12);
+      color: var(--yds-text-default-secondary);
+      margin-left: var(--yds-spacing-8);
+    }
+
+    .agreement-link {
+      color: var(--yds-text-utils-03-default);
+      /* 使用Text/Utils/03/Default颜色（蓝色）*/
+      text-decoration: none;
+      /* 无下划线 */
+    }
+
+    .switch-method {
+      text-align: center;
+      margin-top: var(--yds-spacing-24);
+    }
+
+    .switch-method-link {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-secondary);
+      text-decoration: none;
+      position: relative;
+    }
+
+    .switch-method-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--yds-border-default-secondary);
+    }
+
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--yds-bg-transp-black-50-pct);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .loading-overlay.show {
+      display: flex;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--yds-border-default-tertiary);
+      border-top-color: var(--yds-text-brand-default);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 移动端容器 -->
+  <div class="mobile-container">
+    <!-- 栅格系统 -->
+    <div class="yds-grid">
+      <div class="yds-grid__cell yds-grid__cell--12">
+        <div class="yds-grid__cell-content">
+
+          <!-- Logo -->
+          <div class="login-header">
+            <img src="../images/logo.png" alt="唯品会" class="login-logo">
+          </div>
+
+          <!-- 手机号显示 -->
+          <div class="phone-number-section">
+            <div class="phone-label">唯品会将使用本机号码</div>
+            <div class="phone-number" onclick="editPhoneNumber()">
+              <span id="phone-display">138****8888</span>
+              <img src="../icons/y_icon_line_edit_edit.svg" alt="编辑">
+            </div>
+          </div>
+
+          <!-- 协议勾选 -->
+          <div class="agreement-section">
+            <label class="yds-radio yds-radio--small">
+              <input type="radio" class="yds-radio__input" id="agreement" name="agreement" value="agree"
+                data-radio-toggle>
+              <span class="yds-radio__circle"></span>
+            </label>
+            <span class="agreement-text">
+              我已阅读并同意
+              <a href="javascript:void(0)" class="agreement-link">《用户协议》</a>
+              和
+              <a href="javascript:void(0)" class="agreement-link">《隐私政策》</a>
+            </span>
+          </div>
+
+          <!-- 一键登录按钮 -->
+          <button id="login-btn" class="yds-button yds-button--solid-dark yds-button--black yds-button--xl"
+            style="width: 100%;" onclick="handleLogin()">
+            一键登录
+          </button>
+
+          <!-- 换个方式登录 -->
+          <div class="switch-method">
+            <a href="login-sms-step1.html" class="switch-method-link">换个方式登录</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 加载遮罩 -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Toast 组件 -->
+  <div id="yds-toast" class="yds-toast yds-toast--default" style="display: none;">
+    <div class="yds-toast__text"></div>
+  </div>
+
+  <script>
+    // 模拟运营商获取手机号
+    const userPhoneNumber = '13800138888';
+
+    // ========== 初始化 ==========
+    document.addEventListener('DOMContentLoaded', function () {
+      // 显示手机号
+      const maskedPhone = userPhoneNumber.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+      document.getElementById('phone-display').textContent = maskedPhone;
+    });
+
+    // ========== 编辑手机号 ==========
+    function editPhoneNumber() {
+      showToast('跳转到手机验证码登录');
+      setTimeout(() => {
+        window.location.href = 'login-sms-step1.html';
+      }, 500);
+    }
+
+    // ========== 一键登录处理 ==========
+    function handleLogin() {
+      const agreement = document.getElementById('agreement');
+
+      if (!agreement.checked) {
+        showToast('请先阅读并同意用户协议和隐私政策');
+        return;
+      }
+
+      // 显示加载遮罩
+      document.getElementById('loading-overlay').classList.add('show');
+
+      // 模拟运营商认证
+      setTimeout(() => {
+        document.getElementById('loading-overlay').classList.remove('show');
+        showToast('登录成功');
+
+        setTimeout(() => {
+          // 登录成功后跳转到首页
+          window.location.href = 'login-success.html';
+        }, 1000);
+      }, 2000);
+    }
+
+    // ========== Toast 提示 ==========
+    function showToast(message, duration = 2000) {
+      const toast = document.getElementById('yds-toast');
+      const toastText = toast.querySelector('.yds-toast__text');
+
+      toastText.textContent = message;
+      toast.style.display = 'flex';
+      toast.classList.add('yds-toast--fade-in');
+
+      setTimeout(() => {
+        toast.classList.remove('yds-toast--fade-in');
+        toast.classList.add('yds-toast--fade-out');
+
+        setTimeout(() => {
+          toast.style.display = 'none';
+          toast.classList.remove('yds-toast--fade-out');
+        }, 300);
+      }, duration);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Button 组件 Figma 映射",
+  "component": "Button",
+  "figmaNodeId": "2482:20987",
+  "figmaFileKey": "BepKKgfdECcLIBi5bvkMbp",
+  "codeConnect": {
+    "enabled": true,
+    "componentName": "YDSButton",
+    "label": "React",
+    "clientLanguages": "typescript,javascript",
+    "clientFrameworks": "react,vue"
+  },
+  "variants": {
+    "solid-dark-brand-large-default": {
+      "nodeId": "2482:20984",
+      "variant": "solid-dark",
+      "color": "brand",
+      "size": "large",
+      "state": "default",
+      "iconOnly": false,
+      "props": {
+        "background": "var(--yds-bg-brand-default)",
+        "color": "var(--yds-text-default-tertiary)",
+        "height": "38px",
+        "padding": "20px 10px",
+        "fontSize": "14px",
+        "fontWeight": "500"
+      }
+    },
+    "solid-light-brand-large-default": {
+      "nodeId": "2482:20974",
+      "variant": "solid-light",
+      "color": "brand",
+      "size": "large",
+      "state": "default",
+      "iconOnly": false,
+      "props": {
+        "background": "var(--yds-bg-brand-secondary)",
+        "color": "var(--yds-text-brand-default)",
+        "height": "38px",
+        "padding": "20px 10px",
+        "fontSize": "14px",
+        "fontWeight": "400"
+      }
+    },
+    "outlined-brand-xl-default": {
+      "nodeId": "2482:20782",
+      "variant": "outlined",
+      "color": "brand",
+      "size": "xl",
+      "state": "default",
+      "iconOnly": false,
+      "props": {
+        "background": "transparent",
+        "color": "var(--yds-text-brand-default)",
+        "border": "0.5px solid var(--yds-border-brand-default)",
+        "height": "48px",
+        "padding": "20px 14px",
+        "fontSize": "15px",
+        "fontWeight": "400"
+      }
+    },
+    "solid-dark-brand-mini-default": {
+      "nodeId": "2503:10879",
+      "variant": "solid-dark",
+      "color": "brand",
+      "size": "mini",
+      "state": "default",
+      "iconOnly": false,
+      "props": {
+        "background": "var(--yds-bg-brand-default)",
+        "color": "var(--yds-text-default-tertiary)",
+        "height": "20px",
+        "padding": "8px 2px",
+        "fontSize": "11px",
+        "fontWeight": "400"
+      }
+    }
+  },
+  "variantNames": {
+    "variant": {
+      "solid-dark": "深色填充",
+      "solid-light": "浅色填充",
+      "outlined": "描边"
+    },
+    "color": {
+      "brand": "品牌色",
+      "black": "黑色",
+      "white": "白色"
+    },
+    "size": {
+      "xl": "超大尺寸",
+      "large": "大尺寸",
+      "medium": "中尺寸",
+      "medium-small": "中小尺寸",
+      "small": "小尺寸",
+      "mini": "迷你"
+    },
+    "state": {
+      "default": "默认",
+      "disabled": "禁用"
+    }
+  }
+}

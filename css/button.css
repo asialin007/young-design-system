@@ -1,0 +1,284 @@
+/**
+ * 年轻版设计系统 2.0 - Button 组件样式
+ */
+
+/* ==================== 基础样式 ==================== */
+
+.yds-button {
+  /* 布局 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-sizing: border-box;
+
+  /* 字体 */
+  font-family: var(--yds-font-family-base);
+  font-weight: var(--yds-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+
+  /* 交互 */
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+
+  /* 边框 */
+  border: none;
+  outline: none;
+
+  /* 年轻版设计系统：直角设计 */
+  border-radius: var(--yds-radius-none, 0);
+}
+
+.yds-button:disabled {
+  cursor: not-allowed;
+}
+
+/* ==================== 按钮内图标尺寸 ==================== */
+
+/* 超大尺寸按钮内的图标 - 18px*18px */
+.yds-button--xl .yds-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* 大尺寸按钮内的图标 - 16px*16px */
+.yds-button--large .yds-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* 中等尺寸按钮内的图标 - 16px*16px */
+.yds-button--medium .yds-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* 小尺寸按钮内的图标 - 14px*14px */
+.yds-button--small .yds-icon,
+.yds-button--medium-small .yds-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* 迷你尺寸按钮内的图标 - 12px*12px */
+.yds-button--mini .yds-icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* ==================== 尺寸变体 ==================== */
+
+.yds-button--xl {
+  height: var(--yds-button-xl-height);
+  min-width: var(--yds-button-xl-min-width);
+  padding: var(--yds-button-xl-padding-y) var(--yds-button-xl-padding-x);
+  font-size: var(--yds-button-xl-font-size);
+}
+
+.yds-button--xl.yds-button--icon-only {
+  width: var(--yds-button-xl-icon-size);
+  height: var(--yds-button-xl-icon-size);
+  min-width: var(--yds-button-xl-icon-size);
+  padding: 0;
+}
+
+.yds-button--large {
+  height: var(--yds-button-large-height);
+  min-width: var(--yds-button-large-min-width);
+  padding: var(--yds-button-large-padding-y) var(--yds-button-large-padding-x);
+  font-size: var(--yds-button-large-font-size);
+}
+
+.yds-button--large.yds-button--icon-only {
+  width: var(--yds-button-large-icon-size);
+  height: var(--yds-button-large-icon-size);
+  min-width: var(--yds-button-large-icon-size);
+  padding: 0;
+}
+
+.yds-button--medium {
+  height: var(--yds-button-medium-height);
+  min-width: var(--yds-button-medium-min-width);
+  padding: var(--yds-button-medium-padding-y) var(--yds-button-medium-padding-x);
+  font-size: var(--yds-button-medium-font-size);
+}
+
+.yds-button--medium.yds-button--icon-only {
+  width: var(--yds-button-medium-icon-size);
+  height: var(--yds-button-medium-icon-size);
+  min-width: var(--yds-button-medium-icon-size);
+  padding: 0;
+}
+
+.yds-button--medium-small {
+  height: var(--yds-button-medium-small-height);
+  min-width: var(--yds-button-medium-small-min-width);
+  padding: var(--yds-button-medium-small-padding-y) var(--yds-button-medium-small-padding-x);
+  font-size: var(--yds-button-medium-small-font-size);
+  font-weight: var(--yds-font-weight-regular);
+}
+
+.yds-button--small {
+  height: var(--yds-button-small-height);
+  min-width: var(--yds-button-small-min-width);
+  padding: var(--yds-button-small-padding-y) var(--yds-button-small-padding-x);
+  font-size: var(--yds-button-small-font-size);
+  font-weight: var(--yds-font-weight-regular);
+}
+
+.yds-button--small.yds-button--icon-only {
+  width: var(--yds-button-small-icon-size);
+  height: var(--yds-button-small-icon-size);
+  min-width: var(--yds-button-small-icon-size);
+  padding: 0;
+}
+
+.yds-button--mini {
+  height: var(--yds-button-mini-height);
+  min-width: var(--yds-button-mini-min-width);
+  padding: var(--yds-button-mini-padding-y) var(--yds-button-mini-padding-x);
+  font-size: var(--yds-button-mini-font-size);
+  font-weight: var(--yds-font-weight-regular);
+}
+
+.yds-button--mini.yds-button--icon-only {
+  width: var(--yds-button-mini-icon-size);
+  height: var(--yds-button-mini-icon-size);
+  min-width: var(--yds-button-mini-icon-size);
+  padding: 0;
+}
+
+/* ==================== 深色填充 Solid Dark ==================== */
+
+/* 品牌色 */
+.yds-button--solid-dark.yds-button--brand {
+  background-color: var(--yds-color-brand-primary);
+  color: var(--yds-color-neutral-white);
+}
+
+.yds-button--solid-dark.yds-button--brand:hover:not(:disabled) {
+  background-color: var(--yds-color-brand-hover);
+}
+
+.yds-button--solid-dark.yds-button--brand:disabled {
+  background-color: var(--yds-color-opacity-black-4);
+  color: var(--yds-color-opacity-black-24);
+}
+
+/* 黑色 */
+.yds-button--solid-dark.yds-button--black {
+  background-color: var(--yds-color-neutral-black);
+  color: var(--yds-color-neutral-white);
+}
+
+.yds-button--solid-dark.yds-button--black:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.yds-button--solid-dark.yds-button--black:disabled {
+  background-color: var(--yds-color-opacity-black-4);
+  color: var(--yds-color-opacity-black-24);
+}
+
+/* ==================== 浅色填充 Solid Light ==================== */
+
+/* 品牌色 */
+.yds-button--solid-light.yds-button--brand {
+  background-color: var(--yds-color-brand-secondary);
+  color: var(--yds-color-brand-active);
+}
+
+.yds-button--solid-light.yds-button--brand:hover:not(:disabled) {
+  background-color: var(--yds-color-brand-primary);
+  color: var(--yds-color-neutral-white);
+}
+
+.yds-button--solid-light.yds-button--brand:disabled {
+  background-color: var(--yds-color-opacity-black-4);
+  color: var(--yds-color-opacity-black-24);
+}
+
+/* 黑色 */
+.yds-button--solid-light.yds-button--black {
+  background-color: var(--yds-color-opacity-black-4);
+  color: var(--yds-color-neutral-black);
+}
+
+.yds-button--solid-light.yds-button--black:hover:not(:disabled) {
+  background-color: var(--yds-color-opacity-black-24);
+}
+
+.yds-button--solid-light.yds-button--black:disabled {
+  background-color: var(--yds-color-opacity-black-4);
+  color: var(--yds-color-opacity-black-24);
+}
+
+/* 白色 */
+.yds-button--solid-light.yds-button--white {
+  background-color: var(--yds-color-neutral-white);
+  color: var(--yds-color-neutral-black);
+}
+
+.yds-button--solid-light.yds-button--white:hover:not(:disabled) {
+  background-color: var(--yds-color-opacity-white-95);
+}
+
+.yds-button--solid-light.yds-button--white:disabled {
+  background-color: var(--yds-color-opacity-black-4);
+  color: var(--yds-color-opacity-black-24);
+}
+
+/* ==================== 描边 Outlined ==================== */
+
+/* 品牌色 */
+.yds-button--outlined.yds-button--brand {
+  background-color: transparent;
+  color: var(--yds-color-brand-active);
+  border: 1px solid var(--yds-color-brand-hover);
+}
+
+.yds-button--outlined.yds-button--brand:hover:not(:disabled) {
+  background-color: var(--yds-color-brand-secondary);
+}
+
+.yds-button--outlined.yds-button--brand:disabled {
+  background-color: transparent;
+  color: var(--yds-color-opacity-black-24);
+  border-color: var(--yds-color-opacity-black-24);
+}
+
+/* 白色 */
+.yds-button--outlined.yds-button--white {
+  background-color: transparent;
+  color: var(--yds-color-neutral-white);
+  border: 1px solid var(--yds-color-opacity-white-95);
+}
+
+.yds-button--outlined.yds-button--white:hover:not(:disabled) {
+  background-color: var(--yds-color-opacity-white-24);
+}
+
+.yds-button--outlined.yds-button--white:disabled {
+  background-color: transparent;
+  color: var(--yds-color-opacity-white-50);
+  border-color: var(--yds-color-opacity-white-24);
+}
+
+/* 黑色 */
+.yds-button--outlined.yds-button--black {
+  background-color: transparent;
+  color: var(--yds-color-neutral-black);
+  border: 1px solid var(--yds-color-opacity-black-95);
+}
+
+.yds-button--outlined.yds-button--black:hover:not(:disabled) {
+  background-color: var(--yds-color-opacity-black-4);
+}
+
+.yds-button--outlined.yds-button--black:disabled {
+  background-color: transparent;
+  color: var(--yds-color-opacity-black-24);
+  border-color: var(--yds-color-opacity-black-24);
+}

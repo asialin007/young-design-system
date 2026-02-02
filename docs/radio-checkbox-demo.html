@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio & Checkbox - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f5f5f5;
+      font-family: PingFang SC, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+    }
+
+    .demo-header {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .demo-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #1b1b1b;
+    }
+
+    .demo-description {
+      font-size: 16px;
+      color: #4e4f54;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1b1b1b;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .demo-card {
+      background: white;
+      padding: 24px;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #1b1b1b;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #7e828c;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .demo-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: nowrap;
+      width: 100%;
+    }
+
+    .demo-row label {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1 class="demo-title">Radio & Checkbox 单选框和复选框</h1>
+    <p class="demo-description">
+      年轻版设计系统的单选框和复选框组件，用于表单选择和状态切换。
+      支持大/小尺寸、黑色/品牌色、默认/选中/禁用等多种状态。
+    </p>
+  </div>
+
+  <!-- ==================== 单选框 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">Radio 单选框</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">大尺寸 - 默认色</h3>
+        <p class="card-description">20px 尺寸，黑色填充</p>
+        <div class="demo-row">
+          <label class="yds-radio yds-radio--large">
+            <input type="radio" name="radio-large-1" class="yds-radio__input">
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">未选中</span>
+          </label>
+          <label class="yds-radio yds-radio--large yds-radio--checked">
+            <input type="radio" name="radio-large-1" class="yds-radio__input" checked>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">大尺寸 - 品牌色</h3>
+        <p class="card-description">20px 尺寸，粉色填充</p>
+        <div class="demo-row">
+          <label class="yds-radio yds-radio--large yds-radio--brand">
+            <input type="radio" name="radio-large-2" class="yds-radio__input">
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">未选中</span>
+          </label>
+          <label class="yds-radio yds-radio--large yds-radio--brand yds-radio--checked">
+            <input type="radio" name="radio-large-2" class="yds-radio__input" checked>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">小尺寸 - 默认色</h3>
+        <p class="card-description">16px 尺寸，黑色填充</p>
+        <div class="demo-row">
+          <label class="yds-radio yds-radio--small">
+            <input type="radio" name="radio-small-1" class="yds-radio__input">
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">未选中</span>
+          </label>
+          <label class="yds-radio yds-radio--small yds-radio--checked">
+            <input type="radio" name="radio-small-1" class="yds-radio__input" checked>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">小尺寸 - 品牌色</h3>
+        <p class="card-description">16px 尺寸，粉色填充</p>
+        <div class="demo-row">
+          <label class="yds-radio yds-radio--small yds-radio--brand">
+            <input type="radio" name="radio-small-2" class="yds-radio__input">
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">未选中</span>
+          </label>
+          <label class="yds-radio yds-radio--small yds-radio--brand yds-radio--checked">
+            <input type="radio" name="radio-small-2" class="yds-radio__input" checked>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">禁用状态 - 默认色</h3>
+        <p class="card-description">禁用状态，带遮罩层</p>
+        <div class="demo-row">
+          <label class="yds-radio yds-radio--large yds-radio--disabled">
+            <input type="radio" name="radio-disabled-1" class="yds-radio__input" disabled>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">禁用未选中</span>
+          </label>
+          <label class="yds-radio yds-radio--large yds-radio--checked yds-radio--disabled">
+            <input type="radio" name="radio-disabled-1" class="yds-radio__input" checked disabled>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">禁用选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">禁用状态 - 品牌色</h3>
+        <p class="card-description">禁用状态，带粉色遮罩层</p>
+        <div class="demo-row">
+          <label class="yds-radio yds-radio--large yds-radio--brand yds-radio--disabled">
+            <input type="radio" name="radio-disabled-2" class="yds-radio__input" disabled>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">禁用未选中</span>
+          </label>
+          <label class="yds-radio yds-radio--large yds-radio--brand yds-radio--checked yds-radio--disabled">
+            <input type="radio" name="radio-disabled-2" class="yds-radio__input" checked disabled>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">禁用选中</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 复选框 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">Checkbox 复选框</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">大尺寸 - 默认色</h3>
+        <p class="card-description">20px 尺寸，黑色填充</p>
+        <div class="demo-row">
+          <label class="yds-checkbox yds-checkbox--large">
+            <input type="checkbox" class="yds-checkbox__input">
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">未选中</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--large yds-checkbox--checked">
+            <input type="checkbox" class="yds-checkbox__input" checked>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">大尺寸 - 品牌色</h3>
+        <p class="card-description">20px 尺寸，粉色填充</p>
+        <div class="demo-row">
+          <label class="yds-checkbox yds-checkbox--large yds-checkbox--brand">
+            <input type="checkbox" class="yds-checkbox__input">
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">未选中</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--large yds-checkbox--brand yds-checkbox--checked">
+            <input type="checkbox" class="yds-checkbox__input" checked>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">小尺寸 - 默认色</h3>
+        <p class="card-description">16px 尺寸，黑色填充</p>
+        <div class="demo-row">
+          <label class="yds-checkbox yds-checkbox--small">
+            <input type="checkbox" class="yds-checkbox__input">
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">未选中</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--small yds-checkbox--checked">
+            <input type="checkbox" class="yds-checkbox__input" checked>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">小尺寸 - 品牌色</h3>
+        <p class="card-description">16px 尺寸，粉色填充</p>
+        <div class="demo-row">
+          <label class="yds-checkbox yds-checkbox--small yds-checkbox--brand">
+            <input type="checkbox" class="yds-checkbox__input">
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">未选中</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--small yds-checkbox--brand yds-checkbox--checked">
+            <input type="checkbox" class="yds-checkbox__input" checked>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">禁用状态 - 默认色</h3>
+        <p class="card-description">禁用状态，带遮罩层</p>
+        <div class="demo-row">
+          <label class="yds-checkbox yds-checkbox--large yds-checkbox--disabled">
+            <input type="checkbox" class="yds-checkbox__input" disabled>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">禁用未选中</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--large yds-checkbox--checked yds-checkbox--disabled">
+            <input type="checkbox" class="yds-checkbox__input" checked disabled>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">禁用选中</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">禁用状态 - 品牌色</h3>
+        <p class="card-description">禁用状态，带粉色遮罩层</p>
+        <div class="demo-row">
+          <label class="yds-checkbox yds-checkbox--large yds-checkbox--brand yds-checkbox--disabled">
+            <input type="checkbox" class="yds-checkbox__input" disabled>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">禁用未选中</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--large yds-checkbox--brand yds-checkbox--checked yds-checkbox--disabled">
+            <input type="checkbox" class="yds-checkbox__input" checked disabled>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">禁用选中</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 使用示例 ==================== -->
+
+  <div class="demo-section">
+    <h2 class="section-title">使用示例</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">表单场景 - 性别选择</h3>
+        <p class="card-description">使用单选框进行互斥选择</p>
+        <div class="demo-row">
+          <label class="yds-radio yds-radio--large">
+            <input type="radio" name="gender" class="yds-radio__input" value="male">
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">男</span>
+          </label>
+          <label class="yds-radio yds-radio--large">
+            <input type="radio" name="gender" class="yds-radio__input" value="female">
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">女</span>
+          </label>
+          <label class="yds-radio yds-radio--large">
+            <input type="radio" name="gender" class="yds-radio__input" value="other">
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">其他</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">表单场景 - 兴趣选择</h3>
+        <p class="card-description">使用复选框进行多选</p>
+        <div class="demo-row">
+          <label class="yds-checkbox yds-checkbox--large">
+            <input type="checkbox" class="yds-checkbox__input">
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">阅读</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--large">
+            <input type="checkbox" class="yds-checkbox__input">
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">运动</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--large">
+            <input type="checkbox" class="yds-checkbox__input">
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">音乐</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">品牌色示例</h3>
+        <p class="card-description">使用品牌色的单选和复选框</p>
+        <div class="demo-row">
+          <label class="yds-radio yds-radio--large yds-radio--brand yds-radio--checked">
+            <input type="radio" name="brand-demo" class="yds-radio__input" checked>
+            <span class="yds-radio__circle"></span>
+            <span class="yds-radio__label">单选框</span>
+          </label>
+          <label class="yds-checkbox yds-checkbox--large yds-checkbox--brand yds-checkbox--checked">
+            <input type="checkbox" class="yds-checkbox__input" checked>
+            <span class="yds-checkbox__box"></span>
+            <span class="yds-checkbox__label">复选框</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 单选框交互
+    document.querySelectorAll('.yds-radio__input').forEach(input => {
+      input.addEventListener('change', function() {
+        const parent = this.closest('.yds-radio');
+        const radios = document.querySelectorAll(`.yds-radio__input[name="${this.name}"]`);
+        radios.forEach(radio => {
+          radio.closest('.yds-radio').classList.remove('yds-radio--checked');
+        });
+        parent.classList.add('yds-radio--checked');
+      });
+    });
+
+    // 复选框交互 - 只支持两种状态：未选中 ↔ 全选
+    document.querySelectorAll('.yds-checkbox__input').forEach(input => {
+      input.addEventListener('change', function() {
+        const checkbox = this.closest('.yds-checkbox');
+        if (this.checked) {
+          checkbox.classList.add('yds-checkbox--checked');
+        } else {
+          checkbox.classList.remove('yds-checkbox--checked');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

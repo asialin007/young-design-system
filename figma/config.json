@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Figma 组件库映射配置",
+  "version": "2.0.0",
+  "figmaFile": {
+    "name": "年轻版设计系统V2.0-草稿",
+    "fileKey": "BepKKgfdECcLIBi5bvkMbp",
+    "url": "https://www.figma.com/design/BepKKgfdECcLIBi5bvkMbp/年轻版设计系统V2.0-草稿-?t=WltW8enqA8FCuqdG-1"
+  },
+  "components": {
+    "Button": {
+      "name": "Button 按钮",
+      "nodeId": "2482:20987",
+      "componentPath": "src/react/Button.tsx",
+      "variants": {
+        "variant": ["solid-dark", "solid-light", "outlined"],
+        "color": ["brand", "black", "white"],
+        "size": ["xl", "large", "medium", "medium-small", "small", "mini"],
+        "state": ["default", "disabled"],
+        "iconOnly": [true, false]
+      }
+    },
+    "Grid": {
+      "name": "Grid 栅格系统",
+      "nodeId": "548:3165",
+      "componentPath": "css/grid.css",
+      "variants": {
+        "columns": [1, 2, 3, 4, 6, 12],
+        "gutter": ["min", "small", "base", "large"]
+      }
+    },
+    "Dialog": {
+      "name": "Dialog 对话框",
+      "nodeId": "5471:25750",
+      "componentPath": "src/react/Dialog.tsx",
+      "variants": {
+        "open": [true, false],
+        "showClose": [true, false],
+        "showCancel": [true, false],
+        "showConfirm": [true, false],
+        "showDivider": [true, false],
+        "align": ["left", "center", "right"]
+      }
+    }
+  }
+}

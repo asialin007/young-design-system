@@ -1,0 +1,231 @@
+/**
+ * 年轻版设计系统 2.0 - Toast 轻提示组件样式
+ *
+ * Toast 用于显示短暂的通知消息，在屏幕中央或特定位置显示，自动消失
+ */
+
+/* ==================== 基础样式 ==================== */
+
+.yds-toast {
+  /* 布局 */
+  display: flex;
+  box-sizing: border-box;
+
+  /* 位置 */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  /* 样式 */
+  background-color: rgba(27, 27, 27, 0.85);
+  border-radius: 0;
+  color: #ffffff;
+
+  /* 字体 */
+  font-family: var(--yds-font-family-base);
+  font-weight: var(--yds-font-weight-regular);
+}
+
+/* ==================== 变体 - 默认 Default ==================== */
+
+.yds-toast--default {
+  /* 水平布局，居中 */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--yds-spacing-8);
+
+  /* 尺寸 */
+  min-width: var(--yds-toast-min-width, 120px);
+  max-width: var(--yds-toast-max-width, 240px);
+  padding: var(--yds-toast-padding-y, var(--yds-spacing-16))
+           var(--yds-toast-padding-x, var(--yds-spacing-16));
+}
+
+.yds-toast--default .yds-toast__text {
+  /* 单行文字，居中 */
+  font-size: var(--yds-toast-font-size, var(--yds-font-size-14));
+  line-height: var(--yds-toast-line-height, var(--yds-line-height-18));
+  text-align: center;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==================== 变体 - 品牌/头像 Brand ==================== */
+
+.yds-toast--brand {
+  /* 垂直布局，居中 */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--yds-spacing-12);
+
+  /* 尺寸 */
+  padding: var(--yds-spacing-16) var(--yds-spacing-12);
+}
+
+.yds-toast--brand .yds-toast__avatar {
+  /* 头像 */
+  width: var(--yds-toast-avatar-size, 56px);
+  height: var(--yds-toast-avatar-size, 56px);
+  background-color: var(--yds-color-neutral-white);
+  border: 0.5px solid rgba(27, 27, 27, 0.16);
+  border-radius: var(--yds-radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.yds-toast--brand .yds-toast__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.yds-toast--brand .yds-toast__content {
+  /* 内容区域 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--yds-spacing-2);
+  text-align: center;
+}
+
+.yds-toast--brand .yds-toast__title {
+  /* 标题 */
+  font-size: var(--yds-toast-font-size, var(--yds-font-size-14));
+  line-height: var(--yds-toast-line-height, var(--yds-line-height-18));
+  font-weight: var(--yds-font-weight-regular);
+  min-width: 100px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.yds-toast--brand .yds-toast__subtitle {
+  /* 副标题（可选） */
+  font-size: var(--yds-toast-subtitle-font-size, var(--yds-font-size-12));
+  line-height: var(--yds-toast-subtitle-line-height, var(--yds-line-height-16));
+  color: rgba(255, 255, 255, 0.5);
+  min-width: 120px;
+  max-width: 200px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==================== 变体 - 氛围/图标 Atmosphere ==================== */
+
+.yds-toast--atmosphere {
+  /* 水平布局，左对齐 */
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--yds-spacing-2);
+
+  /* 尺寸 */
+  min-width: var(--yds-toast-min-width, 120px);
+  max-width: var(--yds-toast-max-width, 240px);
+  padding: var(--yds-toast-padding-y, var(--yds-spacing-16))
+           var(--yds-toast-padding-x, var(--yds-spacing-16));
+}
+
+.yds-toast--atmosphere .yds-toast__icon {
+  /* 图标（左右装饰） */
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.yds-toast--atmosphere .yds-toast__icon--left {
+  /* 左图标 */
+  transform: rotate(180deg);
+}
+
+.yds-toast--atmosphere .yds-toast__icon--right {
+  /* 右图标 */
+  transform: rotate(180deg);
+}
+
+.yds-toast--atmosphere .yds-toast__icon svg {
+  /* SVG 图标 */
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.yds-toast--atmosphere .yds-toast__text {
+  /* 标题 */
+  flex: 1;
+  font-size: var(--yds-toast-font-size, var(--yds-font-size-14));
+  line-height: var(--yds-toast-line-height, var(--yds-line-height-18));
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==================== 带 Icon 的默认变体 ==================== */
+
+.yds-toast--default.yds-toast--with-icon {
+  /* 保持布局，添加图标 */
+  gap: var(--yds-spacing-8);
+}
+
+.yds-toast--default.yds-toast--with-icon .yds-toast__icon {
+  /* 图标 */
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ==================== 动画效果 ==================== */
+
+.yds-toast--fade-in {
+  animation: yds-toast-fade-in 0.3s ease-out;
+}
+
+.yds-toast--fade-out {
+  animation: yds-toast-fade-out 0.3s ease-in forwards;
+}
+
+@keyframes yds-toast-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes yds-toast-fade-out {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* ==================== 响应式 ==================== */
+
+@media (max-width: 768px) {
+  .yds-toast {
+    /* 移动端调整 */
+    max-width: calc(100vw - var(--yds-spacing-32));
+  }
+}

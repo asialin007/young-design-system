@@ -1,0 +1,2834 @@
+{
+  "light": {
+    "Bg/Default/White": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Default/White",
+      "alias": "Gray/100"
+    },
+    "Bg/Default/Gray": {
+      "hex": "#F4F5F7",
+      "description": "Bg/Default/Gray",
+      "alias": "Gray/150"
+    },
+    "Bg/Default/Black": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Default/Black",
+      "alias": "Gray/800"
+    },
+    "Bg/Default/Disabled": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Default/Disabled",
+      "alias": "Black/100"
+    },
+    "Bg/Brand/Default": {
+      "hex": "#FF77E7",
+      "description": "Bg/Brand/Default",
+      "alias": "Brand/300"
+    },
+    "Bg/Brand/Default02": {
+      "hex": "#F74AD9",
+      "description": "Bg/Brand/Default02",
+      "alias": "Brand/400"
+    },
+    "Bg/Brand/Secondary": {
+      "hex": "#FFF2FF",
+      "description": "Bg/Brand/Secondary",
+      "alias": "Brand/100"
+    },
+    "Bg/Positive/Default": {
+      "hex": "#2AA764",
+      "description": "Bg/Positive/Default",
+      "alias": "BudGreen/400"
+    },
+    "Bg/Positive/Secondary": {
+      "hex": "#F2FAF6",
+      "description": "Bg/Positive/Secondary",
+      "alias": "BudGreen/100"
+    },
+    "Bg/Warning/Default": {
+      "hex": "#F29800",
+      "description": "Bg/Warning/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Bg/Warning/Secondary": {
+      "hex": "#FFFCE5",
+      "description": "Bg/Warning/Secondary",
+      "alias": "BrightYellow/100"
+    },
+    "Bg/Danger/Default": {
+      "hex": "#E93E3E",
+      "description": "Bg/Danger/Default",
+      "alias": "Red/500"
+    },
+    "Bg/Danger/Secondary": {
+      "hex": "#FAF0F0",
+      "description": "Bg/Danger/Secondary",
+      "alias": "Red/100"
+    },
+    "Bg/Utils/01/Default": {
+      "hex": "#3D1C06",
+      "description": "Bg/Utils/01/Default",
+      "alias": "Caramel/500"
+    },
+    "Bg/Utils/01/Default02": {
+      "hex": "#8C4A0D",
+      "description": "Bg/Utils/01/Default02",
+      "alias": "Caramel/400"
+    },
+    "Bg/Utils/01/Default03": {
+      "hex": "#AD6E1A",
+      "description": "Bg/Utils/01/Default03",
+      "alias": "Caramel/300"
+    },
+    "Bg/Utils/01/Secondary": {
+      "hex": "#DAB080",
+      "description": "Bg/Utils/01/Secondary",
+      "alias": "Caramel/200"
+    },
+    "Bg/Utils/01/Tertiary": {
+      "hex": "#FCF6E8",
+      "description": "Bg/Utils/01/Tertiary",
+      "alias": "Caramel/100"
+    },
+    "Bg/Utils/02/Default": {
+      "hex": "#2AA764",
+      "description": "Bg/Utils/02/Default",
+      "alias": "BudGreen/400"
+    },
+    "Bg/Utils/02/Secondary": {
+      "hex": "#F2FAF6",
+      "description": "Bg/Utils/02/Secondary",
+      "alias": "BudGreen/100"
+    },
+    "Bg/Utils/03/Default": {
+      "hex": "#467FEB",
+      "description": "Bg/Utils/03/Default",
+      "alias": "SkyBlue/400"
+    },
+    "Bg/Utils/03/Secondary": {
+      "hex": "#EFF5FC",
+      "description": "Bg/Utils/03/Secondary",
+      "alias": "SkyBlue/100"
+    },
+    "Bg/Utils/04/Default": {
+      "hex": "#856AEA",
+      "description": "Bg/Utils/04/Default",
+      "alias": "BrightPurple/400"
+    },
+    "Bg/Utils/04/Secondary": {
+      "hex": "#ECEBFF",
+      "description": "Bg/Utils/04/Secondary",
+      "alias": "BrightPurple/100"
+    },
+    "Bg/Utils/05/Default": {
+      "hex": "#5C6A80",
+      "description": "Bg/Utils/05/Default",
+      "alias": "BlueGray/400"
+    },
+    "Bg/Utils/05/Secondary": {
+      "hex": "#F0F6FA",
+      "description": "Bg/Utils/05/Secondary",
+      "alias": "BlueGray/100"
+    },
+    "Bg/Utils/06/Default": {
+      "hex": "#FFE833",
+      "description": "Bg/Utils/06/Default",
+      "alias": "BrightYellow/300"
+    },
+    "Bg/Utils/06/Secondary": {
+      "hex": "#FFFCE5",
+      "description": "Bg/Utils/06/Secondary",
+      "alias": "BrightYellow/100"
+    },
+    "Bg/Utils/07/Default": {
+      "hex": "#E93E3E",
+      "description": "Bg/Utils/07/Default",
+      "alias": "Red/500"
+    },
+    "Bg/Utils/07/Secondary": {
+      "hex": "#FAF0F0",
+      "description": "Bg/Utils/07/Secondary",
+      "alias": "Red/100"
+    },
+    "Bg/Transp/Black/4%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/Black/4%",
+      "alias": "Black/100"
+    },
+    "Bg/Transp/Black/8%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/Black/8%",
+      "alias": "Black/200"
+    },
+    "Bg/Transp/Black/16%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/Black/16%",
+      "alias": "Black/300"
+    },
+    "Bg/Transp/Black/24%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/Black/24%",
+      "alias": "Black/400"
+    },
+    "Bg/Transp/Black/50%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/Black/50%",
+      "alias": "Black/500"
+    },
+    "Bg/Transp/Black/60%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/Black/60%",
+      "alias": "Black/600"
+    },
+    "Bg/Transp/Black/85%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/Black/85%",
+      "alias": "Black/700"
+    },
+    "Bg/Transp/Black/95%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/Black/95%",
+      "alias": "Black/800"
+    },
+    "Bg/Transp/White/4%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/White/4%",
+      "alias": "White/100"
+    },
+    "Bg/Transp/White/8%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/White/8%",
+      "alias": "White/200"
+    },
+    "Bg/Transp/White/16%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/White/16%",
+      "alias": "White/300"
+    },
+    "Bg/Transp/White/24%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/White/24%",
+      "alias": "White/400"
+    },
+    "Bg/Transp/White/50%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/White/50%",
+      "alias": "White/500"
+    },
+    "Bg/Transp/White/60%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/White/60%",
+      "alias": "White/600"
+    },
+    "Bg/Transp/White/85%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/White/85%",
+      "alias": "White/700"
+    },
+    "Bg/Transp/White/95%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/White/95%",
+      "alias": "White/800"
+    },
+    "Bg/Transp/Brand/4%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/4%",
+      "alias": "Brand/700"
+    },
+    "Bg/Transp/Brand/8%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/8%",
+      "alias": "Brand/800"
+    },
+    "Bg/Transp/Brand/16%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/16%",
+      "alias": "Brand/900"
+    },
+    "Bg/Transp/Brand/24%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/24%",
+      "alias": "Brand/1000"
+    },
+    "Bg/Transp/Brand/50%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/50%",
+      "alias": "Brand/1100"
+    },
+    "Bg/Transp/Brand/60%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/60%",
+      "alias": "Brand/1200"
+    },
+    "Bg/Transp/Brand/85%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/85%",
+      "alias": "Brand/1300"
+    },
+    "Bg/Transp/Brand/95%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/95%",
+      "alias": "Brand/1400"
+    },
+    "Text/Default/Default": {
+      "hex": "#1B1B1B",
+      "description": "Text/Default/Default",
+      "alias": "Gray/800"
+    },
+    "Text/Default/Secondary": {
+      "hex": "#4E4F54",
+      "description": "Text/Default/Secondary",
+      "alias": "Gray/550"
+    },
+    "Text/Default/Tertiary": {
+      "hex": "#7E828C",
+      "description": "Text/Default/Tertiary",
+      "alias": "Gray/450"
+    },
+    "Text/Default/Disabled": {
+      "hex": "#B9BBBF",
+      "description": "Text/Default/Disabled",
+      "alias": "Gray/350"
+    },
+    "Text/Default/White": {
+      "hex": "#FFFFFF",
+      "description": "Text/Default/White",
+      "alias": "Gray/100"
+    },
+    "Text/Brand/Default": {
+      "hex": "#E52EC5",
+      "description": "Text/Brand/Default",
+      "alias": "Brand/500"
+    },
+    "Text/Brand/Default02": {
+      "hex": "#F74AD9",
+      "description": "Text/Brand/Default02",
+      "alias": "Brand/400"
+    },
+    "Text/Brand/Default03": {
+      "hex": "#CC29AF",
+      "description": "Text/Brand/Default03",
+      "alias": "Brand/600"
+    },
+    "Text/Brand/Secondary": {
+      "hex": "#FF77E7",
+      "description": "Text/Brand/Secondary",
+      "alias": "Brand/300"
+    },
+    "Text/Brand/Tertiary": {
+      "hex": "#FFB3F2",
+      "description": "Text/Brand/Tertiary",
+      "alias": "Brand/200"
+    },
+    "Text/Positive/Default": {
+      "hex": "#2AA764",
+      "description": "Text/Positive/Default",
+      "alias": "BudGreen/400"
+    },
+    "Text/Positive/Default02": {
+      "hex": "#397355",
+      "description": "Text/Positive/Default02",
+      "alias": "BudGreen/500"
+    },
+    "Text/Positive/Secondary": {
+      "hex": "#70C497",
+      "description": "Text/Positive/Secondary",
+      "alias": "BudGreen/300"
+    },
+    "Text/Warning/Default": {
+      "hex": "#F29800",
+      "description": "Text/Warning/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Text/Warning/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Text/Warning/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Text/Danger/Default": {
+      "hex": "#E93E3E",
+      "description": "Text/Danger/Default",
+      "alias": "Red/500"
+    },
+    "Text/Danger/Secondary": {
+      "hex": "#F06767",
+      "description": "Text/Danger/Secondary",
+      "alias": "Red/400"
+    },
+    "Text/Danger/Tertiary": {
+      "hex": "#FAF0F0",
+      "description": "Text/Danger/Tertiary",
+      "alias": "Red/100"
+    },
+    "Text/Utils/01/Default": {
+      "hex": "#8C4A0D",
+      "description": "Text/Utils/01/Default",
+      "alias": "Caramel/400"
+    },
+    "Text/Utils/01/Default02": {
+      "hex": "#AD6E1A",
+      "description": "Text/Utils/01/Default02",
+      "alias": "Caramel/300"
+    },
+    "Text/Utils/01/Secondary": {
+      "hex": "#DAB080",
+      "description": "Text/Utils/01/Secondary",
+      "alias": "Caramel/200"
+    },
+    "Text/Utils/01/Tertiary": {
+      "hex": "#FCF6E8",
+      "description": "Text/Utils/01/Tertiary",
+      "alias": "Caramel/100"
+    },
+    "Text/Utils/02/Default": {
+      "hex": "#2AA764",
+      "description": "Text/Utils/02/Default",
+      "alias": "BudGreen/400"
+    },
+    "Text/Utils/02/Default02": {
+      "hex": "#397355",
+      "description": "Text/Utils/02/Default02",
+      "alias": "BudGreen/500"
+    },
+    "Text/Utils/02/Secondary": {
+      "hex": "#B2E0C7",
+      "description": "Text/Utils/02/Secondary",
+      "alias": "BudGreen/200"
+    },
+    "Text/Utils/03/Default": {
+      "hex": "#467FEB",
+      "description": "Text/Utils/03/Default",
+      "alias": "SkyBlue/400"
+    },
+    "Text/Utils/03/Default02": {
+      "hex": "#245BC9",
+      "description": "Text/Utils/03/Default02",
+      "alias": "SkyBlue/500"
+    },
+    "Text/Utils/03/Secondary": {
+      "hex": "#ACCAFD",
+      "description": "Text/Utils/03/Secondary",
+      "alias": "SkyBlue/200"
+    },
+    "Text/Utils/04/Default": {
+      "hex": "#856AEA",
+      "description": "Text/Utils/04/Default",
+      "alias": "BrightPurple/400"
+    },
+    "Text/Utils/04/Default02": {
+      "hex": "#6248C1",
+      "description": "Text/Utils/04/Default02",
+      "alias": "BrightPurple/500"
+    },
+    "Text/Utils/04/Secondary": {
+      "hex": "#CAC0F8",
+      "description": "Text/Utils/04/Secondary",
+      "alias": "BrightPurple/200"
+    },
+    "Text/Utils/05/Default": {
+      "hex": "#5C6A80",
+      "description": "Text/Utils/05/Default",
+      "alias": "BlueGray/400"
+    },
+    "Text/Utils/05/Default02": {
+      "hex": "#334255",
+      "description": "Text/Utils/05/Default02",
+      "alias": "BlueGray/500"
+    },
+    "Text/Utils/05/Secondary": {
+      "hex": "#CBD5E1",
+      "description": "Text/Utils/05/Secondary",
+      "alias": "BlueGray/200"
+    },
+    "Text/Utils/06/Default": {
+      "hex": "#F29800",
+      "description": "Text/Utils/06/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Text/Utils/06/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Text/Utils/06/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Text/Utils/07/Default": {
+      "hex": "#E93E3E",
+      "description": "Text/Utils/07/Default",
+      "alias": "Red/500"
+    },
+    "Text/Utils/07/Secondary": {
+      "hex": "#FDC4C0",
+      "description": "Text/Utils/07/Secondary",
+      "alias": "Red/200"
+    },
+    "Text/Transp/Black/4%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/Black/4%",
+      "alias": "Black/100"
+    },
+    "Text/Transp/Black/8%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/Black/8%",
+      "alias": "Black/200"
+    },
+    "Text/Transp/Black/16%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/Black/16%",
+      "alias": "Black/300"
+    },
+    "Text/Transp/Black/24%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/Black/24%",
+      "alias": "Black/400"
+    },
+    "Text/Transp/Black/50%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/Black/50%",
+      "alias": "Black/500"
+    },
+    "Text/Transp/Black/60%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/Black/60%",
+      "alias": "Black/600"
+    },
+    "Text/Transp/Black/85%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/Black/85%",
+      "alias": "Black/700"
+    },
+    "Text/Transp/Black/95%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/Black/95%",
+      "alias": "Black/800"
+    },
+    "Text/Transp/White/4%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/White/4%",
+      "alias": "White/100"
+    },
+    "Text/Transp/White/8%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/White/8%",
+      "alias": "White/200"
+    },
+    "Text/Transp/White/16%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/White/16%",
+      "alias": "White/300"
+    },
+    "Text/Transp/White/24%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/White/24%",
+      "alias": "White/400"
+    },
+    "Text/Transp/White/50%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/White/50%",
+      "alias": "White/500"
+    },
+    "Text/Transp/White/60%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/White/60%",
+      "alias": "White/600"
+    },
+    "Text/Transp/White/85%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/White/85%",
+      "alias": "White/700"
+    },
+    "Text/Transp/White/95%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/White/95%",
+      "alias": "White/800"
+    },
+    "Text/Transp/Brand/4%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/4%",
+      "alias": "Brand/700"
+    },
+    "Text/Transp/Brand/8%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/8%",
+      "alias": "Brand/800"
+    },
+    "Text/Transp/Brand/16%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/16%",
+      "alias": "Brand/900"
+    },
+    "Text/Transp/Brand/24%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/24%",
+      "alias": "Brand/1000"
+    },
+    "Text/Transp/Brand/50%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/50%",
+      "alias": "Brand/1100"
+    },
+    "Text/Transp/Brand/60%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/60%",
+      "alias": "Brand/1200"
+    },
+    "Text/Transp/Brand/85%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/85%",
+      "alias": "Brand/1300"
+    },
+    "Text/Transp/Brand/95%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/95%",
+      "alias": "Brand/1400"
+    },
+    "Border/Default/Default": {
+      "hex": "#1B1B1B",
+      "description": "Border/Default/Default",
+      "alias": "Gray/800"
+    },
+    "Border/Default/Secondary": {
+      "hex": "#1B1B1B",
+      "description": "Border/Default/Secondary",
+      "alias": "Black/500"
+    },
+    "Border/Default/Tertiary": {
+      "hex": "#1B1B1B",
+      "description": "Border/Default/Tertiary",
+      "alias": "Black/400"
+    },
+    "Border/Default/White": {
+      "hex": "#FFFFFF",
+      "description": "Border/Default/White",
+      "alias": "Gray/100"
+    },
+    "Border/Brand/Default": {
+      "hex": "#F74AD9",
+      "description": "Border/Brand/Default",
+      "alias": "Brand/400"
+    },
+    "Border/Brand/Secondary": {
+      "hex": "#FFB3F2",
+      "description": "Border/Brand/Secondary",
+      "alias": "Brand/200"
+    },
+    "Border/Positive/Default": {
+      "hex": "#2AA764",
+      "description": "Border/Positive/Default",
+      "alias": "BudGreen/400"
+    },
+    "Border/Positive/Secondary": {
+      "hex": "#70C497",
+      "description": "Border/Positive/Secondary",
+      "alias": "BudGreen/300"
+    },
+    "Border/Positive/Tertiary": {
+      "hex": "#B2E0C7",
+      "description": "Border/Positive/Tertiary",
+      "alias": "BudGreen/200"
+    },
+    "Border/Warning/Default": {
+      "hex": "#F29800",
+      "description": "Border/Warning/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Border/Warning/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Border/Warning/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Border/Danger/Default": {
+      "hex": "#E93E3E",
+      "description": "Border/Danger/Default",
+      "alias": "Red/500"
+    },
+    "Border/Danger/Secondary": {
+      "hex": "#F06767",
+      "description": "Border/Danger/Secondary",
+      "alias": "Red/400"
+    },
+    "Border/Danger/Tertiary": {
+      "hex": "#F99792",
+      "description": "Border/Danger/Tertiary",
+      "alias": "Red/300"
+    },
+    "Border/Utils/01/Default": {
+      "hex": "#8C4A0D",
+      "description": "Border/Utils/01/Default",
+      "alias": "Caramel/400"
+    },
+    "Border/Utils/01/Secondary": {
+      "hex": "#AD6E1A",
+      "description": "Border/Utils/01/Secondary",
+      "alias": "Caramel/300"
+    },
+    "Border/Utils/01/Tertiary": {
+      "hex": "#DAB080",
+      "description": "Border/Utils/01/Tertiary",
+      "alias": "Caramel/200"
+    },
+    "Border/Utils/02/Default": {
+      "hex": "#397355",
+      "description": "Border/Utils/02/Default",
+      "alias": "BudGreen/500"
+    },
+    "Border/Utils/02/Secondary": {
+      "hex": "#2AA764",
+      "description": "Border/Utils/02/Secondary",
+      "alias": "BudGreen/400"
+    },
+    "Border/Utils/02/Tertiary": {
+      "hex": "#B2E0C7",
+      "description": "Border/Utils/02/Tertiary",
+      "alias": "BudGreen/200"
+    },
+    "Border/Utils/03/Default": {
+      "hex": "#245BC9",
+      "description": "Border/Utils/03/Default",
+      "alias": "SkyBlue/500"
+    },
+    "Border/Utils/03/Secondary": {
+      "hex": "#467FEB",
+      "description": "Border/Utils/03/Secondary",
+      "alias": "SkyBlue/400"
+    },
+    "Border/Utils/03/Tertiary": {
+      "hex": "#ACCAFD",
+      "description": "Border/Utils/03/Tertiary",
+      "alias": "SkyBlue/200"
+    },
+    "Border/Utils/04/Default": {
+      "hex": "#856AEA",
+      "description": "Border/Utils/04/Default",
+      "alias": "BrightPurple/400"
+    },
+    "Border/Utils/04/Secondary": {
+      "hex": "#A795F1",
+      "description": "Border/Utils/04/Secondary",
+      "alias": "BrightPurple/300"
+    },
+    "Border/Utils/04/Tertiary": {
+      "hex": "#CAC0F8",
+      "description": "Border/Utils/04/Tertiary",
+      "alias": "BrightPurple/200"
+    },
+    "Border/Utils/05/Default": {
+      "hex": "#5C6A80",
+      "description": "Border/Utils/05/Default",
+      "alias": "BlueGray/400"
+    },
+    "Border/Utils/05/Secondary": {
+      "hex": "#94A3B8",
+      "description": "Border/Utils/05/Secondary",
+      "alias": "BlueGray/300"
+    },
+    "Border/Utils/05/Tertiary": {
+      "hex": "#CBD5E1",
+      "description": "Border/Utils/05/Tertiary",
+      "alias": "BlueGray/200"
+    },
+    "Border/Utils/06/Default": {
+      "hex": "#F29800",
+      "description": "Border/Utils/06/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Border/Utils/06/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Border/Utils/06/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Border/Utils/06/Tertiary": {
+      "hex": "#FFF28C",
+      "description": "Border/Utils/06/Tertiary",
+      "alias": "BrightYellow/200"
+    },
+    "Border/Utils/07/Default": {
+      "hex": "#E93E3E",
+      "description": "Border/Utils/07/Default",
+      "alias": "Red/500"
+    },
+    "Border/Utils/07/Secondary": {
+      "hex": "#F06767",
+      "description": "Border/Utils/07/Secondary",
+      "alias": "Red/400"
+    },
+    "Border/Utils/07/Tertiary": {
+      "hex": "#F99792",
+      "description": "Border/Utils/07/Tertiary",
+      "alias": "Red/300"
+    },
+    "Border/Transp/Black/4%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/Black/4%",
+      "alias": "Black/100"
+    },
+    "Border/Transp/Black/8%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/Black/8%",
+      "alias": "Black/200"
+    },
+    "Border/Transp/Black/16%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/Black/16%",
+      "alias": "Black/300"
+    },
+    "Border/Transp/Black/24%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/Black/24%",
+      "alias": "Black/400"
+    },
+    "Border/Transp/Black/50%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/Black/50%",
+      "alias": "Black/500"
+    },
+    "Border/Transp/Black/60%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/Black/60%",
+      "alias": "Black/600"
+    },
+    "Border/Transp/Black/85%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/Black/85%",
+      "alias": "Black/700"
+    },
+    "Border/Transp/Black/95%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/Black/95%",
+      "alias": "Black/800"
+    },
+    "Border/Transp/White/4%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/White/4%",
+      "alias": "White/100"
+    },
+    "Border/Transp/White/8%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/White/8%",
+      "alias": "White/200"
+    },
+    "Border/Transp/White/16%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/White/16%",
+      "alias": "White/300"
+    },
+    "Border/Transp/White/24%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/White/24%",
+      "alias": "White/400"
+    },
+    "Border/Transp/White/50%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/White/50%",
+      "alias": "White/500"
+    },
+    "Border/Transp/White/60%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/White/60%",
+      "alias": "White/600"
+    },
+    "Border/Transp/White/85%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/White/85%",
+      "alias": "White/700"
+    },
+    "Border/Transp/White/95%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/White/95%",
+      "alias": "White/800"
+    },
+    "Border/Transp/Brand/4%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/4%",
+      "alias": "Brand/700"
+    },
+    "Border/Transp/Brand/8%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/8%",
+      "alias": "Brand/800"
+    },
+    "Border/Transp/Brand/16%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/16%",
+      "alias": "Brand/900"
+    },
+    "Border/Transp/Brand/24%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/24%",
+      "alias": "Brand/1000"
+    },
+    "Border/Transp/Brand/50%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/50%",
+      "alias": "Brand/1100"
+    },
+    "Border/Transp/Brand/60%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/60%",
+      "alias": "Brand/1200"
+    },
+    "Border/Transp/Brand/85%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/85%",
+      "alias": "Brand/1300"
+    },
+    "Border/Transp/Brand/95%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/95%",
+      "alias": "Brand/1400"
+    },
+    "Icon/Default/Default": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Default",
+      "alias": "Gray/800"
+    },
+    "Icon/Default/Secondary": {
+      "hex": "#4E4F54",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/550"
+    },
+    "Icon/Default/Tertiary": {
+      "hex": "#7E828C",
+      "description": "Icon/Default/Tertiary",
+      "alias": "Gray/450"
+    },
+    "Icon/Default/Tertiary02": {
+      "hex": "#B9BBBF",
+      "description": "Icon/Default/Tertiary02",
+      "alias": "Gray/350"
+    },
+    "Icon/Default/White": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/White",
+      "alias": "Gray/100"
+    },
+    "Icon/Brand/Default": {
+      "hex": "#F74AD9",
+      "description": "Icon/Brand/Default",
+      "alias": "Brand/400"
+    },
+    "Icon/Brand/Default02": {
+      "hex": "#FF77E7",
+      "description": "Icon/Brand/Default02",
+      "alias": "Brand/300"
+    },
+    "Icon/Brand/Secondary": {
+      "hex": "#FFB3F2",
+      "description": "Icon/Brand/Secondary",
+      "alias": "Brand/200"
+    },
+    "Icon/Positive/Default": {
+      "hex": "#2AA764",
+      "description": "Icon/Positive/Default",
+      "alias": "BudGreen/400"
+    },
+    "Icon/Positive/Secondary": {
+      "hex": "#70C497",
+      "description": "Icon/Positive/Secondary",
+      "alias": "BudGreen/300"
+    },
+    "Icon/Positive/Tertiary": {
+      "hex": "#B2E0C7",
+      "description": "Icon/Positive/Tertiary",
+      "alias": "BudGreen/200"
+    },
+    "Icon/Warning/Default": {
+      "hex": "#F29800",
+      "description": "Icon/Warning/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Icon/Warning/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Icon/Warning/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Icon/Warning/Tertiary": {
+      "hex": "#FFF28C",
+      "description": "Icon/Warning/Tertiary",
+      "alias": "BrightYellow/200"
+    },
+    "Icon/Danger/Default": {
+      "hex": "#E93E3E",
+      "description": "Icon/Danger/Default",
+      "alias": "Red/500"
+    },
+    "Icon/Danger/Secondary": {
+      "hex": "#F06767",
+      "description": "Icon/Danger/Secondary",
+      "alias": "Red/400"
+    },
+    "Icon/Danger/Tertiary": {
+      "hex": "#FDC4C0",
+      "description": "Icon/Danger/Tertiary",
+      "alias": "Red/200"
+    },
+    "Icon/Utils/01/Default": {
+      "hex": "#8C4A0D",
+      "description": "Icon/Utils/01/Default",
+      "alias": "Caramel/400"
+    },
+    "Icon/Utils/01/Default02": {
+      "hex": "#AD6E1A",
+      "description": "Icon/Utils/01/Default02",
+      "alias": "Caramel/300"
+    },
+    "Icon/Utils/01/Secondary": {
+      "hex": "#DAB080",
+      "description": "Icon/Utils/01/Secondary",
+      "alias": "Caramel/200"
+    },
+    "Icon/Utils/01/Tertiary": {
+      "hex": "#FCF6E8",
+      "description": "Icon/Utils/01/Tertiary",
+      "alias": "Caramel/100"
+    },
+    "Icon/Utils/02/Default": {
+      "hex": "#2AA764",
+      "description": "Icon/Utils/02/Default",
+      "alias": "BudGreen/400"
+    },
+    "Icon/Utils/02/Secondary": {
+      "hex": "#70C497",
+      "description": "Icon/Utils/02/Secondary",
+      "alias": "BudGreen/300"
+    },
+    "Icon/Utils/02/Tertiary": {
+      "hex": "#B2E0C7",
+      "description": "Icon/Utils/02/Tertiary",
+      "alias": "BudGreen/200"
+    },
+    "Icon/Utils/03/Default": {
+      "hex": "#467FEB",
+      "description": "Icon/Utils/03/Default",
+      "alias": "SkyBlue/400"
+    },
+    "Icon/Utils/03/Secondary": {
+      "hex": "#5993FE",
+      "description": "Icon/Utils/03/Secondary",
+      "alias": "SkyBlue/300"
+    },
+    "Icon/Utils/03/Tertiary": {
+      "hex": "#ACCAFD",
+      "description": "Icon/Utils/03/Tertiary",
+      "alias": "SkyBlue/200"
+    },
+    "Icon/Utils/04/Default": {
+      "hex": "#856AEA",
+      "description": "Icon/Utils/04/Default",
+      "alias": "BrightPurple/400"
+    },
+    "Icon/Utils/04/Secondary": {
+      "hex": "#A795F1",
+      "description": "Icon/Utils/04/Secondary",
+      "alias": "BrightPurple/300"
+    },
+    "Icon/Utils/04/Tertiary": {
+      "hex": "#CAC0F8",
+      "description": "Icon/Utils/04/Tertiary",
+      "alias": "BrightPurple/200"
+    },
+    "Icon/Utils/05/Default": {
+      "hex": "#5C6A80",
+      "description": "Icon/Utils/05/Default",
+      "alias": "BlueGray/400"
+    },
+    "Icon/Utils/05/Secondary": {
+      "hex": "#CBD5E1",
+      "description": "Icon/Utils/05/Secondary",
+      "alias": "BlueGray/200"
+    },
+    "Icon/Utils/06/Default": {
+      "hex": "#F29800",
+      "description": "Icon/Utils/06/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Icon/Utils/06/Secondary": {
+      "hex": "#FFF28C",
+      "description": "Icon/Utils/06/Secondary",
+      "alias": "BrightYellow/200"
+    },
+    "Icon/Utils/06/Tertiary": {
+      "hex": "#FFE833",
+      "description": "Icon/Utils/06/Tertiary",
+      "alias": "BrightYellow/300"
+    },
+    "Icon/Utils/07/Default": {
+      "hex": "#E93E3E",
+      "description": "Icon/Utils/07/Default",
+      "alias": "Red/500"
+    },
+    "Icon/Utils/07/Secondary": {
+      "hex": "#F99792",
+      "description": "Icon/Utils/07/Secondary",
+      "alias": "Red/300"
+    },
+    "Icon/Utils/08/Default": {
+      "hex": "#FAFA00",
+      "description": "Icon/Utils/08/Default",
+      "alias": "SunlightYellow/100"
+    },
+    "Icon/Transp/Black/4%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/Black/4%",
+      "alias": "Black/100"
+    },
+    "Icon/Transp/Black/8%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/Black/8%",
+      "alias": "Black/200"
+    },
+    "Icon/Transp/Black/16%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/Black/16%",
+      "alias": "Black/300"
+    },
+    "Icon/Transp/Black/24%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/Black/24%",
+      "alias": "Black/400"
+    },
+    "Icon/Transp/Black/50%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/Black/50%",
+      "alias": "Black/500"
+    },
+    "Icon/Transp/Black/60%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/Black/60%",
+      "alias": "Black/600"
+    },
+    "Icon/Transp/Black/85%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/Black/85%",
+      "alias": "Black/700"
+    },
+    "Icon/Transp/Black/95%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/Black/95%",
+      "alias": "Black/800"
+    },
+    "Icon/Transp/White/4%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/White/4%",
+      "alias": "White/100"
+    },
+    "Icon/Transp/White/8%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/White/8%",
+      "alias": "White/200"
+    },
+    "Icon/Transp/White/16%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/White/16%",
+      "alias": "White/300"
+    },
+    "Icon/Transp/White/24%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/White/24%",
+      "alias": "White/400"
+    },
+    "Icon/Transp/White/50%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/White/50%",
+      "alias": "White/500"
+    },
+    "Icon/Transp/White/60%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/White/60%",
+      "alias": "White/600"
+    },
+    "Icon/Transp/White/85%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/White/85%",
+      "alias": "White/700"
+    },
+    "Icon/Transp/White/95%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/White/95%",
+      "alias": "White/800"
+    },
+    "Icon/Transp/Brand/4%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/4%",
+      "alias": "Brand/700"
+    },
+    "Icon/Transp/Brand/8%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/8%",
+      "alias": "Brand/800"
+    },
+    "Icon/Transp/Brand/16%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/16%",
+      "alias": "Brand/900"
+    },
+    "Icon/Transp/Brand/24%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/24%",
+      "alias": "Brand/1000"
+    },
+    "Icon/Transp/Brand/50%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/50%",
+      "alias": "Brand/1100"
+    },
+    "Icon/Transp/Brand/60%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/60%",
+      "alias": "Brand/1200"
+    },
+    "Icon/Transp/Brand/85%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/85%",
+      "alias": "Brand/1300"
+    },
+    "Icon/Transp/Brand/95%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/95%",
+      "alias": "Brand/1400"
+    },
+    "Btn/Bg/Default/Primary": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Default",
+      "alias": "Gray/800"
+    },
+    "Btn/Bg/Default/Primary02": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/800"
+    },
+    "Btn/Bg/Default/Secondary": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Black/100"
+    },
+    "Btn/Bg/Default/White": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/White",
+      "alias": "Gray/100"
+    },
+    "Btn/Bg/Default/White02": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/White",
+      "alias": "Gray/100"
+    },
+    "Btn/Bg/Default/Disabled": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Black/100"
+    },
+    "Btn/Bg/Default/Disabled02": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Black/400"
+    },
+    "Btn/Bg/Default/Disabled03": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/100"
+    },
+    "Btn/Bg/Brand/Default": {
+      "hex": "#FF77E7",
+      "description": "Icon/Brand/Default",
+      "alias": "Brand/300"
+    },
+    "Btn/Bg/Brand/Secondary": {
+      "hex": "#FFF2FF",
+      "description": "Icon/Brand/Default02",
+      "alias": "Brand/100"
+    },
+    "Btn/Text/Default/Primary": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Default",
+      "alias": "Gray/100"
+    },
+    "Btn/Text/Default/Secondary": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/800"
+    },
+    "Btn/Text/Default/Tertiary": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/800"
+    },
+    "Btn/Text/Default/White": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/White",
+      "alias": "Gray/100"
+    },
+    "Btn/Text/Default/White02": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/White",
+      "alias": "Gray/100"
+    },
+    "Btn/Text/Default/Disabled": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Black/400"
+    },
+    "Btn/Text/Default/Disabled02": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Secondary",
+      "alias": "White/500"
+    },
+    "Btn/Text/Default/Disabled03": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/100"
+    },
+    "Btn/Text/Brand/Default": {
+      "hex": "#E52EC5",
+      "description": "Icon/Brand/Default",
+      "alias": "Brand/500"
+    }
+  },
+  "dark": {
+    "Bg/Default/White": {
+      "hex": "#0F0F0F",
+      "description": "Bg/Default/White",
+      "alias": "Gray/900"
+    },
+    "Bg/Default/Gray": {
+      "hex": "#1F1F1F",
+      "description": "Bg/Default/Gray",
+      "alias": "Gray/700"
+    },
+    "Bg/Default/Black": {
+      "hex": "#F2F2F2",
+      "description": "Bg/Default/Black",
+      "alias": "Gray/200"
+    },
+    "Bg/Default/Disabled": {
+      "hex": "#272727",
+      "description": "Bg/Default/Disabled",
+      "alias": "Gray/600"
+    },
+    "Bg/Brand/Default": {
+      "hex": "#FF77E7",
+      "description": "Bg/Brand/Default",
+      "alias": "Brand/300"
+    },
+    "Bg/Brand/Default02": {
+      "hex": "#F74AD9",
+      "description": "Bg/Brand/Default02",
+      "alias": "Brand/400"
+    },
+    "Bg/Brand/Secondary": {
+      "hex": "#FFF2FF",
+      "description": "Bg/Brand/Secondary",
+      "alias": "Brand/100"
+    },
+    "Bg/Positive/Default": {
+      "hex": "#2AA764",
+      "description": "Bg/Positive/Default",
+      "alias": "BudGreen/400"
+    },
+    "Bg/Positive/Secondary": {
+      "hex": "#F2FAF6",
+      "description": "Bg/Positive/Secondary",
+      "alias": "BudGreen/100"
+    },
+    "Bg/Warning/Default": {
+      "hex": "#F29800",
+      "description": "Bg/Warning/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Bg/Warning/Secondary": {
+      "hex": "#FFFCE5",
+      "description": "Bg/Warning/Secondary",
+      "alias": "BrightYellow/100"
+    },
+    "Bg/Danger/Default": {
+      "hex": "#E93E3E",
+      "description": "Bg/Danger/Default",
+      "alias": "Red/500"
+    },
+    "Bg/Danger/Secondary": {
+      "hex": "#FAF0F0",
+      "description": "Bg/Danger/Secondary",
+      "alias": "Red/100"
+    },
+    "Bg/Utils/01/Default": {
+      "hex": "#3D1C06",
+      "description": "Bg/Utils/01/Default",
+      "alias": "Caramel/500"
+    },
+    "Bg/Utils/01/Default02": {
+      "hex": "#8C4A0D",
+      "description": "Bg/Utils/01/Default02",
+      "alias": "Caramel/400"
+    },
+    "Bg/Utils/01/Default03": {
+      "hex": "#AD6E1A",
+      "description": "Bg/Utils/01/Default03",
+      "alias": "Caramel/300"
+    },
+    "Bg/Utils/01/Secondary": {
+      "hex": "#DAB080",
+      "description": "Bg/Utils/01/Secondary",
+      "alias": "Caramel/200"
+    },
+    "Bg/Utils/01/Tertiary": {
+      "hex": "#FCF6E8",
+      "description": "Bg/Utils/01/Tertiary",
+      "alias": "Caramel/100"
+    },
+    "Bg/Utils/02/Default": {
+      "hex": "#2AA764",
+      "description": "Bg/Utils/02/Default",
+      "alias": "BudGreen/400"
+    },
+    "Bg/Utils/02/Secondary": {
+      "hex": "#F2FAF6",
+      "description": "Bg/Utils/02/Secondary",
+      "alias": "BudGreen/100"
+    },
+    "Bg/Utils/03/Default": {
+      "hex": "#467FEB",
+      "description": "Bg/Utils/03/Default",
+      "alias": "SkyBlue/400"
+    },
+    "Bg/Utils/03/Secondary": {
+      "hex": "#EFF5FC",
+      "description": "Bg/Utils/03/Secondary",
+      "alias": "SkyBlue/100"
+    },
+    "Bg/Utils/04/Default": {
+      "hex": "#856AEA",
+      "description": "Bg/Utils/04/Default",
+      "alias": "BrightPurple/400"
+    },
+    "Bg/Utils/04/Secondary": {
+      "hex": "#ECEBFF",
+      "description": "Bg/Utils/04/Secondary",
+      "alias": "BrightPurple/100"
+    },
+    "Bg/Utils/05/Default": {
+      "hex": "#5C6A80",
+      "description": "Bg/Utils/05/Default",
+      "alias": "BlueGray/400"
+    },
+    "Bg/Utils/05/Secondary": {
+      "hex": "#F0F6FA",
+      "description": "Bg/Utils/05/Secondary",
+      "alias": "BlueGray/100"
+    },
+    "Bg/Utils/06/Default": {
+      "hex": "#FFE833",
+      "description": "Bg/Utils/06/Default",
+      "alias": "BrightYellow/300"
+    },
+    "Bg/Utils/06/Secondary": {
+      "hex": "#FFFCE5",
+      "description": "Bg/Utils/06/Secondary",
+      "alias": "BrightYellow/100"
+    },
+    "Bg/Utils/07/Default": {
+      "hex": "#E93E3E",
+      "description": "Bg/Utils/07/Default",
+      "alias": "Red/500"
+    },
+    "Bg/Utils/07/Secondary": {
+      "hex": "#FAF0F0",
+      "description": "Bg/Utils/07/Secondary",
+      "alias": "Red/100"
+    },
+    "Bg/Transp/Black/4%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/Black/4%",
+      "alias": "White/100"
+    },
+    "Bg/Transp/Black/8%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/Black/8%",
+      "alias": "White/200"
+    },
+    "Bg/Transp/Black/16%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/Black/16%",
+      "alias": "White/300"
+    },
+    "Bg/Transp/Black/24%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/Black/24%",
+      "alias": "White/400"
+    },
+    "Bg/Transp/Black/50%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/Black/50%",
+      "alias": "White/500"
+    },
+    "Bg/Transp/Black/60%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/Black/60%",
+      "alias": "White/600"
+    },
+    "Bg/Transp/Black/85%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/Black/85%",
+      "alias": "White/700"
+    },
+    "Bg/Transp/Black/95%": {
+      "hex": "#FFFFFF",
+      "description": "Bg/Transp/Black/95%",
+      "alias": "White/800"
+    },
+    "Bg/Transp/White/4%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/White/4%",
+      "alias": "Black/100"
+    },
+    "Bg/Transp/White/8%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/White/8%",
+      "alias": "Black/200"
+    },
+    "Bg/Transp/White/16%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/White/16%",
+      "alias": "Black/300"
+    },
+    "Bg/Transp/White/24%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/White/24%",
+      "alias": "Black/400"
+    },
+    "Bg/Transp/White/50%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/White/50%",
+      "alias": "Black/500"
+    },
+    "Bg/Transp/White/60%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/White/60%",
+      "alias": "Black/600"
+    },
+    "Bg/Transp/White/85%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/White/85%",
+      "alias": "Black/700"
+    },
+    "Bg/Transp/White/95%": {
+      "hex": "#1B1B1B",
+      "description": "Bg/Transp/White/95%",
+      "alias": "Black/800"
+    },
+    "Bg/Transp/Brand/4%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/4%",
+      "alias": "Brand/700"
+    },
+    "Bg/Transp/Brand/8%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/8%",
+      "alias": "Brand/800"
+    },
+    "Bg/Transp/Brand/16%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/16%",
+      "alias": "Brand/900"
+    },
+    "Bg/Transp/Brand/24%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/24%",
+      "alias": "Brand/1000"
+    },
+    "Bg/Transp/Brand/50%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/50%",
+      "alias": "Brand/1100"
+    },
+    "Bg/Transp/Brand/60%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/60%",
+      "alias": "Brand/1200"
+    },
+    "Bg/Transp/Brand/85%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/85%",
+      "alias": "Brand/1300"
+    },
+    "Bg/Transp/Brand/95%": {
+      "hex": "#FF77E7",
+      "description": "Bg/Transp/Brand/95%",
+      "alias": "Brand/1400"
+    },
+    "Text/Default/Default": {
+      "hex": "#F2F2F2",
+      "description": "Text/Default/Default",
+      "alias": "Gray/200"
+    },
+    "Text/Default/Secondary": {
+      "hex": "#C6C6C6",
+      "description": "Text/Default/Secondary",
+      "alias": "Gray/300"
+    },
+    "Text/Default/Tertiary": {
+      "hex": "#989898",
+      "description": "Text/Default/Tertiary",
+      "alias": "Gray/400"
+    },
+    "Text/Default/Disabled": {
+      "hex": "#5F5F5F",
+      "description": "Text/Default/Disabled",
+      "alias": "Gray/500"
+    },
+    "Text/Default/White": {
+      "hex": "#1F1F1F",
+      "description": "Text/Default/White",
+      "alias": "Gray/700"
+    },
+    "Text/Brand/Default": {
+      "hex": "#E52EC5",
+      "description": "Text/Brand/Default",
+      "alias": "Brand/500"
+    },
+    "Text/Brand/Default02": {
+      "hex": "#F74AD9",
+      "description": "Text/Brand/Default02",
+      "alias": "Brand/400"
+    },
+    "Text/Brand/Default03": {
+      "hex": "#CC29AF",
+      "description": "Text/Brand/Default03",
+      "alias": "Brand/600"
+    },
+    "Text/Brand/Secondary": {
+      "hex": "#FF77E7",
+      "description": "Text/Brand/Secondary",
+      "alias": "Brand/300"
+    },
+    "Text/Brand/Tertiary": {
+      "hex": "#FFB3F2",
+      "description": "Text/Brand/Tertiary",
+      "alias": "Brand/200"
+    },
+    "Text/Positive/Default": {
+      "hex": "#2AA764",
+      "description": "Text/Positive/Default",
+      "alias": "BudGreen/400"
+    },
+    "Text/Positive/Default02": {
+      "hex": "#397355",
+      "description": "Text/Positive/Default02",
+      "alias": "BudGreen/500"
+    },
+    "Text/Positive/Secondary": {
+      "hex": "#70C497",
+      "description": "Text/Positive/Secondary",
+      "alias": "BudGreen/300"
+    },
+    "Text/Warning/Default": {
+      "hex": "#F29800",
+      "description": "Text/Warning/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Text/Warning/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Text/Warning/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Text/Danger/Default": {
+      "hex": "#E93E3E",
+      "description": "Text/Danger/Default",
+      "alias": "Red/500"
+    },
+    "Text/Danger/Secondary": {
+      "hex": "#F06767",
+      "description": "Text/Danger/Secondary",
+      "alias": "Red/400"
+    },
+    "Text/Danger/Tertiary": {
+      "hex": "#FAF0F0",
+      "description": "Text/Danger/Tertiary",
+      "alias": "Red/100"
+    },
+    "Text/Utils/01/Default": {
+      "hex": "#8C4A0D",
+      "description": "Text/Utils/01/Default",
+      "alias": "Caramel/400"
+    },
+    "Text/Utils/01/Default02": {
+      "hex": "#AD6E1A",
+      "description": "Text/Utils/01/Default02",
+      "alias": "Caramel/300"
+    },
+    "Text/Utils/01/Secondary": {
+      "hex": "#DAB080",
+      "description": "Text/Utils/01/Secondary",
+      "alias": "Caramel/200"
+    },
+    "Text/Utils/01/Tertiary": {
+      "hex": "#FCF6E8",
+      "description": "Text/Utils/01/Tertiary",
+      "alias": "Caramel/100"
+    },
+    "Text/Utils/02/Default": {
+      "hex": "#2AA764",
+      "description": "Text/Utils/02/Default",
+      "alias": "BudGreen/400"
+    },
+    "Text/Utils/02/Default02": {
+      "hex": "#397355",
+      "description": "Text/Utils/02/Default02",
+      "alias": "BudGreen/500"
+    },
+    "Text/Utils/02/Secondary": {
+      "hex": "#B2E0C7",
+      "description": "Text/Utils/02/Secondary",
+      "alias": "BudGreen/200"
+    },
+    "Text/Utils/03/Default": {
+      "hex": "#467FEB",
+      "description": "Text/Utils/03/Default",
+      "alias": "SkyBlue/400"
+    },
+    "Text/Utils/03/Default02": {
+      "hex": "#245BC9",
+      "description": "Text/Utils/03/Default02",
+      "alias": "SkyBlue/500"
+    },
+    "Text/Utils/03/Secondary": {
+      "hex": "#ACCAFD",
+      "description": "Text/Utils/03/Secondary",
+      "alias": "SkyBlue/200"
+    },
+    "Text/Utils/04/Default": {
+      "hex": "#856AEA",
+      "description": "Text/Utils/04/Default",
+      "alias": "BrightPurple/400"
+    },
+    "Text/Utils/04/Default02": {
+      "hex": "#6248C1",
+      "description": "Text/Utils/04/Default02",
+      "alias": "BrightPurple/500"
+    },
+    "Text/Utils/04/Secondary": {
+      "hex": "#CAC0F8",
+      "description": "Text/Utils/04/Secondary",
+      "alias": "BrightPurple/200"
+    },
+    "Text/Utils/05/Default": {
+      "hex": "#5C6A80",
+      "description": "Text/Utils/05/Default",
+      "alias": "BlueGray/400"
+    },
+    "Text/Utils/05/Default02": {
+      "hex": "#334255",
+      "description": "Text/Utils/05/Default02",
+      "alias": "BlueGray/500"
+    },
+    "Text/Utils/05/Secondary": {
+      "hex": "#CBD5E1",
+      "description": "Text/Utils/05/Secondary",
+      "alias": "BlueGray/200"
+    },
+    "Text/Utils/06/Default": {
+      "hex": "#F29800",
+      "description": "Text/Utils/06/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Text/Utils/06/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Text/Utils/06/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Text/Utils/07/Default": {
+      "hex": "#E93E3E",
+      "description": "Text/Utils/07/Default",
+      "alias": "Red/500"
+    },
+    "Text/Utils/07/Secondary": {
+      "hex": "#FDC4C0",
+      "description": "Text/Utils/07/Secondary",
+      "alias": "Red/200"
+    },
+    "Text/Transp/Black/4%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/Black/4%",
+      "alias": "White/100"
+    },
+    "Text/Transp/Black/8%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/Black/8%",
+      "alias": "White/200"
+    },
+    "Text/Transp/Black/16%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/Black/16%",
+      "alias": "White/300"
+    },
+    "Text/Transp/Black/24%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/Black/24%",
+      "alias": "White/400"
+    },
+    "Text/Transp/Black/50%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/Black/50%",
+      "alias": "White/500"
+    },
+    "Text/Transp/Black/60%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/Black/60%",
+      "alias": "White/600"
+    },
+    "Text/Transp/Black/85%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/Black/85%",
+      "alias": "White/700"
+    },
+    "Text/Transp/Black/95%": {
+      "hex": "#FFFFFF",
+      "description": "Text/Transp/Black/95%",
+      "alias": "White/800"
+    },
+    "Text/Transp/White/4%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/White/4%",
+      "alias": "Black/100"
+    },
+    "Text/Transp/White/8%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/White/8%",
+      "alias": "Black/200"
+    },
+    "Text/Transp/White/16%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/White/16%",
+      "alias": "Black/300"
+    },
+    "Text/Transp/White/24%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/White/24%",
+      "alias": "Black/400"
+    },
+    "Text/Transp/White/50%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/White/50%",
+      "alias": "Black/500"
+    },
+    "Text/Transp/White/60%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/White/60%",
+      "alias": "Black/600"
+    },
+    "Text/Transp/White/85%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/White/85%",
+      "alias": "Black/700"
+    },
+    "Text/Transp/White/95%": {
+      "hex": "#1B1B1B",
+      "description": "Text/Transp/White/95%",
+      "alias": "Black/800"
+    },
+    "Text/Transp/Brand/4%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/4%",
+      "alias": "Brand/700"
+    },
+    "Text/Transp/Brand/8%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/8%",
+      "alias": "Brand/800"
+    },
+    "Text/Transp/Brand/16%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/16%",
+      "alias": "Brand/900"
+    },
+    "Text/Transp/Brand/24%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/24%",
+      "alias": "Brand/1000"
+    },
+    "Text/Transp/Brand/50%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/50%",
+      "alias": "Brand/1100"
+    },
+    "Text/Transp/Brand/60%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/60%",
+      "alias": "Brand/1200"
+    },
+    "Text/Transp/Brand/85%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/85%",
+      "alias": "Brand/1300"
+    },
+    "Text/Transp/Brand/95%": {
+      "hex": "#FF77E7",
+      "description": "Text/Transp/Brand/95%",
+      "alias": "Brand/1400"
+    },
+    "Border/Default/Default": {
+      "hex": "#FFFFFF",
+      "description": "Border/Default/Default",
+      "alias": "Gray/100"
+    },
+    "Border/Default/Secondary": {
+      "hex": "#FFFFFF",
+      "description": "Border/Default/Secondary",
+      "alias": "White/500"
+    },
+    "Border/Default/Tertiary": {
+      "hex": "#FFFFFF",
+      "description": "Border/Default/Tertiary",
+      "alias": "White/400"
+    },
+    "Border/Default/White": {
+      "hex": "#1B1B1B",
+      "description": "Border/Default/White",
+      "alias": "Gray/800"
+    },
+    "Border/Brand/Default": {
+      "hex": "#F74AD9",
+      "description": "Border/Brand/Default",
+      "alias": "Brand/400"
+    },
+    "Border/Brand/Secondary": {
+      "hex": "#FFB3F2",
+      "description": "Border/Brand/Secondary",
+      "alias": "Brand/200"
+    },
+    "Border/Positive/Default": {
+      "hex": "#2AA764",
+      "description": "Border/Positive/Default",
+      "alias": "BudGreen/400"
+    },
+    "Border/Positive/Secondary": {
+      "hex": "#70C497",
+      "description": "Border/Positive/Secondary",
+      "alias": "BudGreen/300"
+    },
+    "Border/Positive/Tertiary": {
+      "hex": "#B2E0C7",
+      "description": "Border/Positive/Tertiary",
+      "alias": "BudGreen/200"
+    },
+    "Border/Warning/Default": {
+      "hex": "#F29800",
+      "description": "Border/Warning/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Border/Warning/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Border/Warning/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Border/Danger/Default": {
+      "hex": "#E93E3E",
+      "description": "Border/Danger/Default",
+      "alias": "Red/500"
+    },
+    "Border/Danger/Secondary": {
+      "hex": "#F06767",
+      "description": "Border/Danger/Secondary",
+      "alias": "Red/400"
+    },
+    "Border/Danger/Tertiary": {
+      "hex": "#F99792",
+      "description": "Border/Danger/Tertiary",
+      "alias": "Red/300"
+    },
+    "Border/Utils/01/Default": {
+      "hex": "#8C4A0D",
+      "description": "Border/Utils/01/Default",
+      "alias": "Caramel/400"
+    },
+    "Border/Utils/01/Secondary": {
+      "hex": "#AD6E1A",
+      "description": "Border/Utils/01/Secondary",
+      "alias": "Caramel/300"
+    },
+    "Border/Utils/01/Tertiary": {
+      "hex": "#DAB080",
+      "description": "Border/Utils/01/Tertiary",
+      "alias": "Caramel/200"
+    },
+    "Border/Utils/02/Default": {
+      "hex": "#397355",
+      "description": "Border/Utils/02/Default",
+      "alias": "BudGreen/500"
+    },
+    "Border/Utils/02/Secondary": {
+      "hex": "#2AA764",
+      "description": "Border/Utils/02/Secondary",
+      "alias": "BudGreen/400"
+    },
+    "Border/Utils/02/Tertiary": {
+      "hex": "#B2E0C7",
+      "description": "Border/Utils/02/Tertiary",
+      "alias": "BudGreen/200"
+    },
+    "Border/Utils/03/Default": {
+      "hex": "#245BC9",
+      "description": "Border/Utils/03/Default",
+      "alias": "SkyBlue/500"
+    },
+    "Border/Utils/03/Secondary": {
+      "hex": "#467FEB",
+      "description": "Border/Utils/03/Secondary",
+      "alias": "SkyBlue/400"
+    },
+    "Border/Utils/03/Tertiary": {
+      "hex": "#ACCAFD",
+      "description": "Border/Utils/03/Tertiary",
+      "alias": "SkyBlue/200"
+    },
+    "Border/Utils/04/Default": {
+      "hex": "#856AEA",
+      "description": "Border/Utils/04/Default",
+      "alias": "BrightPurple/400"
+    },
+    "Border/Utils/04/Secondary": {
+      "hex": "#A795F1",
+      "description": "Border/Utils/04/Secondary",
+      "alias": "BrightPurple/300"
+    },
+    "Border/Utils/04/Tertiary": {
+      "hex": "#CAC0F8",
+      "description": "Border/Utils/04/Tertiary",
+      "alias": "BrightPurple/200"
+    },
+    "Border/Utils/05/Default": {
+      "hex": "#5C6A80",
+      "description": "Border/Utils/05/Default",
+      "alias": "BlueGray/400"
+    },
+    "Border/Utils/05/Secondary": {
+      "hex": "#94A3B8",
+      "description": "Border/Utils/05/Secondary",
+      "alias": "BlueGray/300"
+    },
+    "Border/Utils/05/Tertiary": {
+      "hex": "#CBD5E1",
+      "description": "Border/Utils/05/Tertiary",
+      "alias": "BlueGray/200"
+    },
+    "Border/Utils/06/Default": {
+      "hex": "#F29800",
+      "description": "Border/Utils/06/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Border/Utils/06/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Border/Utils/06/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Border/Utils/06/Tertiary": {
+      "hex": "#FFF28C",
+      "description": "Border/Utils/06/Tertiary",
+      "alias": "BrightYellow/200"
+    },
+    "Border/Utils/07/Default": {
+      "hex": "#E93E3E",
+      "description": "Border/Utils/07/Default",
+      "alias": "Red/500"
+    },
+    "Border/Utils/07/Secondary": {
+      "hex": "#F06767",
+      "description": "Border/Utils/07/Secondary",
+      "alias": "Red/400"
+    },
+    "Border/Utils/07/Tertiary": {
+      "hex": "#F99792",
+      "description": "Border/Utils/07/Tertiary",
+      "alias": "Red/300"
+    },
+    "Border/Transp/Black/4%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/Black/4%",
+      "alias": "White/100"
+    },
+    "Border/Transp/Black/8%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/Black/8%",
+      "alias": "White/200"
+    },
+    "Border/Transp/Black/16%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/Black/16%",
+      "alias": "White/300"
+    },
+    "Border/Transp/Black/24%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/Black/24%",
+      "alias": "White/400"
+    },
+    "Border/Transp/Black/50%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/Black/50%",
+      "alias": "White/500"
+    },
+    "Border/Transp/Black/60%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/Black/60%",
+      "alias": "White/600"
+    },
+    "Border/Transp/Black/85%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/Black/85%",
+      "alias": "White/700"
+    },
+    "Border/Transp/Black/95%": {
+      "hex": "#FFFFFF",
+      "description": "Border/Transp/Black/95%",
+      "alias": "White/800"
+    },
+    "Border/Transp/White/4%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/White/4%",
+      "alias": "Black/100"
+    },
+    "Border/Transp/White/8%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/White/8%",
+      "alias": "Black/200"
+    },
+    "Border/Transp/White/16%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/White/16%",
+      "alias": "Black/300"
+    },
+    "Border/Transp/White/24%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/White/24%",
+      "alias": "Black/400"
+    },
+    "Border/Transp/White/50%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/White/50%",
+      "alias": "Black/500"
+    },
+    "Border/Transp/White/60%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/White/60%",
+      "alias": "Black/600"
+    },
+    "Border/Transp/White/85%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/White/85%",
+      "alias": "Black/700"
+    },
+    "Border/Transp/White/95%": {
+      "hex": "#1B1B1B",
+      "description": "Border/Transp/White/95%",
+      "alias": "Black/800"
+    },
+    "Border/Transp/Brand/4%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/4%",
+      "alias": "Brand/700"
+    },
+    "Border/Transp/Brand/8%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/8%",
+      "alias": "Brand/800"
+    },
+    "Border/Transp/Brand/16%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/16%",
+      "alias": "Brand/900"
+    },
+    "Border/Transp/Brand/24%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/24%",
+      "alias": "Brand/1000"
+    },
+    "Border/Transp/Brand/50%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/50%",
+      "alias": "Brand/1100"
+    },
+    "Border/Transp/Brand/60%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/60%",
+      "alias": "Brand/1200"
+    },
+    "Border/Transp/Brand/85%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/85%",
+      "alias": "Brand/1300"
+    },
+    "Border/Transp/Brand/95%": {
+      "hex": "#FF77E7",
+      "description": "Border/Transp/Brand/95%",
+      "alias": "Brand/1400"
+    },
+    "Icon/Default/Default": {
+      "hex": "#F2F2F2",
+      "description": "Icon/Default/Default",
+      "alias": "Gray/200"
+    },
+    "Icon/Default/Secondary": {
+      "hex": "#C6C6C6",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/300"
+    },
+    "Icon/Default/Tertiary": {
+      "hex": "#989898",
+      "description": "Icon/Default/Tertiary",
+      "alias": "Gray/400"
+    },
+    "Icon/Default/Tertiary02": {
+      "hex": "#5F5F5F",
+      "description": "Icon/Default/Tertiary02",
+      "alias": "Gray/500"
+    },
+    "Icon/Default/White": {
+      "hex": "#1F1F1F",
+      "description": "Icon/Default/White",
+      "alias": "Gray/700"
+    },
+    "Icon/Brand/Default": {
+      "hex": "#F74AD9",
+      "description": "Icon/Brand/Default",
+      "alias": "Brand/400"
+    },
+    "Icon/Brand/Default02": {
+      "hex": "#FF77E7",
+      "description": "Icon/Brand/Default02",
+      "alias": "Brand/300"
+    },
+    "Icon/Brand/Secondary": {
+      "hex": "#FFB3F2",
+      "description": "Icon/Brand/Secondary",
+      "alias": "Brand/200"
+    },
+    "Icon/Positive/Default": {
+      "hex": "#2AA764",
+      "description": "Icon/Positive/Default",
+      "alias": "BudGreen/400"
+    },
+    "Icon/Positive/Secondary": {
+      "hex": "#70C497",
+      "description": "Icon/Positive/Secondary",
+      "alias": "BudGreen/300"
+    },
+    "Icon/Positive/Tertiary": {
+      "hex": "#B2E0C7",
+      "description": "Icon/Positive/Tertiary",
+      "alias": "BudGreen/200"
+    },
+    "Icon/Warning/Default": {
+      "hex": "#F29800",
+      "description": "Icon/Warning/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Icon/Warning/Secondary": {
+      "hex": "#F9C91A",
+      "description": "Icon/Warning/Secondary",
+      "alias": "BrightYellow/400"
+    },
+    "Icon/Warning/Tertiary": {
+      "hex": "#FFF28C",
+      "description": "Icon/Warning/Tertiary",
+      "alias": "BrightYellow/200"
+    },
+    "Icon/Danger/Default": {
+      "hex": "#E93E3E",
+      "description": "Icon/Danger/Default",
+      "alias": "Red/500"
+    },
+    "Icon/Danger/Secondary": {
+      "hex": "#F06767",
+      "description": "Icon/Danger/Secondary",
+      "alias": "Red/400"
+    },
+    "Icon/Danger/Tertiary": {
+      "hex": "#FDC4C0",
+      "description": "Icon/Danger/Tertiary",
+      "alias": "Red/200"
+    },
+    "Icon/Utils/01/Default": {
+      "hex": "#8C4A0D",
+      "description": "Icon/Utils/01/Default",
+      "alias": "Caramel/400"
+    },
+    "Icon/Utils/01/Default02": {
+      "hex": "#AD6E1A",
+      "description": "Icon/Utils/01/Default02",
+      "alias": "Caramel/300"
+    },
+    "Icon/Utils/01/Secondary": {
+      "hex": "#DAB080",
+      "description": "Icon/Utils/01/Secondary",
+      "alias": "Caramel/200"
+    },
+    "Icon/Utils/01/Tertiary": {
+      "hex": "#FCF6E8",
+      "description": "Icon/Utils/01/Tertiary",
+      "alias": "Caramel/100"
+    },
+    "Icon/Utils/02/Default": {
+      "hex": "#2AA764",
+      "description": "Icon/Utils/02/Default",
+      "alias": "BudGreen/400"
+    },
+    "Icon/Utils/02/Secondary": {
+      "hex": "#70C497",
+      "description": "Icon/Utils/02/Secondary",
+      "alias": "BudGreen/300"
+    },
+    "Icon/Utils/02/Tertiary": {
+      "hex": "#B2E0C7",
+      "description": "Icon/Utils/02/Tertiary",
+      "alias": "BudGreen/200"
+    },
+    "Icon/Utils/03/Default": {
+      "hex": "#467FEB",
+      "description": "Icon/Utils/03/Default",
+      "alias": "SkyBlue/400"
+    },
+    "Icon/Utils/03/Secondary": {
+      "hex": "#5993FE",
+      "description": "Icon/Utils/03/Secondary",
+      "alias": "SkyBlue/300"
+    },
+    "Icon/Utils/03/Tertiary": {
+      "hex": "#ACCAFD",
+      "description": "Icon/Utils/03/Tertiary",
+      "alias": "SkyBlue/200"
+    },
+    "Icon/Utils/04/Default": {
+      "hex": "#856AEA",
+      "description": "Icon/Utils/04/Default",
+      "alias": "BrightPurple/400"
+    },
+    "Icon/Utils/04/Secondary": {
+      "hex": "#A795F1",
+      "description": "Icon/Utils/04/Secondary",
+      "alias": "BrightPurple/300"
+    },
+    "Icon/Utils/04/Tertiary": {
+      "hex": "#CAC0F8",
+      "description": "Icon/Utils/04/Tertiary",
+      "alias": "BrightPurple/200"
+    },
+    "Icon/Utils/05/Default": {
+      "hex": "#5C6A80",
+      "description": "Icon/Utils/05/Default",
+      "alias": "BlueGray/400"
+    },
+    "Icon/Utils/05/Secondary": {
+      "hex": "#CBD5E1",
+      "description": "Icon/Utils/05/Secondary",
+      "alias": "BlueGray/200"
+    },
+    "Icon/Utils/06/Default": {
+      "hex": "#F29800",
+      "description": "Icon/Utils/06/Default",
+      "alias": "BrightYellow/500"
+    },
+    "Icon/Utils/06/Secondary": {
+      "hex": "#FFF28C",
+      "description": "Icon/Utils/06/Secondary",
+      "alias": "BrightYellow/200"
+    },
+    "Icon/Utils/06/Tertiary": {
+      "hex": "#FFE833",
+      "description": "Icon/Utils/06/Tertiary",
+      "alias": "BrightYellow/300"
+    },
+    "Icon/Utils/07/Default": {
+      "hex": "#E93E3E",
+      "description": "Icon/Utils/07/Default",
+      "alias": "Red/500"
+    },
+    "Icon/Utils/07/Secondary": {
+      "hex": "#F99792",
+      "description": "Icon/Utils/07/Secondary",
+      "alias": "Red/300"
+    },
+    "Icon/Utils/08/Default": {
+      "hex": "#FAFA00",
+      "description": "Icon/Utils/08/Default",
+      "alias": "SunlightYellow/100"
+    },
+    "Icon/Transp/Black/4%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/Black/4%",
+      "alias": "White/100"
+    },
+    "Icon/Transp/Black/8%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/Black/8%",
+      "alias": "White/200"
+    },
+    "Icon/Transp/Black/16%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/Black/16%",
+      "alias": "White/300"
+    },
+    "Icon/Transp/Black/24%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/Black/24%",
+      "alias": "White/400"
+    },
+    "Icon/Transp/Black/50%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/Black/50%",
+      "alias": "White/500"
+    },
+    "Icon/Transp/Black/60%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/Black/60%",
+      "alias": "White/600"
+    },
+    "Icon/Transp/Black/85%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/Black/85%",
+      "alias": "White/700"
+    },
+    "Icon/Transp/Black/95%": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Transp/Black/95%",
+      "alias": "White/800"
+    },
+    "Icon/Transp/White/4%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/White/4%",
+      "alias": "Black/100"
+    },
+    "Icon/Transp/White/8%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/White/8%",
+      "alias": "Black/200"
+    },
+    "Icon/Transp/White/16%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/White/16%",
+      "alias": "Black/300"
+    },
+    "Icon/Transp/White/24%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/White/24%",
+      "alias": "Black/400"
+    },
+    "Icon/Transp/White/50%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/White/50%",
+      "alias": "Black/500"
+    },
+    "Icon/Transp/White/60%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/White/60%",
+      "alias": "Black/600"
+    },
+    "Icon/Transp/White/85%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/White/85%",
+      "alias": "Black/700"
+    },
+    "Icon/Transp/White/95%": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Transp/White/95%",
+      "alias": "Black/800"
+    },
+    "Icon/Transp/Brand/4%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/4%",
+      "alias": "Brand/700"
+    },
+    "Icon/Transp/Brand/8%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/8%",
+      "alias": "Brand/800"
+    },
+    "Icon/Transp/Brand/16%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/16%",
+      "alias": "Brand/900"
+    },
+    "Icon/Transp/Brand/24%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/24%",
+      "alias": "Brand/1000"
+    },
+    "Icon/Transp/Brand/50%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/50%",
+      "alias": "Brand/1100"
+    },
+    "Icon/Transp/Brand/60%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/60%",
+      "alias": "Brand/1200"
+    },
+    "Icon/Transp/Brand/85%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/85%",
+      "alias": "Brand/1300"
+    },
+    "Icon/Transp/Brand/95%": {
+      "hex": "#FF77E7",
+      "description": "Icon/Transp/Brand/95%",
+      "alias": "Brand/1400"
+    },
+    "Btn/Bg/Default/Primary": {
+      "hex": "#FF77E7",
+      "description": "Icon/Default/Default",
+      "alias": "Brand/300"
+    },
+    "Btn/Bg/Default/Primary02": {
+      "hex": "#F74AD9",
+      "description": "Icon/Default/Secondary",
+      "alias": "Brand/400"
+    },
+    "Btn/Bg/Default/Secondary": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Secondary",
+      "alias": "White/100"
+    },
+    "Btn/Bg/Default/White": {
+      "hex": "#0F0F0F",
+      "description": "Icon/Default/White",
+      "alias": "Gray/900"
+    },
+    "Btn/Bg/Default/White02": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/White",
+      "alias": "Gray/100"
+    },
+    "Btn/Bg/Default/Disabled": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Secondary",
+      "alias": "White/100"
+    },
+    "Btn/Bg/Default/Disabled02": {
+      "hex": "#FF77E7",
+      "description": "Icon/Default/Secondary",
+      "alias": "Brand/1100"
+    },
+    "Btn/Bg/Default/Disabled03": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Secondary",
+      "alias": "White/600"
+    },
+    "Btn/Bg/Brand/Default": {
+      "hex": "#FF77E7",
+      "description": "Icon/Brand/Default",
+      "alias": "Brand/300"
+    },
+    "Btn/Bg/Brand/Secondary": {
+      "hex": "#FFF2FF",
+      "description": "Icon/Brand/Default02",
+      "alias": "Brand/100"
+    },
+    "Btn/Text/Default/Primary": {
+      "hex": "#1F1F1F",
+      "description": "Icon/Default/Default",
+      "alias": "Gray/700"
+    },
+    "Btn/Text/Default/Secondary": {
+      "hex": "#F2F2F2",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/200"
+    },
+    "Btn/Text/Default/Tertiary": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Gray/800"
+    },
+    "Btn/Text/Default/White": {
+      "hex": "#1F1F1F",
+      "description": "Icon/Default/White",
+      "alias": "Gray/700"
+    },
+    "Btn/Text/Default/White02": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/White",
+      "alias": "Gray/100"
+    },
+    "Btn/Text/Default/Disabled": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Secondary",
+      "alias": "White/400"
+    },
+    "Btn/Text/Default/Disabled02": {
+      "hex": "#1B1B1B",
+      "description": "Icon/Default/Secondary",
+      "alias": "Black/500"
+    },
+    "Btn/Text/Default/Disabled03": {
+      "hex": "#FFFFFF",
+      "description": "Icon/Default/Secondary",
+      "alias": "White/600"
+    },
+    "Btn/Text/Brand/Default": {
+      "hex": "#E52EC5",
+      "description": "Icon/Brand/Default",
+      "alias": "Brand/500"
+    }
+  },
+  "categories": {
+    "Bg": [
+      "Bg/Default/White",
+      "Bg/Default/Gray",
+      "Bg/Default/Black",
+      "Bg/Default/Disabled",
+      "Bg/Brand/Default",
+      "Bg/Brand/Default02",
+      "Bg/Brand/Secondary",
+      "Bg/Positive/Default",
+      "Bg/Positive/Secondary",
+      "Bg/Warning/Default",
+      "Bg/Warning/Secondary",
+      "Bg/Danger/Default",
+      "Bg/Danger/Secondary",
+      "Bg/Utils/01/Default",
+      "Bg/Utils/01/Default02",
+      "Bg/Utils/01/Default03",
+      "Bg/Utils/01/Secondary",
+      "Bg/Utils/01/Tertiary",
+      "Bg/Utils/02/Default",
+      "Bg/Utils/02/Secondary",
+      "Bg/Utils/03/Default",
+      "Bg/Utils/03/Secondary",
+      "Bg/Utils/04/Default",
+      "Bg/Utils/04/Secondary",
+      "Bg/Utils/05/Default",
+      "Bg/Utils/05/Secondary",
+      "Bg/Utils/06/Default",
+      "Bg/Utils/06/Secondary",
+      "Bg/Utils/07/Default",
+      "Bg/Utils/07/Secondary",
+      "Bg/Transp/Black/4%",
+      "Bg/Transp/Black/8%",
+      "Bg/Transp/Black/16%",
+      "Bg/Transp/Black/24%",
+      "Bg/Transp/Black/50%",
+      "Bg/Transp/Black/60%",
+      "Bg/Transp/Black/85%",
+      "Bg/Transp/Black/95%",
+      "Bg/Transp/White/4%",
+      "Bg/Transp/White/8%",
+      "Bg/Transp/White/16%",
+      "Bg/Transp/White/24%",
+      "Bg/Transp/White/50%",
+      "Bg/Transp/White/60%",
+      "Bg/Transp/White/85%",
+      "Bg/Transp/White/95%",
+      "Bg/Transp/Brand/4%",
+      "Bg/Transp/Brand/8%",
+      "Bg/Transp/Brand/16%",
+      "Bg/Transp/Brand/24%",
+      "Bg/Transp/Brand/50%",
+      "Bg/Transp/Brand/60%",
+      "Bg/Transp/Brand/85%",
+      "Bg/Transp/Brand/95%"
+    ],
+    "Border": [
+      "Border/Default/Default",
+      "Border/Default/Secondary",
+      "Border/Default/Tertiary",
+      "Border/Default/White",
+      "Border/Brand/Default",
+      "Border/Brand/Secondary",
+      "Border/Positive/Default",
+      "Border/Positive/Secondary",
+      "Border/Positive/Tertiary",
+      "Border/Warning/Default",
+      "Border/Warning/Secondary",
+      "Border/Danger/Default",
+      "Border/Danger/Secondary",
+      "Border/Danger/Tertiary",
+      "Border/Utils/01/Default",
+      "Border/Utils/01/Secondary",
+      "Border/Utils/01/Tertiary",
+      "Border/Utils/02/Default",
+      "Border/Utils/02/Secondary",
+      "Border/Utils/02/Tertiary",
+      "Border/Utils/03/Default",
+      "Border/Utils/03/Secondary",
+      "Border/Utils/03/Tertiary",
+      "Border/Utils/04/Default",
+      "Border/Utils/04/Secondary",
+      "Border/Utils/04/Tertiary",
+      "Border/Utils/05/Default",
+      "Border/Utils/05/Secondary",
+      "Border/Utils/05/Tertiary",
+      "Border/Utils/06/Default",
+      "Border/Utils/06/Secondary",
+      "Border/Utils/06/Tertiary",
+      "Border/Utils/07/Default",
+      "Border/Utils/07/Secondary",
+      "Border/Utils/07/Tertiary",
+      "Border/Transp/Black/4%",
+      "Border/Transp/Black/8%",
+      "Border/Transp/Black/16%",
+      "Border/Transp/Black/24%",
+      "Border/Transp/Black/50%",
+      "Border/Transp/Black/60%",
+      "Border/Transp/Black/85%",
+      "Border/Transp/Black/95%",
+      "Border/Transp/White/4%",
+      "Border/Transp/White/8%",
+      "Border/Transp/White/16%",
+      "Border/Transp/White/24%",
+      "Border/Transp/White/50%",
+      "Border/Transp/White/60%",
+      "Border/Transp/White/85%",
+      "Border/Transp/White/95%",
+      "Border/Transp/Brand/4%",
+      "Border/Transp/Brand/8%",
+      "Border/Transp/Brand/16%",
+      "Border/Transp/Brand/24%",
+      "Border/Transp/Brand/50%",
+      "Border/Transp/Brand/60%",
+      "Border/Transp/Brand/85%",
+      "Border/Transp/Brand/95%"
+    ],
+    "Btn": [
+      "Btn/Bg/Default/Primary",
+      "Btn/Bg/Default/Primary02",
+      "Btn/Bg/Default/Secondary",
+      "Btn/Bg/Default/White",
+      "Btn/Bg/Default/White02",
+      "Btn/Bg/Default/Disabled",
+      "Btn/Bg/Default/Disabled02",
+      "Btn/Bg/Default/Disabled03",
+      "Btn/Bg/Brand/Default",
+      "Btn/Bg/Brand/Secondary",
+      "Btn/Text/Default/Primary",
+      "Btn/Text/Default/Secondary",
+      "Btn/Text/Default/Tertiary",
+      "Btn/Text/Default/White",
+      "Btn/Text/Default/White02",
+      "Btn/Text/Default/Disabled",
+      "Btn/Text/Default/Disabled02",
+      "Btn/Text/Default/Disabled03",
+      "Btn/Text/Brand/Default"
+    ],
+    "Icon": [
+      "Icon/Default/Default",
+      "Icon/Default/Secondary",
+      "Icon/Default/Tertiary",
+      "Icon/Default/Tertiary02",
+      "Icon/Default/White",
+      "Icon/Brand/Default",
+      "Icon/Brand/Default02",
+      "Icon/Brand/Secondary",
+      "Icon/Positive/Default",
+      "Icon/Positive/Secondary",
+      "Icon/Positive/Tertiary",
+      "Icon/Warning/Default",
+      "Icon/Warning/Secondary",
+      "Icon/Warning/Tertiary",
+      "Icon/Danger/Default",
+      "Icon/Danger/Secondary",
+      "Icon/Danger/Tertiary",
+      "Icon/Utils/01/Default",
+      "Icon/Utils/01/Default02",
+      "Icon/Utils/01/Secondary",
+      "Icon/Utils/01/Tertiary",
+      "Icon/Utils/02/Default",
+      "Icon/Utils/02/Secondary",
+      "Icon/Utils/02/Tertiary",
+      "Icon/Utils/03/Default",
+      "Icon/Utils/03/Secondary",
+      "Icon/Utils/03/Tertiary",
+      "Icon/Utils/04/Default",
+      "Icon/Utils/04/Secondary",
+      "Icon/Utils/04/Tertiary",
+      "Icon/Utils/05/Default",
+      "Icon/Utils/05/Secondary",
+      "Icon/Utils/06/Default",
+      "Icon/Utils/06/Secondary",
+      "Icon/Utils/06/Tertiary",
+      "Icon/Utils/07/Default",
+      "Icon/Utils/07/Secondary",
+      "Icon/Utils/08/Default",
+      "Icon/Transp/Black/4%",
+      "Icon/Transp/Black/8%",
+      "Icon/Transp/Black/16%",
+      "Icon/Transp/Black/24%",
+      "Icon/Transp/Black/50%",
+      "Icon/Transp/Black/60%",
+      "Icon/Transp/Black/85%",
+      "Icon/Transp/Black/95%",
+      "Icon/Transp/White/4%",
+      "Icon/Transp/White/8%",
+      "Icon/Transp/White/16%",
+      "Icon/Transp/White/24%",
+      "Icon/Transp/White/50%",
+      "Icon/Transp/White/60%",
+      "Icon/Transp/White/85%",
+      "Icon/Transp/White/95%",
+      "Icon/Transp/Brand/4%",
+      "Icon/Transp/Brand/8%",
+      "Icon/Transp/Brand/16%",
+      "Icon/Transp/Brand/24%",
+      "Icon/Transp/Brand/50%",
+      "Icon/Transp/Brand/60%",
+      "Icon/Transp/Brand/85%",
+      "Icon/Transp/Brand/95%"
+    ],
+    "Text": [
+      "Text/Default/Default",
+      "Text/Default/Secondary",
+      "Text/Default/Tertiary",
+      "Text/Default/Disabled",
+      "Text/Default/White",
+      "Text/Brand/Default",
+      "Text/Brand/Default02",
+      "Text/Brand/Default03",
+      "Text/Brand/Secondary",
+      "Text/Brand/Tertiary",
+      "Text/Positive/Default",
+      "Text/Positive/Default02",
+      "Text/Positive/Secondary",
+      "Text/Warning/Default",
+      "Text/Warning/Secondary",
+      "Text/Danger/Default",
+      "Text/Danger/Secondary",
+      "Text/Danger/Tertiary",
+      "Text/Utils/01/Default",
+      "Text/Utils/01/Default02",
+      "Text/Utils/01/Secondary",
+      "Text/Utils/01/Tertiary",
+      "Text/Utils/02/Default",
+      "Text/Utils/02/Default02",
+      "Text/Utils/02/Secondary",
+      "Text/Utils/03/Default",
+      "Text/Utils/03/Default02",
+      "Text/Utils/03/Secondary",
+      "Text/Utils/04/Default",
+      "Text/Utils/04/Default02",
+      "Text/Utils/04/Secondary",
+      "Text/Utils/05/Default",
+      "Text/Utils/05/Default02",
+      "Text/Utils/05/Secondary",
+      "Text/Utils/06/Default",
+      "Text/Utils/06/Secondary",
+      "Text/Utils/07/Default",
+      "Text/Utils/07/Secondary",
+      "Text/Transp/Black/4%",
+      "Text/Transp/Black/8%",
+      "Text/Transp/Black/16%",
+      "Text/Transp/Black/24%",
+      "Text/Transp/Black/50%",
+      "Text/Transp/Black/60%",
+      "Text/Transp/Black/85%",
+      "Text/Transp/Black/95%",
+      "Text/Transp/White/4%",
+      "Text/Transp/White/8%",
+      "Text/Transp/White/16%",
+      "Text/Transp/White/24%",
+      "Text/Transp/White/50%",
+      "Text/Transp/White/60%",
+      "Text/Transp/White/85%",
+      "Text/Transp/White/95%",
+      "Text/Transp/Brand/4%",
+      "Text/Transp/Brand/8%",
+      "Text/Transp/Brand/16%",
+      "Text/Transp/Brand/24%",
+      "Text/Transp/Brand/50%",
+      "Text/Transp/Brand/60%",
+      "Text/Transp/Brand/85%",
+      "Text/Transp/Brand/95%"
+    ]
+  }
+}

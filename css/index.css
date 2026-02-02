@@ -1,0 +1,94 @@
+/**
+ * 年轻版设计系统
+ * CSS 入口文件
+ * 引入所有组件样式和颜色变量
+ */
+
+/* ==================== 导入所有模块 ==================== */
+
+/* 基础变量 */
+@import url('./variables.css');
+
+/* 颜色系统 */
+@import url('./colors.css');
+
+/* 组件样式 */
+@import url('./button.css');
+@import url('./button-group.css');
+@import url('./radio.css');
+@import url('./checkbox.css');
+@import url('./switch.css');
+@import url('./dialog.css');
+@import url('./popup.css');
+@import url('./grid.css');
+@import url('./navbar.css');
+@import url('./tabbar.css');
+@import url('./toast.css');
+@import url('./icons.css');
+
+/* ==================== 图标基础样式 ==================== */
+
+.yds-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.yds-icon--xs {
+  width: 16px;
+  height: 16px;
+}
+
+.yds-icon--sm {
+  width: 20px;
+  height: 20px;
+}
+
+.yds-icon--md {
+  width: 24px;
+  height: 24px;
+}
+
+.yds-icon--lg {
+  width: 28px;
+  height: 28px;
+}
+
+.yds-icon--xl {
+  width: 32px;
+  height: 32px;
+}
+
+/* 带徽标的图标 */
+.yds-icon .yds-icon-badge {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  padding: 1px 4px;
+  font-size: 10px;
+  background-color: var(--yds-bg-danger-default);
+  color: var(--yds-bg-default-white);
+  border-radius: 9999px;
+  border: 1px solid var(--yds-bg-danger-default);
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.yds-icon .yds-icon-badge--dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--yds-bg-danger-default);
+  border-radius: 50%;
+}
+
+/* 带徽标的图标容器 */
+.badge-demo {
+  position: relative;
+  display: inline-flex;
+}

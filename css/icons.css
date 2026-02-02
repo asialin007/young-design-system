@@ -1,0 +1,254 @@
+/**
+ * 年轻版设计系统 2.0 - 图标组件样式
+ */
+
+/* ==================== 基础图标样式 ==================== */
+
+.yds-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  /* 默认尺寸 */
+  width: 24px;
+  height: 24px;
+
+  /* 颜色继承 */
+  color: inherit;
+
+  /* 过渡 */
+  transition: all 0.2s ease;
+}
+
+.yds-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==================== 尺寸变体 ==================== */
+
+.yds-icon--xs {
+  width: 16px;
+  height: 16px;
+}
+
+.yds-icon--sm {
+  width: 20px;
+  height: 20px;
+}
+
+.yds-icon--md {
+  width: 24px;
+  height: 24px;
+}
+
+.yds-icon--lg {
+  width: 28px;
+  height: 28px;
+}
+
+.yds-icon--xl {
+  width: 32px;
+  height: 32px;
+}
+
+/* ==================== 颜色变体 ==================== */
+
+.yds-icon--default {
+  color: var(--yds-text-default-default);
+}
+
+.yds-icon--secondary {
+  color: var(--yds-text-default-secondary);
+}
+
+.yds-icon--tertiary {
+  color: var(--yds-text-default-tertiary);
+}
+
+.yds-icon--brand {
+  color: var(--yds-text-brand-default);
+}
+
+.yds-icon--white {
+  color: var(--yds-text-default-white);
+}
+
+/* ==================== 按钮中的图标 ==================== */
+
+.yds-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 尺寸 */
+  width: 32px;
+  height: 32px;
+
+  /* 背景 */
+  background: transparent;
+
+  /* 边框 */
+  border: none;
+  border-radius: var(--yds-radius-md);
+
+  /* 颜色 */
+  color: var(--yds-text-default-secondary);
+
+  /* 交互 */
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.yds-icon-btn:active {
+  background-color: var(--yds-bg-transp-black-8%);
+}
+
+.yds-icon-btn--sm {
+  width: 24px;
+  height: 24px;
+}
+
+.yds-icon-btn--lg {
+  width: 40px;
+  height: 40px;
+}
+
+/* ==================== 导航栏图标按钮 ==================== */
+
+.yds-navbar__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 尺寸 */
+  width: 24px;
+  height: 24px;
+
+  /* 背景 */
+  background: transparent;
+
+  /* 边框 */
+  border: none;
+
+  /* 交互 */
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.yds-navbar__icon-btn:active {
+  opacity: 0.6;
+}
+
+.yds-navbar__icon-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==================== 带徽标的图标 ==================== */
+
+.yds-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.yds-icon-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+
+  /* 布局 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 字体 */
+  font-size: 10px;
+  font-weight: var(--yds-font-weight-medium);
+  line-height: 1;
+  color: var(--yds-text-default-white);
+
+  /* 背景 */
+  background-color: var(--yds-bg-danger-default);
+
+  /* 边框 */
+  border: 2px solid var(--yds-bg-default-white);
+
+  /* 圆角 */
+  border-radius: 8px;
+
+  /* 过渡 */
+  transition: transform 0.2s ease;
+}
+
+.yds-icon-badge--dot {
+  min-width: 8px;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+}
+
+/* ==================== 旋转动画 ==================== */
+
+@keyframes yds-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.yds-icon--spin {
+  animation: yds-icon-spin 1s linear infinite;
+}
+
+/* ==================== 脉冲动画 ==================== */
+
+@keyframes yds-icon-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.yds-icon--pulse {
+  animation: yds-icon-pulse 2s ease-in-out infinite;
+}
+
+/* ==================== 深色模式适配 ==================== */
+
+[data-theme="dark"] .yds-icon {
+  color: var(--yds-text-default-white);
+}
+
+[data-theme="dark"] .yds-icon--secondary {
+  color: var(--yds-text-transp-white-85%);
+}
+
+[data-theme="dark"] .yds-icon--tertiary {
+  color: var(--yds-text-transp-white-50%);
+}
+
+[data-theme="dark"] .yds-navbar__icon-btn {
+  color: var(--yds-text-transp-white-85%);
+}
+
+[data-theme="dark"] .yds-icon-btn {
+  color: var(--yds-text-transp-white-85%);
+}
+
+[data-theme="dark"] .yds-icon-badge {
+  border-color: var(--yds-bg-default-black);
+}

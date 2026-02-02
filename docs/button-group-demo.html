@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Group 按钮组合 - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .demo-header {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .demo-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #1b1b1b;
+    }
+
+    .demo-description {
+      font-size: 16px;
+      color: #4e4f54;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1b1b1b;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+    }
+
+    .demo-card {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #1b1b1b;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #7e828c;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1 class="demo-title">Button Group 按钮组合</h1>
+    <p class="demo-description">
+      Button Group 按钮组合组件用于组合多个按钮，支持多种对齐方式和尺寸配置。
+      适用于表单操作、工具栏、页面导航等场景。
+    </p>
+  </div>
+
+  <!-- 按钮默认色说明 -->
+  <div class="demo-section">
+    <h2 class="section-title">按钮默认色</h2>
+
+    <div class="demo-card">
+      <p class="card-description">所有主按钮、次按钮和更多按钮均使用默认的黑色样式</p>
+    </div>
+  </div>
+
+  <!-- 单个按钮 -->
+  <div class="demo-section">
+    <h2 class="section-title">单个按钮</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">单按钮</h3>
+      <p class="card-description">count=1，只显示一个按钮，使用黑色</p>
+      <div class="button-group" style="max-width: 500px;">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          单个按钮
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 两个按钮 - 水平对齐 -->
+  <div class="demo-section">
+    <h2 class="section-title">两个按钮 - 水平对齐</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">水平对齐</h3>
+      <p class="card-description">count=2，主按钮和次按钮宽度相等，使用黑色</p>
+      <div class="button-group yds-button-group--equal">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          主按钮
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          次按钮
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 两个按钮 - 右侧对齐 -->
+  <div class="demo-section">
+    <h2 class="section-title">两个按钮 - 右侧对齐</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">右侧对齐</h3>
+      <p class="card-description">count=2，主按钮占满宽度，次按钮靠右显示，使用黑色</p>
+      <div class="button-group yds-button-group--right">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large" style="flex: 1;">
+          主按钮
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          次按钮
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 两个按钮 - 文字混合对齐 -->
+  <div class="demo-section">
+    <h2 class="section-title">两个按钮 - 文字混合对齐</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">文字混合</h3>
+      <p class="card-description">count=2，主按钮和次按钮都带有图标，使用黑色</p>
+      <div class="button-group yds-button-group--text-mix">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          主按钮
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 8px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          次按钮
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 三个按钮 -->
+  <div class="demo-section">
+    <h2 class="section-title">三个按钮</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">三按钮</h3>
+      <p class="card-description">count=3，主按钮 + 次按钮 + 更多按钮，均使用黑色</p>
+      <div class="button-group yds-button-group--equal">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          主按钮
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          次按钮
+        </button>
+        <button class="yds-button yds-button--solid-light yds-button--black yds-button--large">
+          更多
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四个按钮 -->
+  <div class="demo-section">
+    <h2 class="section-title">四个按钮</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">四按钮</h3>
+      <p class="card-description">count=4，主按钮 + 次按钮 + 三级按钮 + 四级按钮，均使用黑色</p>
+      <div class="button-group yds-button-group--equal">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          按钮 1
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          按钮 2
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          按钮 3
+        </button>
+        <button class="yds-button yds-button--solid-light yds-button--black yds-button--large">
+          更多
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 垂直排列 -->
+  <div class="demo-section">
+    <h2 class="section-title">垂直排列</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">垂直排列</h3>
+      <p class="card-description">按钮纵向排列，使用黑色</p>
+      <div class="button-group yds-button-group--vertical">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          按钮 1
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          按钮 2
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+          按钮 3
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分割线显示 -->
+  <div class="demo-section">
+    <h2 class="section-title">分割线显示</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">带分割线</h3>
+        <p class="card-description">按钮之间显示分割线</p>
+        <div class="button-group yds-button-group yds-button-group--divider">
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+            按钮 1
+          </button>
+          <div class="yds-button-group__divider"></div>
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+            按钮 2
+          </button>
+          <div class="yds-button-group__divider"></div>
+        </div>
+      </div>
+    </div>
+
+  <!-- 小尺寸 -->
+  <div class="demo-section">
+    <h2 class="section-title">小尺寸</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">小尺寸</h3>
+      <p class="card-description">按钮高度 24px</p>
+      <div class="button-group" style="max-width: 300px;">
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--small">
+          主按钮
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--small">
+          次按钮
+        </button>
+        <button class="yds-button yds-button--solid-dark yds-button--black yds-button--small">
+          更多
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 添加点击事件
+    document.querySelectorAll('.yds-button').forEach(button => {
+      button.addEventListener('click', (e) => {
+        console.log('Button clicked:', e.target.textContent.trim());
+      });
+    });
+  </script>
+</body>
+</html>

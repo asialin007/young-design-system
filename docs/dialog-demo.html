@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog 对话框 - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .demo-header {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .demo-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #1b1b1b;
+    }
+
+    .demo-description {
+      font-size: 16px;
+      color: #4e4f54;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1b1b1b;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .demo-card {
+      background: white;
+      padding: 24px;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #1b1b1b;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #7e828c;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    /* Dialog 遮罩层 */
+    .yds-dialog-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(27, 27, 27, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Dialog 容器 */
+    .yds-dialog {
+      background-color: #ffffff;
+      border-radius: 0;
+      padding: 24px;
+      min-width: 280px;
+      max-width: 400px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* 标题区域 */
+    .yds-dialog__title-section {
+      margin-bottom: 16px;
+    }
+
+    .yds-dialog__title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #1b1b1b;
+      margin: 0 0 8px 0;
+      line-height: 22px;
+    }
+
+    .yds-dialog__subtitle {
+      font-size: 14px;
+      color: #7e828c;
+      margin: 0;
+      line-height: 18px;
+    }
+
+    /* 内容区域 */
+    .yds-dialog__body-text {
+      font-size: 14px;
+      color: #1b1b1b;
+      line-height: 22px;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 按钮区域 */
+    .yds-dialog__buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .yds-dialog__buttons--horizontal {
+      flex-direction: row;
+    }
+
+    .yds-dialog__buttons--vertical {
+      flex-direction: column;
+    }
+
+    /* 按钮样式 */
+    .yds-dialog__button {
+      flex: 1;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 72px;
+      height: 38px;
+    }
+
+    .yds-dialog__button--primary {
+      background-color: #1b1b1b;
+      color: #ffffff;
+    }
+
+    .yds-dialog__button--primary:hover {
+      background-color: #4e4f54;
+      color: #ffffff;
+    }
+
+    .yds-dialog__button--secondary {
+      background-color: #f4f5f7;
+      color: #1b1b1b;
+    }
+
+    .yds-dialog__button--secondary:hover {
+      background-color: #e5e5e5;
+      color: #1b1b1b;
+    }
+
+    .yds-dialog__button--full {
+      width: 100%;
+    }
+
+    /* 关闭按钮 */
+    .yds-dialog__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7e828c;
+      transition: color 0.2s ease;
+    }
+
+    .yds-dialog__close:hover {
+      color: #1b1b1b;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1 class="demo-title">Dialog 对话框</h1>
+    <p class="demo-description">
+      Dialog 对话框组件用于显示重要信息或需要用户交互的场景，支持多种布局和按钮配置。
+      适用于确认操作、表单输入、信息展示等场景。
+    </p>
+  </div>
+
+  <!-- 单按钮 -->
+  <div class="demo-section">
+    <h2 class="section-title">单按钮</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">基础对话框</h3>
+        <p class="card-description">只有主按钮的基础对话框</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="single-button">
+          打开单按钮对话框
+        </button>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">带标题和副标题</h3>
+        <p class="card-description">显示标题和副标题内容</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="with-title">
+          打开带标题对话框
+        </button>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">带图片</h3>
+        <p class="card-description">显示图片内容区域</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="with-image">
+          打开带图片对话框
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 双按钮 -->
+  <div class="demo-section">
+    <h2 class="section-title">双按钮</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">水平排列</h3>
+        <p class="card-description">次按钮和主按钮水平排列</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="two-buttons-horizontal">
+          打开水平双按钮对话框
+        </button>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">垂直排列</h3>
+        <p class="card-description">主按钮在上，次按钮在下垂直排列</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="two-buttons-vertical">
+          打开垂直双按钮对话框
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 三按钮 -->
+  <div class="demo-section">
+    <h2 class="section-title">三按钮</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">水平三按钮</h3>
+        <p class="card-description">最多显示三个按钮，水平排列</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="three-buttons-horizontal">
+          打开三按钮对话框（水平）
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 带关闭按钮 -->
+  <div class="demo-section">
+    <h2 class="section-title">带关闭按钮</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">右上角关闭</h3>
+        <p class="card-description">右上角显示关闭按钮（X图标）</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="with-close">
+          打开带关闭按钮对话框
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 自定义内容 -->
+  <div class="demo-section">
+    <h2 class="section-title">自定义内容</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">自定义插槽</h3>
+        <p class="card-description">使用自定义内容插槽</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="custom-content">
+          打开自定义内容对话框
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 完整示例 -->
+  <div class="demo-section">
+    <h2 class="section-title">完整示例</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">包含所有功能</h3>
+      <p class="card-description">标题 + 副标题 + 内容 + 双按钮 + 关闭按钮</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" data-dialog="full-example">
+          打开完整示例对话框
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dialog 容器 -->
+  <div id="dialog-container"></div>
+
+  <script>
+    // Dialog 创建函数
+    function createDialog(config) {
+      const overlay = document.createElement('div');
+      overlay.className = 'yds-dialog-overlay';
+
+      const dialog = document.createElement('div');
+      dialog.className = 'yds-dialog';
+      dialog.setAttribute('role', 'dialog');
+      dialog.setAttribute('aria-modal', 'true');
+
+      // 标题和副标题
+      if (config.title || config.subtitle || config.content) {
+        const titleSection = document.createElement('div');
+        titleSection.className = 'yds-dialog__title-section';
+
+        if (config.title) {
+          const title = document.createElement('h2');
+          title.className = 'yds-dialog__title';
+          title.textContent = config.title;
+          titleSection.appendChild(title);
+        }
+
+        if (config.subtitle) {
+          const subtitle = document.createElement('p');
+          subtitle.className = 'yds-dialog__subtitle';
+          subtitle.textContent = config.subtitle;
+          titleSection.appendChild(subtitle);
+        }
+
+        dialog.appendChild(titleSection);
+      }
+
+      // 内容
+      if (config.content) {
+        const bodyText = document.createElement('div');
+        bodyText.className = 'yds-dialog__body-text';
+        bodyText.innerHTML = config.content;
+        dialog.appendChild(bodyText);
+      }
+
+      // 按钮区域
+      if (config.buttonCount > 0) {
+        const buttonsDiv = document.createElement('div');
+        buttonsDiv.className = `yds-dialog__buttons yds-dialog__buttons--${config.buttonDirection || 'horizontal'}`;
+
+        if (config.buttonCount === 1) {
+          const btn = createButton({
+            text: config.buttons?.[0]?.text || '主按钮',
+            isPrimary: true,
+            isFull: config.buttonFull || false,
+            onClick: config.onPrimaryClick
+          });
+          buttonsDiv.appendChild(btn);
+        } else if (config.buttonCount === 2) {
+          const secondaryBtn = createButton({
+            text: config.buttons?.[1]?.text || '次按钮',
+            isPrimary: false,
+            onClick: config.onSecondaryClick
+          });
+          const primaryBtn = createButton({
+            text: config.buttons?.[0]?.text || '主按钮',
+            isPrimary: true,
+            isFull: config.buttonFull || false,
+            onClick: config.onPrimaryClick
+          });
+          buttonsDiv.appendChild(secondaryBtn);
+          buttonsDiv.appendChild(primaryBtn);
+        } else if (config.buttonCount === 3) {
+          if (config.buttonDirection === 'vertical') {
+            const primaryBtn = createButton({
+              text: config.buttons?.[0]?.text || '主按钮',
+              isPrimary: true,
+              onClick: config.onPrimaryClick
+            });
+            const secondaryBtn = createButton({
+              text: config.buttons?.[1]?.text || '次按钮',
+              isPrimary: false,
+              onClick: config.onSecondaryClick
+            });
+            buttonsDiv.appendChild(primaryBtn);
+            buttonsDiv.appendChild(secondaryBtn);
+          } else {
+            const secondaryBtn = createButton({
+              text: config.buttons?.[1]?.text || '次按钮',
+              isPrimary: false,
+              onClick: config.onSecondaryClick
+            });
+            const primaryBtn = createButton({
+              text: config.buttons?.[0]?.text || '主按钮',
+              isPrimary: true,
+              onClick: config.onPrimaryClick
+            });
+            buttonsDiv.appendChild(secondaryBtn);
+            buttonsDiv.appendChild(primaryBtn);
+          }
+        }
+
+        dialog.appendChild(buttonsDiv);
+      }
+
+      // 关闭按钮
+      if (config.showClose) {
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'yds-dialog__close';
+        closeBtn.type = 'button';
+        closeBtn.ariaLabel = '关闭';
+        closeBtn.innerHTML = `
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 6L18 18M6 18L18 6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        `;
+        closeBtn.onclick = () => {
+          document.body.removeChild(overlay);
+          if (config.onClose) config.onClose();
+        };
+        dialog.appendChild(closeBtn);
+      }
+
+      overlay.appendChild(dialog);
+      document.body.appendChild(overlay);
+
+      // 点击遮罩层关闭
+      overlay.onclick = (e) => {
+        if (e.target === overlay) {
+          document.body.removeChild(overlay);
+          if (config.onClose) config.onClose();
+        }
+      };
+    }
+
+    // 创建按钮
+    function createButton({ text, isPrimary, isFull, onClick }) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `yds-dialog__button yds-dialog__button--${isPrimary ? 'primary' : 'secondary'}${isFull ? ' yds-dialog__button--full' : ''}`;
+      btn.textContent = text;
+      if (onClick) {
+        btn.onclick = () => {
+          document.body.removeChild(document.querySelector('.yds-dialog-overlay'));
+          onClick();
+        };
+      }
+      return btn;
+    }
+
+    // 单按钮对话框
+    document.querySelector('[data-dialog="single-button"]').addEventListener('click', () => {
+      createDialog({
+        title: '标题不超过两行',
+        content: '对话框内容区域，支持多行文本显示。',
+        buttonCount: 1,
+        buttonDirection: 'horizontal',
+        buttons: [{ text: '主按钮' }],
+        onPrimaryClick: () => console.log('点击了主按钮')
+      });
+    });
+
+    // 带标题对话框
+    document.querySelector('[data-dialog="with-title"]').addEventListener('click', () => {
+      createDialog({
+        title: '标题不超过两行',
+        subtitle: '副标题不超过一行',
+        buttonCount: 1,
+        buttonDirection: 'horizontal',
+        buttons: [{ text: '主按钮' }],
+        onPrimaryClick: () => console.log('点击了主按钮')
+      });
+    });
+
+    // 带图片对话框
+    document.querySelector('[data-dialog="with-image"]').addEventListener('click', () => {
+      createDialog({
+        title: '标题不超过两行',
+        subtitle: '副标题不超过一行',
+        content: `
+          <div style="width: 100%; height: 140px; background-color: #F2F7FF; border: 2px dashed #8CBCFF; display: flex; align-items: center; justify-content: center; color: #006AFF; font-size: 14px; border-radius: 8px; margin-bottom: 16px;">
+            图片区域
+          </div>
+        `,
+        buttonCount: 1,
+        buttonDirection: 'horizontal',
+        buttons: [{ text: '主按钮' }],
+        onPrimaryClick: () => console.log('点击了主按钮')
+      });
+    });
+
+    // 水平双按钮对话框
+    document.querySelector('[data-dialog="two-buttons-horizontal"]').addEventListener('click', () => {
+      createDialog({
+        title: '标题不超过两行',
+        subtitle: '副标题不超过一行',
+        buttonCount: 2,
+        buttonDirection: 'horizontal',
+        buttons: [
+          { text: '主按钮' },
+          { text: '次按钮' }
+        ],
+        onPrimaryClick: () => console.log('点击了主按钮'),
+        onSecondaryClick: () => console.log('点击了次按钮')
+      });
+    });
+
+    // 垂直双按钮对话框
+    document.querySelector('[data-dialog="two-buttons-vertical"]').addEventListener('click', () => {
+      createDialog({
+        title: '标题不超过两行',
+        subtitle: '副标题不超过一行',
+        buttonCount: 2,
+        buttonDirection: 'vertical',
+        buttons: [
+          { text: '主按钮' },
+          { text: '次按钮' }
+        ],
+        onPrimaryClick: () => console.log('点击了主按钮'),
+        onSecondaryClick: () => console.log('点击了次按钮')
+      });
+    });
+
+    // 三按钮对话框
+    document.querySelector('[data-dialog="three-buttons-horizontal"]').addEventListener('click', () => {
+      createDialog({
+        title: '标题不超过两行',
+        subtitle: '副标题不超过一行',
+        buttonCount: 3,
+        buttonDirection: 'horizontal',
+        buttons: [
+          { text: '主按钮' },
+          { text: '次按钮' }
+        ],
+        onPrimaryClick: () => console.log('点击了主按钮'),
+        onSecondaryClick: () => console.log('点击了次按钮')
+      });
+    });
+
+    // 带关闭按钮对话框
+    document.querySelector('[data-dialog="with-close"]').addEventListener('click', () => {
+      createDialog({
+        title: '标题不超过两行',
+        subtitle: '副标题不超过一行',
+        showClose: true,
+        buttonCount: 1,
+        buttonDirection: 'horizontal',
+        buttons: [{ text: '主按钮' }],
+        onPrimaryClick: () => console.log('点击了主按钮'),
+        onClose: () => console.log('点击了关闭按钮')
+      });
+    });
+
+    // 自定义内容对话框
+    document.querySelector('[data-dialog="custom-content"]').addEventListener('click', () => {
+      createDialog({
+        content: `
+          <div style="display: flex; gap: 12px; flex-direction: column; align-items: center;">
+            <div style="width: 232px; height: 32px; background-color: #F2F7FF; border: 1px dashed #8CBCFF; display: flex; align-items: center; justify-content: center; color: #006AFF; font-size: 10px;">
+              ◇ 自定义内容
+            </div>
+          </div>
+        `,
+        buttonCount: 1,
+        buttonDirection: 'horizontal',
+        buttons: [{ text: '主按钮' }],
+        onPrimaryClick: () => console.log('点击了主按钮')
+      });
+    });
+
+    // 完整示例对话框
+    document.querySelector('[data-dialog="full-example"]').addEventListener('click', () => {
+      createDialog({
+        title: '标题不超过两行',
+        subtitle: '副标题不超过一行',
+        showClose: true,
+        buttonCount: 2,
+        buttonDirection: 'horizontal',
+        buttons: [
+          { text: '主按钮' },
+          { text: '次按钮' }
+        ],
+        onPrimaryClick: () => console.log('点击了主按钮'),
+        onSecondaryClick: () => console.log('点击了次按钮'),
+        onClose: () => console.log('点击了关闭按钮')
+      });
+    });
+
+    // ESC 键关闭
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const overlay = document.querySelector('.yds-dialog-overlay');
+        if (overlay) {
+          document.body.removeChild(overlay);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

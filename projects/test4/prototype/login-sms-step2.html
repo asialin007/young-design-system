@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>输入验证码 - 唯品会</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    /* ========== 移动端基础样式 ========== */
+    html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;  /* 禁止垂直滚动条 */
+    }
+
+    body {
+      background-color: var(--yds-bg-default-white);
+      height: 100vh;
+      font-family: var(--yds-font-family-base);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;  /* 禁止垂直滚动条 */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .mobile-container {
+      width: 100%;
+      max-width: var(--yds-screen-mobile);
+      margin: 0 auto;
+      overflow-x: hidden;
+      overflow-y: hidden;  /* 禁止垂直滚动条 */
+      position: relative;
+    }
+
+    /* ========== 页面特定样式 ========== */
+    .page-header {
+      display: flex;
+      align-items: center;
+      padding: var(--yds-spacing-16) 0;
+      margin-bottom: var(--yds-spacing-24);
+    }
+
+    .back-button {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: var(--yds-radius-full);
+      transition: background-color 0.3s;
+    }
+
+    .back-button:active {
+      background-color: var(--yds-bg-transp-black-4-pct);
+    }
+
+    .back-button img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .page-title {
+      flex: 1;
+      text-align: center;
+      font-size: var(--yds-font-size-17);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+    }
+
+    .phone-display {
+      font-size: var(--yds-font-size-24);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+      text-align: center;
+      margin-bottom: var(--yds-spacing-8);
+    }
+
+    .phone-tip {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-tertiary);
+      text-align: center;
+      margin-bottom: var(--yds-spacing-48);
+    }
+
+    .verify-code-container {
+      display: flex;
+      justify-content: center;
+      gap: var(--yds-spacing-8);
+      margin-bottom: var(--yds-spacing-48);
+    }
+
+    .verify-code-input {
+      width: 48px;
+      height: 56px;
+      border: none;
+      border-bottom: 2px solid var(--yds-border-default-tertiary);
+      font-size: var(--yds-font-size-24);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+      text-align: center;
+      background: transparent;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .verify-code-input:focus {
+      border-bottom-color: var(--yds-text-brand-default);
+    }
+
+    .verify-code-input.error {
+      border-bottom-color: var(--yds-bg-danger-default);
+    }
+
+    .resend-section {
+      text-align: center;
+      margin-bottom: var(--yds-spacing-48);
+    }
+
+    .resend-button {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-brand-default);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--yds-spacing-8) var(--yds-spacing-16);
+    }
+
+    .resend-button:disabled {
+      color: var(--yds-text-default-disabled);
+      cursor: not-allowed;
+    }
+
+    .countdown {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-tertiary);
+    }
+
+    .error-tip {
+      text-align: center;
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-danger-default);
+      margin-bottom: var(--yds-spacing-24);
+      display: none;
+    }
+
+    .error-tip.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- 移动端容器 -->
+  <div class="mobile-container">
+    <!-- 栅格系统 -->
+    <div class="yds-grid">
+      <div class="yds-grid__cell yds-grid__cell--12">
+        <div class="yds-grid__cell-content">
+
+          <!-- 页面头部 -->
+          <div class="page-header">
+            <div class="back-button" onclick="goBack()">
+              <img src="../icons/y_icon_line_direction_arrow_left.svg" alt="返回">
+            </div>
+            <div class="page-title">验证码登录</div>
+            <div style="width: 40px;"></div>
+          </div>
+
+          <!-- 手机号显示 -->
+          <div class="phone-display" id="phone-display"></div>
+          <div class="phone-tip">验证码已发送至您的手机</div>
+
+          <!-- 错误提示 -->
+          <div class="error-tip" id="error-tip">验证码错误，请重新输入</div>
+
+          <!-- 验证码输入 -->
+          <div class="verify-code-container">
+            <input type="tel" class="verify-code-input" maxlength="1" data-index="0" autofocus>
+            <input type="tel" class="verify-code-input" maxlength="1" data-index="1">
+            <input type="tel" class="verify-code-input" maxlength="1" data-index="2">
+            <input type="tel" class="verify-code-input" maxlength="1" data-index="3">
+            <input type="tel" class="verify-code-input" maxlength="1" data-index="4">
+            <input type="tel" class="verify-code-input" maxlength="1" data-index="5">
+          </div>
+
+          <!-- 重新发送 -->
+          <div class="resend-section">
+            <button class="resend-button" id="resend-btn" onclick="resendCode()">重新获取验证码</button>
+            <span class="countdown" id="countdown" style="display: none;">60s后重新获取</span>
+          </div>
+
+          <!-- 登录按钮 -->
+          <button
+            id="login-btn"
+            class="yds-button yds-button--solid-dark yds-button--black yds-button--xl"
+            style="width: 100%;"
+            disabled
+            onclick="handleLogin()"
+          >
+            登录
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast 组件 -->
+  <div id="yds-toast" class="yds-toast yds-toast--default" style="display: none;">
+    <div class="yds-toast__text"></div>
+  </div>
+
+  <script>
+    // 获取URL参数中的手机号
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // ========== 初始化 ==========
+    let phone = '';
+    let countdown = 60;
+    let countdownTimer = null;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      phone = getQueryParam('phone') || '';
+      document.getElementById('phone-display').textContent = phone.replace(/(\d{3})\d{4}(\d{4})/, '$1 **** $2');
+
+      // 启动倒计时
+      startCountdown();
+
+      // 初始化验证码输入
+      initVerifyCodeInputs();
+    });
+
+    // ========== 验证码输入处理 ==========
+    function initVerifyCodeInputs() {
+      const inputs = document.querySelectorAll('.verify-code-input');
+      const loginBtn = document.getElementById('login-btn');
+
+      inputs.forEach((input, index) => {
+        input.addEventListener('input', function(e) {
+          const value = e.target.value;
+
+          // 只允许数字
+          if (!/^\d*$/.test(value)) {
+            e.target.value = '';
+            return;
+          }
+
+          // 自动跳转到下一个输入框
+          if (value && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+          }
+
+          // 检查是否输入完成
+          checkComplete();
+        });
+
+        input.addEventListener('keydown', function(e) {
+          // 删除键跳转到上一个输入框
+          if (e.key === 'Backspace' && !e.target.value && index > 0) {
+            inputs[index - 1].focus();
+          }
+        });
+
+        // 粘贴处理
+        input.addEventListener('paste', function(e) {
+          e.preventDefault();
+          const pasteData = (e.clipboardData || window.clipboardData).getData('text');
+          const digits = pasteData.replace(/\D/g, '').slice(0, 6);
+
+          digits.split('').forEach((digit, i) => {
+            if (inputs[i]) {
+              inputs[i].value = digit;
+            }
+          });
+
+          // 聚焦到最后一个有值的输入框或最后一个输入框
+          const lastIndex = Math.min(digits.length - 1, inputs.length - 1);
+          if (lastIndex >= 0) {
+            inputs[lastIndex].focus();
+          }
+
+          checkComplete();
+        });
+      });
+
+      function checkComplete() {
+        const code = Array.from(inputs).map(input => input.value).join('');
+        const errorTip = document.getElementById('error-tip');
+
+        if (code.length === 6) {
+          loginBtn.disabled = false;
+          errorTip.classList.remove('show');
+          inputs.forEach(input => input.classList.remove('error'));
+        } else {
+          loginBtn.disabled = true;
+        }
+      }
+    }
+
+    // ========== 倒计时 ==========
+    function startCountdown() {
+      const resendBtn = document.getElementById('resend-btn');
+      const countdownEl = document.getElementById('countdown');
+
+      resendBtn.style.display = 'none';
+      countdownEl.style.display = 'inline';
+
+      countdownTimer = setInterval(() => {
+        countdown--;
+        countdownEl.textContent = countdown + 's后重新获取';
+
+        if (countdown <= 0) {
+          clearInterval(countdownTimer);
+          resendBtn.style.display = 'inline';
+          countdownEl.style.display = 'none';
+          countdown = 60;
+        }
+      }, 1000);
+    }
+
+    // ========== 重新发送验证码 ==========
+    function resendCode() {
+      showToast('验证码已发送');
+      startCountdown();
+    }
+
+    // ========== 登录处理 ==========
+    function handleLogin() {
+      const inputs = document.querySelectorAll('.verify-code-input');
+      const code = Array.from(inputs).map(input => input.value).join('');
+      const errorTip = document.getElementById('error-tip');
+
+      if (code.length !== 6) {
+        return;
+      }
+
+      // 模拟验证码验证
+      // 这里应该调用后端API验证
+      if (code === '123456') {
+        showToast('登录成功');
+        setTimeout(() => {
+          // 登录成功后跳转到首页
+          window.location.href = 'login-success.html';
+        }, 1000);
+      } else {
+        errorTip.classList.add('show');
+        inputs.forEach(input => input.classList.add('error'));
+        showToast('验证码错误，请重新输入');
+      }
+    }
+
+    // ========== 返回 ==========
+    function goBack() {
+      window.history.back();
+    }
+
+    // ========== Toast 提示 ==========
+    function showToast(message, duration = 2000) {
+      const toast = document.getElementById('yds-toast');
+      const toastText = toast.querySelector('.yds-toast__text');
+
+      toastText.textContent = message;
+      toast.style.display = 'flex';
+      toast.classList.add('yds-toast--fade-in');
+
+      setTimeout(() => {
+        toast.classList.remove('yds-toast--fade-in');
+        toast.classList.add('yds-toast--fade-out');
+
+        setTimeout(() => {
+          toast.style.display = 'none';
+          toast.classList.remove('yds-toast--fade-out');
+        }, 300);
+      }, duration);
+    }
+  </script>
+</body>
+</html>

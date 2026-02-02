@@ -1,0 +1,265 @@
+/**
+ * 年轻版设计系统 2.0 - 栅格系统样式
+ * 基于 12 栅格体系（Figma 设计稿）
+ * 标注均为 1 倍设计稿数值
+ */
+
+/* ==================== 栅格容器 ==================== */
+
+/**
+ * 基础栅格容器
+ * 使用 grid-template-columns: repeat(12, 1fr) 实现 12 列均分屏幕宽度
+ * 栅格间距 gap: 3px（1 倍设计稿）
+ */
+.yds-grid {
+  display: grid;
+  grid-template-columns: var(--yds-grid-template);  /* repeat(12, 1fr) */
+  gap: var(--yds-grid-gap);                        /* 3px（1倍设计稿） */
+  width: 100%;
+  box-sizing: border-box;
+
+  /* ⚠️ 重要：栅格容器不添加任何 padding 或 margin */
+  /* 8px 左右边距通过内容单元格的 padding 实现 */
+}
+
+/* ==================== 栅格间距变体 ==================== */
+
+/**
+ * 最小栅格间距（2px）
+ * 用于特殊场景的最小间距
+ */
+.yds-grid--gutter-min {
+  gap: var(--yds-grid-gutter-min);  /* 2px */
+}
+
+/**
+ * 小栅格间距（4px）
+ * 用于商品列表等紧凑场景
+ */
+.yds-grid--gutter-small {
+  gap: var(--yds-grid-gutter-small);  /* 4px */
+}
+
+/**
+ * 基础栅格间距（3px）
+ * 1 倍设计稿默认值
+ */
+.yds-grid--gutter-base {
+  gap: var(--yds-grid-gutter-base);  /* 3px */
+}
+
+/**
+ * 大栅格间距（6px）
+ * 2 倍设计稿或大间距场景
+ */
+.yds-grid--gutter-large {
+  gap: var(--yds-grid-gutter-large);  /* 6px */
+}
+
+/* ==================== 栅格单元格 ==================== */
+
+/**
+ * 栅格单元格基础样式
+ * 使用 grid-column: span N 指定栅格占用
+ */
+.yds-grid__cell {
+  position: relative;
+  box-sizing: border-box;
+  grid-column: span 1;  /* 默认占 1 列 */
+}
+
+/* 栅格单元格 - 占 N 列（N = 1-12） */
+.yds-grid__cell--1 { grid-column: span 1; }
+.yds-grid__cell--2 { grid-column: span 2; }
+.yds-grid__cell--3 { grid-column: span 3; }
+.yds-grid__cell--4 { grid-column: span 4; }
+.yds-grid__cell--5 { grid-column: span 5; }
+.yds-grid__cell--6 { grid-column: span 6; }
+.yds-grid__cell--7 { grid-column: span 7; }
+.yds-grid__cell--8 { grid-column: span 8; }
+.yds-grid__cell--9 { grid-column: span 9; }
+.yds-grid__cell--10 { grid-column: span 10; }
+.yds-grid__cell--11 { grid-column: span 11; }
+.yds-grid__cell--12 { grid-column: span 12; }
+
+/* ==================== 内容单元格 ==================== */
+
+/**
+ * 内容单元格 - 实现 8px 左右边距（默认）
+ * 用于主流程页面（首页、列表、商详等）
+ */
+.yds-grid__cell-content {
+  padding: 0 var(--yds-grid-padding-default);  /* 0 8px */
+}
+
+/**
+ * 内容单元格 - 紧凑边距（4px）
+ * 用于商品列表等紧凑场景
+ */
+.yds-grid__cell-content--compact {
+  padding: 0 var(--yds-grid-padding-compact);  /* 0 4px */
+}
+
+/* ==================== 响应式布局 ==================== */
+
+/**
+ * 1 倍设计稿（标准）
+ * 适用于 375px 宽度的移动端屏幕
+ */
+@media (max-width: 375px) {
+  .yds-grid {
+    gap: var(--yds-grid-gap);  /* 3px */
+  }
+}
+
+/**
+ * 2 倍设计稿（Retina 屏）
+ * 栅格间距 × 2
+ */
+@media (min-width: 376px) and (max-width: 767px) {
+  .yds-grid {
+    gap: var(--yds-grid-gap-2x);  /* 6px */
+  }
+}
+
+/**
+ * 平板（768px+）
+ * 保持栅格间距 3px
+ */
+@media (min-width: 768px) {
+  .yds-grid {
+    gap: var(--yds-grid-gap);  /* 3px */
+  }
+}
+
+/**
+ * 桌面（1440px+）
+ * 栅格系统可以居中显示（可选）
+ */
+@media (min-width: 1440px) {
+  .yds-grid--container {
+    max-width: var(--yds-screen-mobile);
+    margin: 0 auto;
+  }
+}
+
+/* ==================== 栅格辅助类 ==================== */
+
+/**
+ * 内容居中
+ */
+.yds-grid__centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+ * 内容对齐
+ */
+.yds-grid__left {
+  text-align: left;
+}
+
+.yds-grid__right {
+  text-align: right;
+}
+
+.yds-grid__center {
+  text-align: center;
+}
+
+/* ==================== 常用布局模式 ==================== */
+
+/**
+ * 单列布局（占满 12 列）
+ * 用于主流程页面的单列内容
+ */
+.yds-grid--single-column {
+  grid-template-columns: var(--yds-grid-template);  /* repeat(12, 1fr) */
+}
+
+/**
+ * 两列布局（各占 6 列）
+ * 用于商品列表 1 行 2 等场景
+ */
+.yds-grid--two-columns {
+  grid-template-columns: var(--yds-grid-template);  /* repeat(12, 1fr) */
+}
+
+/**
+ * 三列布局（各占 4 列）
+ * 用于三列平均分配的内容
+ */
+.yds-grid--three-columns {
+  grid-template-columns: var(--yds-grid-template);  /* repeat(12, 1fr) */
+}
+
+/**
+ * 居中单列布局（占 8 列，左右各占 2 列）
+ * 用于大卡片、Banner 等居中显示的内容
+ */
+.yds-grid--centered-column {
+  grid-template-columns: var(--yds-grid-template);  /* repeat(12, 1fr) */
+}
+
+/* ==================== 使用示例 ==================== */
+
+/*
+  示例 1：单列布局（默认）
+  ---------------------------------
+  <div class="yds-grid">
+    <div class="yds-grid__cell yds-grid__cell--12">
+      <div class="yds-grid__cell-content">
+        <!-- 内容 -->
+      </div>
+    </div>
+  </div>
+
+  示例 2：两列布局（商品列表）
+  ---------------------------------
+  <div class="yds-grid">
+    <div class="yds-grid__cell yds-grid__cell--6">
+      <div class="yds-grid__cell-content yds-grid__cell-content--compact">
+        <!-- 商品 1 -->
+      </div>
+    </div>
+    <div class="yds-grid__cell yds-grid__cell--6">
+      <div class="yds-grid__cell-content yds-grid__cell-content--compact">
+        <!-- 商品 2 -->
+      </div>
+    </div>
+  </div>
+
+  示例 3：居中单列布局（大卡片）
+  ---------------------------------
+  <div class="yds-grid">
+    <div class="yds-grid__cell yds-grid__cell--2"></div>
+    <div class="yds-grid__cell yds-grid__cell--8">
+      <div class="yds-grid__cell-content yds-grid__cell-content--compact">
+        <!-- 大卡片内容 -->
+      </div>
+    </div>
+    <div class="yds-grid__cell yds-grid__cell--2"></div>
+  </div>
+
+  示例 4：三列布局
+  ---------------------------------
+  <div class="yds-grid">
+    <div class="yds-grid__cell yds-grid__cell--4">
+      <div class="yds-grid__cell-content">
+        <!-- 内容 1 -->
+      </div>
+    </div>
+    <div class="yds-grid__cell yds-grid__cell--4">
+      <div class="yds-grid__cell-content">
+        <!-- 内容 2 -->
+      </div>
+    </div>
+    <div class="yds-grid__cell yds-grid__cell--4">
+      <div class="yds-grid__cell-content">
+        <!-- 内容 3 -->
+      </div>
+    </div>
+  </div>
+*/

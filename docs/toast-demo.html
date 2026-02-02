@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toast 轻提示 - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .demo-header {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .demo-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #1b1b1b;
+    }
+
+    .demo-description {
+      font-size: 16px;
+      color: #4e4f54;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1b1b1b;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .demo-card {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #1b1b1b;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #7e828c;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      background-color: #ff77e7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .button:hover {
+      background-color: #f74ad9;
+    }
+
+    .button-secondary {
+      background-color: #1b1b1b;
+    }
+
+    .button-secondary:hover {
+      opacity: 0.9;
+    }
+
+    .demo-preview {
+      background: #e8e8e8;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 16px;
+      min-height: 100px;
+      position: relative;
+    }
+
+    .toast-container {
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 16px;
+    }
+
+    .code-comment {
+      color: #6a9955;
+    }
+
+    .code-tag {
+      color: #569cd6;
+    }
+
+    .code-class {
+      color: #4ec9b0;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+
+    .theme-toggle button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-toggle">
+    <button class="button" onclick="toggleTheme()">切换主题</button>
+  </div>
+
+  <div class="demo-header">
+    <h1 class="demo-title">Toast 轻提示</h1>
+    <p class="demo-description">
+      Toast 用于显示短暂的通知消息，在屏幕中央或特定位置显示，自动消失。
+      适用于操作反馈、状态提示等场景。
+    </p>
+  </div>
+
+  <!-- 默认 Toast -->
+  <div class="demo-section">
+    <h2 class="section-title">默认 Toast</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">单行文字</h3>
+        <p class="card-description">简单的单行提示信息</p>
+        <button class="button" onclick="showDefaultToast('操作成功')">显示单行 Toast</button>
+        <div class="demo-preview">
+          <div class="toast-container">
+            <div class="yds-toast yds-toast--default" id="demo-default-1" style="position: relative; top: auto; left: auto; transform: none;">
+              <span class="yds-toast__text">操作成功</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">多行文字</h3>
+        <p class="card-description">支持两行以内的文字显示</p>
+        <button class="button" onclick="showDefaultToast('建议内容\n不超过两行')">显示多行 Toast</button>
+        <div class="demo-preview">
+          <div class="toast-container">
+            <div class="yds-toast yds-toast--default" id="demo-default-2" style="position: relative; top: auto; left: auto; transform: none;">
+              <span class="yds-toast__text">建议内容<br>不超过两行</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <span class="code-comment">&lt;!-- HTML --&gt;</span><br>
+      <span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast yds-toast--default</span>"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;span</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__text</span>"<span class="code-tag">&gt;</span>操作成功<span class="code-tag">&lt;/span&gt;</span><br>
+      <span class="code-tag">&lt;/div&gt;</span>
+    </div>
+  </div>
+
+  <!-- 品牌/头像 Toast -->
+  <div class="demo-section">
+    <h2 class="section-title">品牌 Toast</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">带头像</h3>
+        <p class="card-description">显示品牌头像和内容</p>
+        <button class="button" onclick="showBrandToast()">显示品牌 Toast</button>
+        <div class="demo-preview">
+          <div class="toast-container">
+            <div class="yds-toast yds-toast--brand" id="demo-brand" style="position: relative; top: auto; left: auto; transform: none;">
+              <div class="yds-toast__avatar">
+                <img src="https://via.placeholder.com/56" alt="Avatar">
+              </div>
+              <div class="yds-toast__content">
+                <span class="yds-toast__title">VIPSHOP</span>
+                <span class="yds-toast__subtitle">订阅成功</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">仅标题</h3>
+        <p class="card-description">只显示标题，不显示副标题</p>
+        <button class="button" onclick="showBrandToastNoSubtitle()">显示品牌 Toast（无副标题）</button>
+        <div class="demo-preview">
+          <div class="toast-container">
+            <div class="yds-toast yds-toast--brand" id="demo-brand-2" style="position: relative; top: auto; left: auto; transform: none;">
+              <div class="yds-toast__avatar">
+                <img src="https://via.placeholder.com/56" alt="Avatar">
+              </div>
+              <div class="yds-toast__content">
+                <span class="yds-toast__title">VIPSHOP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <span class="code-comment">&lt;!-- HTML --&gt;</span><br>
+      <span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast yds-toast--brand</span>"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__avatar</span>"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;img</span> <span class="code-class">src</span>="avatar.jpg" <span class="code-class">alt</span>="Avatar"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;/div&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__content</span>"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;span</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__title</span>"<span class="code-tag">&gt;</span>VIPSHOP<span class="code-tag">&lt;/span&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;span</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__subtitle</span>"<span class="code-tag">&gt;</span>订阅成功<span class="code-tag">&lt;/span&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;/div&gt;</span><br>
+      <span class="code-tag">&lt;/div&gt;</span>
+    </div>
+  </div>
+
+  <!-- 氛围 Toast -->
+  <div class="demo-section">
+    <h2 class="section-title">氛围 Toast</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">带装饰图标</h3>
+        <p class="card-description">左右带装饰星形图标的提示</p>
+        <button class="button" onclick="showAtmosphereToast()">显示氛围 Toast</button>
+        <div class="demo-preview">
+          <div class="toast-container">
+            <div class="yds-toast yds-toast--atmosphere" id="demo-atmosphere" style="position: relative; top: auto; left: auto; transform: none;">
+              <div class="yds-toast__icon yds-toast__icon--left">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="left">
+                  <path id="Star 27" d="M9.99387 6.19001C10.1837 5.74369 10.8163 5.74369 11.0061 6.19001L11.7072 7.83845C11.9856 8.49308 12.5069 9.01435 13.1615 9.29277L14.81 9.99387C15.2563 10.1837 15.2563 10.8163 14.81 11.0061L13.1615 11.7072C12.5069 11.9856 11.9856 12.5069 11.7072 13.1615L11.0061 14.81C10.8163 15.2563 10.1837 15.2563 9.99387 14.81L9.29277 13.1615C9.01435 12.5069 8.49308 11.9856 7.83845 11.7072L6.19001 11.0061C5.74369 10.8163 5.74369 10.1837 6.19001 9.99387L7.83845 9.29277C8.49308 9.01435 9.01435 8.49308 9.29277 7.83845L9.99387 6.19001Z" fill="url(#paint0_linear_0_6)"/>
+                  <path id="Star 28" opacity="0.7" d="M4.26994 0.540914C4.35623 0.338042 4.64377 0.338042 4.73006 0.540914L5.04874 1.29021C5.17529 1.58776 5.41224 1.82471 5.70979 1.95126L6.45909 2.26994C6.66196 2.35623 6.66196 2.64377 6.45909 2.73006L5.70979 3.04874C5.41224 3.17529 5.17529 3.41224 5.04874 3.70979L4.73006 4.45909C4.64377 4.66196 4.35623 4.66196 4.26994 4.45909L3.95126 3.70979C3.82471 3.41224 3.58776 3.17529 3.29021 3.04874L2.54091 2.73006C2.33804 2.64377 2.33804 2.35623 2.54091 2.26994L3.29021 1.95126C3.58776 1.82471 3.82471 1.58777 3.95126 1.29021L4.26994 0.540914Z" fill="url(#paint1_linear_0_6)"/>
+                  </g>
+                  <defs>
+                  <linearGradient id="paint0_linear_0_6" x1="13.0208" y1="13.25" x2="9.35416" y2="6.83333" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFA94F"/>
+                  <stop offset="1" stop-color="#FFE120"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_0_6" x1="5.64583" y1="3.75" x2="3.97917" y2="0.833334" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFA94F"/>
+                  <stop offset="1" stop-color="#FFE120"/>
+                  </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="yds-toast__text">标题不超过一行</span>
+              <div class="yds-toast__icon yds-toast__icon--right">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="right">
+                  <path id="Star 25" d="M8.5859 1.47365C8.74121 1.10848 9.25879 1.10847 9.4141 1.47364L9.98773 2.82237C10.2155 3.35798 10.642 3.78447 11.1776 4.01227L12.5264 4.5859C12.8915 4.74121 12.8915 5.25879 12.5264 5.4141L11.1776 5.98773C10.642 6.21553 10.2155 6.64202 9.98773 7.17763L9.4141 8.52635C9.25879 8.89152 8.74121 8.89153 8.5859 8.52636L8.01227 7.17763C7.78447 6.64202 7.35798 6.21553 6.82237 5.98773L5.47365 5.4141C5.10848 5.25879 5.10847 4.74121 5.47364 4.5859L6.82237 4.01227C7.35798 3.78447 7.78447 3.35798 8.01227 2.82237L8.5859 1.47365Z" fill="url(#paint0_linear_0_4)"/>
+                  </g>
+                  <defs>
+                  <linearGradient id="paint0_linear_0_4" x1="11.0625" y1="7.25" x2="8.0625" y2="2" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFA94F"/>
+                  <stop offset="1" stop-color="#FFE120"/>
+                  </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">长文字处理</h3>
+        <p class="card-description">超长文字自动省略</p>
+        <button class="button" onclick="showAtmosphereToastLong()">显示长文字 Toast</button>
+        <div class="demo-preview">
+          <div class="toast-container">
+            <div class="yds-toast yds-toast--atmosphere" id="demo-atmosphere-2" style="position: relative; top: auto; left: auto; transform: none;">
+              <div class="yds-toast__icon yds-toast__icon--left">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="left">
+                  <path id="Star 27" d="M9.99387 6.19001C10.1837 5.74369 10.8163 5.74369 11.0061 6.19001L11.7072 7.83845C11.9856 8.49308 12.5069 9.01435 13.1615 9.29277L14.81 9.99387C15.2563 10.1837 15.2563 10.8163 14.81 11.0061L13.1615 11.7072C12.5069 11.9856 11.9856 12.5069 11.7072 13.1615L11.0061 14.81C10.8163 15.2563 10.1837 15.2563 9.99387 14.81L9.29277 13.1615C9.01435 12.5069 8.49308 11.9856 7.83845 11.7072L6.19001 11.0061C5.74369 10.8163 5.74369 10.1837 6.19001 9.99387L7.83845 9.29277C8.49308 9.01435 9.01435 8.49308 9.29277 7.83845L9.99387 6.19001Z" fill="url(#paint0_linear_0_6)"/>
+                  <path id="Star 28" opacity="0.7" d="M4.26994 0.540914C4.35623 0.338042 4.64377 0.338042 4.73006 0.540914L5.04874 1.29021C5.17529 1.58776 5.41224 1.82471 5.70979 1.95126L6.45909 2.26994C6.66196 2.35623 6.66196 2.64377 6.45909 2.73006L5.70979 3.04874C5.41224 3.17529 5.17529 3.41224 5.04874 3.70979L4.73006 4.45909C4.64377 4.66196 4.35623 4.66196 4.26994 4.45909L3.95126 3.70979C3.82471 3.41224 3.58776 3.17529 3.29021 3.04874L2.54091 2.73006C2.33804 2.64377 2.33804 2.35623 2.54091 2.26994L3.29021 1.95126C3.58776 1.82471 3.82471 1.58777 3.95126 1.29021L4.26994 0.540914Z" fill="url(#paint1_linear_0_6)"/>
+                  </g>
+                  <defs>
+                  <linearGradient id="paint0_linear_0_6" x1="13.0208" y1="13.25" x2="9.35416" y2="6.83333" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFA94F"/>
+                  <stop offset="1" stop-color="#FFE120"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_0_6" x1="5.64583" y1="3.75" x2="3.97917" y2="0.833334" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFA94F"/>
+                  <stop offset="1" stop-color="#FFE120"/>
+                  </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span class="yds-toast__text">这是一段非常长的标题文字会自动省略</span>
+              <div class="yds-toast__icon yds-toast__icon--right">
+                <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="right">
+                  <path id="Star 25" d="M8.5859 1.47365C8.74121 1.10848 9.25879 1.10847 9.4141 1.47364L9.98773 2.82237C10.2155 3.35798 10.642 3.78447 11.1776 4.01227L12.5264 4.5859C12.8915 4.74121 12.8915 5.25879 12.5264 5.4141L11.1776 5.98773C10.642 6.21553 10.2155 6.64202 9.98773 7.17763L9.4141 8.52635C9.25879 8.89152 8.74121 8.89153 8.5859 8.52636L8.01227 7.17763C7.78447 6.64202 7.35798 6.21553 6.82237 5.98773L5.47365 5.4141C5.10848 5.25879 5.10847 4.74121 5.47364 4.5859L6.82237 4.01227C7.35798 3.78447 7.78447 3.35798 8.01227 2.82237L8.5859 1.47365Z" fill="url(#paint0_linear_0_4)"/>
+                  </g>
+                  <defs>
+                  <linearGradient id="paint0_linear_0_4" x1="11.0625" y1="7.25" x2="8.0625" y2="2" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFA94F"/>
+                  <stop offset="1" stop-color="#FFE120"/>
+                  </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <span class="code-comment">&lt;!-- HTML --&gt;</span><br>
+      <span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast yds-toast--atmosphere</span>"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__icon yds-toast__icon--left</span>"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;img</span> <span class="code-class">src</span>="../icons/y_toast_decoration_left.svg" <span class="code-class">alt</span>="装饰图标"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;/div&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;span</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__text</span>"<span class="code-tag">&gt;</span>标题不超过一行<span class="code-tag">&lt;/span&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__icon yds-toast__icon--right</span>"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;img</span> <span class="code-class">src</span>="../icons/y_toast_decoration_right.svg" <span class="code-class">alt</span>="装饰图标"<span class="code-tag">&gt;</span><br>
+      &nbsp;&nbsp;<span class="code-tag">&lt;/div&gt;</span><br>
+      <span class="code-tag">&lt;/div&gt;</span>
+    </div>
+  </div>
+
+  <!-- JavaScript 示例 -->
+  <div class="demo-section">
+    <h2 class="section-title">JavaScript 使用示例</h2>
+
+    <div class="demo-card">
+      <h3 class="card-title">Toast 工具函数</h3>
+      <p class="card-description">封装 Toast 显示工具函数</p>
+      <button class="button" onclick="showToast('默认 Toast', 'default')">默认</button>
+      <button class="button" onclick="showToast('订阅成功', 'brand')">品牌</button>
+      <button class="button" onclick="showToast('标题不超过一行', 'atmosphere')">氛围</button>
+
+      <div class="code-block">
+<span class="code-comment">// Toast 工具函数</span><br>
+<span class="code-tag">function</span> <span class="code-class">showToast</span>(text, variant = 'default') {<br>
+&nbsp;&nbsp;<span class="code-tag">const</span> toast = document.<span class="code-class">createElement</span>('div');<br>
+&nbsp;&nbsp;toast.<span class="code-class">classList</span>.<span class="code-class">add</span>('yds-toast', `yds-toast--${variant}`, 'yds-toast--fade-in');<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<span class="code-tag">let</span> html = '';<br>
+&nbsp;&nbsp;<span class="code-tag">switch</span> (variant) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">case</span> 'brand':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;html = `<span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__avatar</span>"<span class="code-tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;img</span> <span class="code-class">src</span>="avatar.jpg" <span class="code-class">alt</span>="Avatar"<span class="code-tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;/div&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;div</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__content</span>"<span class="code-tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;span</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__title</span>"<span class="code-tag">&gt;</span>VIPSHOP<span class="code-tag">&lt;/span&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;span</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__subtitle</span>"<span class="code-tag">&gt;</span>${text}<span class="code-tag">&lt;/span&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;/div&gt;</span>`;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">break</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">case</span> 'atmosphere':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;html = `<span class="code-tag">&lt;img</span> <span class="code-class">src</span>="../icons/y_toast_decoration_left.svg" <span class="code-class">class</span>="<span class="code-class">yds-toast__icon yds-toast__icon--left</span>"<span class="code-tag">&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;span</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__text</span>"<span class="code-tag">&gt;</span>${text}<span class="code-tag">&lt;/span&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">&lt;img</span> <span class="code-class">src</span>="../icons/y_toast_decoration_right.svg" <span class="code-class">class</span>="<span class="code-class">yds-toast__icon yds-toast__icon--right</span>"<span class="code-tag">&gt;</span>`;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">break</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-tag">default</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;html = `<span class="code-tag">&lt;span</span> <span class="code-class">class</span>="<span class="code-class">yds-toast__text</span>"<span class="code-tag">&gt;</span>${text}<span class="code-tag">&lt;/span&gt;</span>`;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;toast.<span class="code-class">innerHTML</span> = html;<br>
+&nbsp;&nbsp;document.<span class="code-class">body</span>.<span class="code-class">appendChild</span>(toast);<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<span class="code-comment">// 2秒后消失</span><br>
+&nbsp;&nbsp;<span class="code-tag">setTimeout</span>(() => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;toast.<span class="code-class">classList</span>.<span class="code-class">remove</span>('yds-toast--fade-in');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;toast.<span class="code-class">classList</span>.<span class="code-class">add</span>('yds-toast--fade-out');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;toast.<span class="code-class">addEventListener</span>('animationend', () => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toast.<span class="code-class">remove</span>();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+&nbsp;&nbsp;}, 2000);<br>
+}
+      </div>
+    </div>
+  </div>
+
+  <!-- SVG 图标定义 -->
+  <div style="display: none;">
+    <svg viewBox="0 0 16 16" id="toast-icon-left">
+      <g id="left">
+        <path d="M9.99387 6.19001C10.1837 5.74369 10.8163 5.74369 11.0061 6.19001L11.7072 7.83845C11.9856 8.49308 12.5069 9.01435 13.1615 9.29277L14.81 9.99387C15.2563 10.1837 15.2563 10.8163 14.81 11.0061L13.1615 11.7072C12.5069 11.9856 11.9856 12.5069 11.7072 13.1615L11.0061 14.81C10.8163 15.2563 10.1837 15.2563 9.99387 14.81L9.29277 13.1615C9.01435 12.5069 8.49308 11.9856 7.83845 11.7072L6.19001 11.0061C5.74369 10.8163 5.74369 10.1837 6.19001 9.99387L7.83845 9.29277C8.49308 9.01435 9.01435 8.49308 9.29277 7.83845L9.99387 6.19001Z" fill="url(#toast-left-grad-1)"/>
+        <path opacity="0.7" d="M4.26994 0.540914C4.35623 0.338042 4.64377 0.338042 4.73006 0.540914L5.04874 1.29021C5.17529 1.58776 5.41224 1.82471 5.70979 1.95126L6.45909 2.26994C6.66196 2.35623 6.66196 2.64377 6.45909 2.73006L5.70979 3.04874C5.41224 3.17529 5.17529 3.41224 5.04874 3.70979L4.73006 4.45909C4.64377 4.66196 4.35623 4.66196 4.26994 4.45909L3.95126 3.70979C3.82471 3.41224 3.58776 3.17529 3.29021 3.04874L2.54091 2.73006C2.33804 2.64377 2.33804 2.35623 2.54091 2.26994L3.29021 1.95126C3.58776 1.82471 3.82471 1.58777 3.95126 1.29021L4.26994 0.540914Z" fill="url(#toast-left-grad-2)"/>
+      </g>
+      <defs>
+        <linearGradient id="toast-left-grad-1" x1="13.0208" y1="13.25" x2="9.35416" y2="6.83333" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FFA94F"/>
+          <stop offset="1" stop-color="#FFE120"/>
+        </linearGradient>
+        <linearGradient id="toast-left-grad-2" x1="5.64583" y1="3.75" x2="3.97917" y2="0.833334" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FFA94F"/>
+          <stop offset="1" stop-color="#FFE120"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <svg viewBox="0 0 16 16" id="toast-icon-right">
+      <g id="right">
+        <path d="M8.5859 1.47365C8.74121 1.10848 9.25879 1.10847 9.4141 1.47364L9.98773 2.82237C10.2155 3.35798 10.642 3.78447 11.1776 4.01227L12.5264 4.5859C12.8915 4.74121 12.8915 5.25879 12.5264 5.4141L11.1776 5.98773C10.642 6.21553 10.2155 6.64202 9.98773 7.17763L9.4141 8.52635C9.25879 8.89152 8.74121 8.89153 8.5859 8.52636L8.01227 7.17763C7.78447 6.64202 7.35798 6.21553 6.82237 5.98773L5.47365 5.4141C5.10848 5.25879 5.10847 4.74121 5.47364 4.5859L6.82237 4.01227C7.35798 3.78447 7.78447 3.35798 8.01227 2.82237L8.5859 1.47365Z" fill="url(#toast-right-grad-1)"/>
+      </g>
+      <defs>
+        <linearGradient id="toast-right-grad-1" x1="11.0625" y1="7.25" x2="8.0625" y2="2" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FFA94F"/>
+          <stop offset="1" stop-color="#FFE120"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <script>
+    // Toast 工具函数
+    function showToast(text, variant = 'default', duration = 2000) {
+      const toast = document.createElement('div');
+      toast.classList.add('yds-toast', `yds-toast--${variant}`, 'yds-toast--fade-in');
+
+      let html = '';
+      switch (variant) {
+        case 'brand':
+          html = `
+            <div class="yds-toast__avatar">
+              <img src="https://via.placeholder.com/56" alt="Avatar">
+            </div>
+            <div class="yds-toast__content">
+              <span class="yds-toast__title">VIPSHOP</span>
+              <span class="yds-toast__subtitle">${text}</span>
+            </div>
+          `;
+          break;
+        case 'atmosphere':
+          html = `
+            <img src="../icons/y_toast_decoration_left.svg" class="yds-toast__icon yds-toast__icon--left" alt="装饰图标">
+            <span class="yds-toast__text">${text}</span>
+            <img src="../icons/y_toast_decoration_right.svg" class="yds-toast__icon yds-toast__icon--right" alt="装饰图标">
+          `;
+          break;
+        default:
+          html = `<span class="yds-toast__text">${text}</span>`;
+      }
+
+      toast.innerHTML = html;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('yds-toast--fade-in');
+        toast.classList.add('yds-toast--fade-out');
+        toast.addEventListener('animationend', () => {
+          toast.remove();
+        });
+      }, duration);
+    }
+
+    // 示例函数
+    function showDefaultToast(text) {
+      showToast(text, 'default');
+    }
+
+    function showBrandToast() {
+      showToast('订阅成功', 'brand');
+    }
+
+    function showBrandToastNoSubtitle() {
+      const toast = document.createElement('div');
+      toast.classList.add('yds-toast', 'yds-toast--brand', 'yds-toast--fade-in');
+      toast.innerHTML = `
+        <div class="yds-toast__avatar">
+          <img src="https://via.placeholder.com/56" alt="Avatar">
+        </div>
+        <div class="yds-toast__content">
+          <span class="yds-toast__title">VIPSHOP</span>
+        </div>
+      `;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('yds-toast--fade-in');
+        toast.classList.add('yds-toast--fade-out');
+        toast.addEventListener('animationend', () => {
+          toast.remove();
+        });
+      }, 2000);
+    }
+
+    function showAtmosphereToast() {
+      showToast('标题不超过一行', 'atmosphere');
+    }
+
+    function showAtmosphereToastLong() {
+      showToast('这是一段非常长的标题文字会自动省略', 'atmosphere');
+    }
+
+    // 主题切换
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', nextTheme);
+    }
+  </script>
+</body>
+</html>

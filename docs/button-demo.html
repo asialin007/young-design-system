@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button 按钮 - 年轻版设计系统</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .demo-header {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .demo-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #1b1b1b;
+    }
+
+    .demo-description {
+      font-size: 16px;
+      color: #4e4f54;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #1b1b1b;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 10px;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .demo-card {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #1b1b1b;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #7e828c;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .demo-dark {
+      background: #1b1b1b;
+      padding: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-header">
+    <h1 class="demo-title">Button 按钮</h1>
+    <p class="demo-description">
+      按钮组件用于触发操作或提交表单，支持多种变体、尺寸和状态。
+    </p>
+  </div>
+
+  <!-- 项目主行动按钮 -->
+  <div class="demo-section">
+    <h2 class="section-title">项目主行动按钮（规范）</h2>
+    <p style="margin-bottom: 20px; color: #4e4f54;">
+      <strong>规范要求：</strong>项目的主行动按钮必须使用 <strong>XL 超大黑色按钮</strong>（48px 高度，18px × 18px 图标）
+    </p>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">标准主行动按钮</h3>
+        <p class="card-description">48px 高度，359px 最小宽度，18px 图标</p>
+        <div class="button-row" style="flex-direction: column; gap: 16px;">
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--xl" style="width: 100%;">
+            <img src="../icons/y_icon_line_edit_add.svg" class="yds-icon" style="filter: brightness(0) invert(1);" alt="添加">
+            添加新任务
+          </button>
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--xl" style="width: 100%;">
+            提交
+          </button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">使用场景</h3>
+        <p class="card-description">适用于所有项目的主操作按钮</p>
+        <ul style="font-size: 14px; color: #4e4f54; line-height: 1.8; padding-left: 20px;">
+          <li>✅ 页面/屏幕的主要操作按钮</li>
+          <li>✅ 表单提交按钮</li>
+          <li>✅ 确认/同意按钮</li>
+          <li>✅ 重要的行动按钮（CTA）</li>
+          <li>✅ 全屏主按钮</li>
+        </ul>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">代码示例</h3>
+        <p class="card-description">复制此代码用于主行动按钮</p>
+        <pre style="background: #f5f5f5; padding: 12px; border-radius: 4px; font-size: 12px; overflow-x: auto;"><code>&lt;!-- 带图标的主按钮 --&gt;
+&lt;button class="yds-button yds-button--solid-dark yds-button--black yds-button--xl" style="width: 100%;"&gt;
+  &lt;img src="../icons/y_icon_line_edit_add.svg" class="yds-icon" style="filter: brightness(0) invert(1);" alt="添加"&gt;
+  添加新任务
+&lt;/button&gt;
+
+&lt;!-- 纯文字主按钮 --&gt;
+&lt;button class="yds-button yds-button--solid-dark yds-button--black yds-button--xl" style="width: 100%;"&gt;
+  提交
+&lt;/button&gt;</code></pre>
+      </div>
+    </div>
+
+    <div class="demo-card" style="max-width: 800px; margin-top: 24px;">
+      <h3 class="card-title">项目主按钮规格</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="border-bottom: 2px solid #e5e5e5;">
+            <th style="padding: 12px; text-align: left; font-size: 14px; color: #1b1b1b;">属性</th>
+            <th style="padding: 12px; text-align: left; font-size: 14px; color: #1b1b1b;">值</th>
+            <th style="padding: 12px; text-align: left; font-size: 14px; color: #1b1b1b;">说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>尺寸</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">XL（超大）</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">最大号按钮尺寸</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>高度</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>48px</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">适合移动端主操作</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>最小宽度</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">359px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">移动端全屏宽度</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>颜色</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>黑色</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">项目默认主按钮颜色</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>图标尺寸</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>18px × 18px</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">自动应用，无需手动设置</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>字体大小</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">15px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">Medium 字重（500）</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>内边距</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">14px 32px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">上下 14px，左右 32px</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 深色填充 - 品牌色 -->
+  <div class="demo-section">
+    <h2 class="section-title">深色填充 - 品牌色</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">所有尺寸</h3>
+        <p class="card-description">从超大到迷你，6 种尺寸可选</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--xl">超大</button>
+          <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large">大</button>
+          <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--medium">中</button>
+          <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--small">小</button>
+          <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--mini">迷你</button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">禁用状态</h3>
+        <p class="card-description">按钮不可点击时的样式</p>
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" disabled>禁用</button>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">纯图标</h3>
+        <p class="card-description">仅显示图标的按钮</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large yds-button--icon-only">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364 0L12 3.636a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 浅色填充 -->
+  <div class="demo-section">
+    <h2 class="section-title">浅色填充</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">品牌色</h3>
+        <p class="card-description">粉色品牌色背景</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-light yds-button--brand yds-button--large">大按钮</button>
+          <button class="yds-button yds-button--solid-light yds-button--brand yds-button--medium">中按钮</button>
+          <button class="yds-button yds-button--solid-light yds-button--brand yds-button--small">小按钮</button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">黑色</h3>
+        <p class="card-description">黑色背景</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-light yds-button--black yds-button--large">大按钮</button>
+          <button class="yds-button yds-button--solid-light yds-button--black yds-button--medium">中按钮</button>
+          <button class="yds-button yds-button--solid-light yds-button--black yds-button--small">小按钮</button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">白色</h3>
+        <p class="card-description">白色背景</p>
+        <div class="demo-dark">
+          <div class="button-row">
+            <button class="yds-button yds-button--solid-light yds-button--white yds-button--large">大按钮</button>
+            <button class="yds-button yds-button--solid-light yds-button--white yds-button--medium">中按钮</button>
+            <button class="yds-button yds-button--solid-light yds-button--white yds-button--small">小按钮</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 描边 -->
+  <div class="demo-section">
+    <h2 class="section-title">描边</h2>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">品牌色</h3>
+        <p class="card-description">品牌色描边样式</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--outlined yds-button--brand yds-button--large">大按钮</button>
+          <button class="yds-button yds-button--outlined yds-button--brand yds-button--medium">中按钮</button>
+          <button class="yds-button yds-button--outlined yds-button--brand yds-button--small">小按钮</button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">白色</h3>
+        <p class="card-description">白色描边样式</p>
+        <div class="demo-dark">
+          <div class="button-row">
+            <button class="yds-button yds-button--outlined yds-button--white yds-button--large">大按钮</button>
+            <button class="yds-button yds-button--outlined yds-button--white yds-button--medium">中按钮</button>
+            <button class="yds-button yds-button--outlined yds-button--white yds-button--small">小按钮</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">黑色</h3>
+        <p class="card-description">黑色描边样式</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--outlined yds-button--black yds-button--large">大按钮</button>
+          <button class="yds-button yds-button--outlined yds-button--black yds-button--medium">中按钮</button>
+          <button class="yds-button yds-button--outlined yds-button--black yds-button--small">小按钮</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 按钮内图标尺寸 -->
+  <div class="demo-section">
+    <h2 class="section-title">按钮内图标尺寸规范</h2>
+    <p style="margin-bottom: 20px; color: #4e4f54;">
+      按钮内嵌的左侧图标尺寸根据按钮尺寸自动调整，无需手动设置。
+    </p>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3 class="card-title">XL 超大按钮 - 18px × 18px 图标</h3>
+        <p class="card-description">高度 48px，图标 18px</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--xl">
+            <img src="../icons/y_icon_line_edit_add.svg" class="yds-icon" style="filter: brightness(0) invert(1);" alt="添加">
+            添加任务
+          </button>
+          <button class="yds-button yds-button--solid-light yds-button--white yds-button--xl">
+            <img src="../icons/y_icon_line_edit_close.svg" class="yds-icon" alt="取消">
+            取消操作
+          </button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">Large 大按钮 - 16px × 16px 图标</h3>
+        <p class="card-description">高度 38px，图标 16px</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--large">
+            <img src="../icons/y_icon_line_business_shopping_cart.svg" class="yds-icon" style="filter: brightness(0) invert(1);" alt="购物车">
+            立即购买
+          </button>
+          <button class="yds-button yds-button--solid-light yds-button--white yds-button--large">
+            <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon" alt="返回">
+            返回
+          </button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">Medium 中按钮 - 16px × 16px 图标</h3>
+        <p class="card-description">高度 32px，图标 16px</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--medium">
+            <img src="../icons/y_icon_line_generality_search.svg" class="yds-icon" style="filter: brightness(0) invert(1);" alt="搜索">
+            搜索
+          </button>
+          <button class="yds-button yds-button--solid-light yds-button--white yds-button--medium">
+            <img src="../icons/y_icon_line_edit_favorites.svg" class="yds-icon" alt="收藏">
+            收藏
+          </button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">Small 小按钮 - 14px × 14px 图标</h3>
+        <p class="card-description">高度 24px，图标 14px</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--small">
+            <img src="../icons/y_icon_line_edit_add.svg" class="yds-icon" style="filter: brightness(0) invert(1);" alt="添加">
+            添加
+          </button>
+          <button class="yds-button yds-button--solid-light yds-button--white yds-button--small">
+            <img src="../icons/y_icon_line_edit_close.svg" class="yds-icon" alt="删除">
+            删除
+          </button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3 class="card-title">Mini 迷你按钮 - 12px × 12px 图标</h3>
+        <p class="card-description">高度 20px，图标 12px</p>
+        <div class="button-row">
+          <button class="yds-button yds-button--solid-dark yds-button--black yds-button--mini">
+            <img src="../icons/y_icon_line_generality_more.svg" class="yds-icon" style="filter: brightness(0) invert(1);" alt="更多">
+            更多
+          </button>
+          <button class="yds-button yds-button--solid-light yds-button--white yds-button--mini">
+            <img src="../icons/y_icon_line_direction_arrow_left.svg" class="yds-icon" alt="返回">
+            返回
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-card" style="max-width: 800px; margin-top: 24px;">
+      <h3 class="card-title">图标尺寸速查表</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="border-bottom: 2px solid #e5e5e5;">
+            <th style="padding: 12px; text-align: left; font-size: 14px; color: #1b1b1b;">按钮尺寸</th>
+            <th style="padding: 12px; text-align: left; font-size: 14px; color: #1b1b1b;">按钮高度</th>
+            <th style="padding: 12px; text-align: left; font-size: 14px; color: #1b1b1b;">图标尺寸</th>
+            <th style="padding: 12px; text-align: left; font-size: 14px; color: #1b1b1b;">使用场景</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>XL（超大）</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">48px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;"><strong>18px × 18px</strong></td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">全屏主按钮</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">Large（大）</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">38px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">16px × 16px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">主要操作</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">Medium（中）</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">32px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">16px × 16px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">常规操作</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">Small（小）</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">24px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">14px × 14px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">紧凑操作</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">Mini（迷你）</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">20px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">12px × 12px</td>
+            <td style="padding: 12px; font-size: 14px; color: #4e4f54;">极简操作</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 实际使用示例 -->
+  <div class="demo-section">
+    <h2 class="section-title">实际使用示例 - 登录表单</h2>
+
+    <div class="demo-card" style="max-width: 400px;">
+      <div style="margin-bottom: 16px;">
+        <input type="text" placeholder="手机号" style="width: 100%; height: 38px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px;">
+      </div>
+      <div style="margin-bottom: 16px;">
+        <input type="password" placeholder="密码" style="width: 100%; height: 38px; padding: 0 12px; border: 1px solid #ddd; border-radius: 4px;">
+      </div>
+      <div class="button-row">
+        <button class="yds-button yds-button--solid-dark yds-button--brand yds-button--large" style="flex: 1;">登录</button>
+        <button class="yds-button yds-button--outlined yds-button--brand yds-button--large">注册</button>
+      </div>
+      <div style="margin-top: 12px;">
+        <button class="yds-button yds-button--solid-light yds-button--brand yds-button--small">忘记密码？</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 交互示例
+    document.querySelectorAll('.yds-button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        if (!this.disabled) {
+          console.log('Button clicked:', this.textContent || 'Icon Button');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

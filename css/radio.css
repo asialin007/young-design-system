@@ -1,0 +1,166 @@
+/**
+ * 年轻版设计系统 2.0 - Radio 单选框组件样式
+ * 用于在多个选项中选择一个
+ *
+ * 基于 Figma 设计规范：
+ * - 未选中：白色背景 + 灰色边框
+ * - 选中（黑色）：黑色外圈 + 白色内圈 + 黑色中心点
+ * - 选中（品牌色）：品牌色外圈 + 白色内圈 + 品牌色中心点
+ * - 禁用：半透明遮罩层
+ */
+
+/* ==================== 单选框容器 ==================== */
+
+.yds-radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.yds-radio:focus-visible {
+  outline: 2px solid #006AFF;
+  outline-offset: 2px;
+}
+
+/* ==================== 尺寸变体 ==================== */
+
+/* 大尺寸：20px - 应用到圆圈 */
+.yds-radio--large .yds-radio__circle {
+  width: 20px;
+  height: 20px;
+}
+
+/* 小尺寸：16px - 应用到圆圈 */
+.yds-radio--small .yds-radio__circle {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==================== 单选框外观 ==================== */
+
+.yds-radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* 外圈容器 */
+.yds-radio__circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--yds-bg-default-white);
+  border: 1px solid var(--yds-border-default-tertiary);
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* 小尺寸边框 */
+.yds-radio--small .yds-radio__circle {
+  border-width: 0.8px;
+}
+
+/* ==================== 悬停状态 ==================== */
+
+.yds-radio:hover:not(.yds-radio--disabled) .yds-radio__circle {
+  border-color: var(--yds-border-default-secondary);
+}
+
+/* ==================== 选中状态 ==================== */
+
+/**
+ * 填充样式（参考复选框）：
+ * 1. 彩色填充背景
+ * 2. ::before - 白色对勾
+ */
+
+/* 彩色填充背景 */
+.yds-radio--checked .yds-radio__circle {
+  background-color: var(--yds-btn-bg-default-primary02, #1B1B1B);
+  border-color: var(--yds-btn-bg-default-primary02, #1B1B1B);
+}
+
+.yds-radio--checked.yds-radio--brand .yds-radio__circle {
+  background-color: var(--yds-bg-brand-default02, #F74AD9);
+  border-color: var(--yds-bg-brand-default02, #F74AD9);
+}
+
+/* 白色对勾标记 */
+.yds-radio--checked .yds-radio__circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 9px;
+  border-style: solid;
+  border-color: var(--yds-bg-default-white);
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -65%) rotate(45deg);
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* 小尺寸对勾 */
+.yds-radio--small.yds-radio--checked .yds-radio__circle::before {
+  width: 4px;
+  height: 7px;
+  border-width: 0 1.6px 1.6px 0;
+}
+
+/* ==================== 禁用状态 ==================== */
+
+.yds-radio--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 禁用状态遮罩层 - 应用到圆圈上 */
+.yds-radio--disabled.yds-radio--checked .yds-radio__circle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--yds-btn-bg-default-disabled02, rgba(27, 27, 27, 0.24));
+  border-radius: 50%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* 禁用品牌色遮罩层 */
+.yds-radio--disabled.yds-radio--checked.yds-radio--brand .yds-radio__circle::after {
+  background-color: var(--yds-icon-transp-brand-50, rgba(255, 119, 231, 0.5));
+}
+
+/* ==================== 标签样式 ==================== */
+
+.yds-radio__label {
+  margin-left: var(--yds-spacing-12);
+  font-size: var(--yds-font-size-14);
+  line-height: var(--yds-line-height-20);
+  color: var(--yds-text-default-default);
+  cursor: pointer;
+}
+
+.yds-radio--disabled .yds-radio__label {
+  cursor: not-allowed;
+  color: var(--yds-text-default-disabled);
+}
+
+/* ==================== 错误状态 ==================== */
+
+.yds-radio--error .yds-radio__circle {
+  border-color: var(--yds-bg-danger-default);
+}
+
+.yds-radio--error.yds-radio--checked .yds-radio__circle {
+  border-color: var(--yds-bg-danger-default);
+}

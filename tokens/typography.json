@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "年轻版设计系统 2.0 - 字体变量",
+  "typography": {
+    "fontFamily": {
+      "base": {
+        "value": "PingFang SC, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+        "type": "fontFamily",
+        "description": "基础字体"
+      }
+    },
+    "fontSize": {
+      "11": {
+        "value": "11px",
+        "type": "fontSize"
+      },
+      "12": {
+        "value": "12px",
+        "type": "fontSize"
+      },
+      "13": {
+        "value": "13px",
+        "type": "fontSize"
+      },
+      "14": {
+        "value": "14px",
+        "type": "fontSize"
+      },
+      "15": {
+        "value": "15px",
+        "type": "fontSize"
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "value": "400",
+        "type": "fontWeight",
+        "description": "常规"
+      },
+      "medium": {
+        "value": "500",
+        "type": "fontWeight",
+        "description": "中等"
+      }
+    },
+    "lineHeight": {
+      "16": {
+        "value": "16px",
+        "type": "lineHeight"
+      },
+      "18": {
+        "value": "18px",
+        "type": "lineHeight"
+      },
+      "20": {
+        "value": "20px",
+        "type": "lineHeight"
+      }
+    },
+    "presets": {
+      "11R": {
+        "fontFamily": "{typography.fontFamily.base}",
+        "fontSize": "{typography.fontSize.11}",
+        "fontWeight": "{typography.fontWeight.regular}",
+        "lineHeight": "{typography.lineHeight.16}",
+        "letterSpacing": "0"
+      },
+      "12R": {
+        "fontFamily": "{typography.fontFamily.base}",
+        "fontSize": "{typography.fontSize.12}",
+        "fontWeight": "{typography.fontWeight.regular}",
+        "lineHeight": "{typography.lineHeight.16}",
+        "letterSpacing": "0"
+      },
+      "13R": {
+        "fontFamily": "{typography.fontFamily.base}",
+        "fontSize": "{typography.fontSize.13}",
+        "fontWeight": "{typography.fontWeight.regular}",
+        "lineHeight": "{typography.lineHeight.18}",
+        "letterSpacing": "0"
+      },
+      "14M": {
+        "fontFamily": "{typography.fontFamily.base}",
+        "fontSize": "{typography.fontSize.14}",
+        "fontWeight": "{typography.fontWeight.medium}",
+        "lineHeight": "{typography.lineHeight.18}",
+        "letterSpacing": "0"
+      },
+      "14R": {
+        "fontFamily": "{typography.fontFamily.base}",
+        "fontSize": "{typography.fontSize.14}",
+        "fontWeight": "{typography.fontWeight.regular}",
+        "lineHeight": "{typography.lineHeight.18}",
+        "letterSpacing": "0"
+      },
+      "15M": {
+        "fontFamily": "{typography.fontFamily.base}",
+        "fontSize": "{typography.fontSize.15}",
+        "fontWeight": "{typography.fontWeight.medium}",
+        "lineHeight": "{typography.lineHeight.20}",
+        "letterSpacing": "0"
+      },
+      "15R": {
+        "fontFamily": "{typography.fontFamily.base}",
+        "fontSize": "{typography.fontSize.15}",
+        "fontWeight": "{typography.fontWeight.regular}",
+        "lineHeight": "{typography.lineHeight.20}",
+        "letterSpacing": "0"
+      }
+    }
+  }
+}

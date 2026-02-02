@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "ButtonGroup 按钮组合组件 Figma 映射",
+  "component": "ButtonGroup",
+  "figmaNodeId": "5863:18305",
+  "figmaFileKey": "BepKKgfdECcLIBi5bvkMbp",
+  "figmaUrl": "https://www.figma.com/design/BepKKgfdECcLIBi5bvkMbp/年轻版设计系统V2.0-草稿-?node-id=5863-18305",
+  "specs": {
+    "alignment": {
+      "equal": "均分对齐",
+      "right": "右侧对齐",
+      "textMix": "文字混合对齐",
+      "iconMix": "图标混合对齐"
+    },
+    "direction": {
+      "horizontal": "水平排列",
+      "vertical": "垂直排列"
+    },
+    "size": {
+      "small": "小尺寸",
+      "large": "大尺寸"
+    },
+    "count": {
+      "1": "单个按钮",
+      "2": "两个按钮组合",
+      "3": "三个按钮组合",
+      "4": "四个按钮组合"
+    }
+  }
+}

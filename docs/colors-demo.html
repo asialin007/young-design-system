@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>年轻版设计系统 2.0 - 完整颜色系统（256个变量）</title>
+  <link rel="stylesheet" href="../css/colors.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+      padding: 40px 20px;
+      background-color: var(--yds-bg-default-gray);
+      color: var(--yds-text-default-default);
+      transition: background-color 0.3s, color 0.3s;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: var(--yds-bg-default-white);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      color: var(--yds-text-default-secondary);
+      font-size: 14px;
+    }
+
+    .theme-switcher {
+      display: flex;
+      gap: 8px;
+      background: var(--yds-bg-default-gray);
+      padding: 4px;
+      border-radius: 8px;
+    }
+
+    .theme-btn {
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      color: var(--yds-text-default-secondary);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .theme-btn.active {
+      background: var(--yds-bg-brand-default);
+      color: white;
+    }
+
+    .theme-btn:hover:not(.active) {
+      background: rgba(0,0,0,0.05);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: var(--yds-bg-default-white);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: bold;
+      color: var(--yds-bg-brand-default);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--yds-text-default-secondary);
+    }
+
+    .section {
+      background: var(--yds-bg-default-white);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--yds-text-default-default);
+    }
+
+    .section-desc {
+      color: var(--yds-text-default-secondary);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .subsection {
+      margin-bottom: 32px;
+    }
+
+    .subsection:last-child {
+      margin-bottom: 0;
+    }
+
+    .subsection h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--yds-text-default-secondary);
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--yds-bg-default-gray);
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .color-card {
+      border: 1px solid var(--yds-border-default-secondary);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: var(--yds-bg-default-white);
+    }
+
+    .color-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .color-swatch {
+      height: 80px;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .color-swatch-inner {
+      width: 100%;
+      height: 100%;
+    }
+
+    .color-swatch::after {
+      content: '点击复制';
+      position: absolute;
+      color: rgba(255,255,255,0.9);
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.2s;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .color-swatch:hover::after {
+      opacity: 1;
+    }
+
+    .color-info {
+      padding: 12px;
+      background: var(--yds-bg-default-white);
+    }
+
+    .color-name {
+      font-size: 11px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: var(--yds-text-default-default);
+      word-break: break-all;
+    }
+
+    .color-value {
+      font-size: 10px;
+      color: var(--yds-text-default-tertiary);
+      font-family: 'Monaco', 'Courier New', monospace;
+    }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--yds-bg-positive-default);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.3s;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .color-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toast" id="toast">✓ 已复制颜色值</div>
+
+  <div class="header">
+    <div class="header-content">
+      <div>
+        <h1>🎨 完整颜色系统</h1>
+        <p>年轻版设计系统 2.0 - 256 个颜色变量 · 支持浅色/深色模式</p>
+      </div>
+      <div class="theme-switcher">
+        <button class="theme-btn active" data-theme="light">☀️ 浅色</button>
+        <button class="theme-btn" data-theme="dark">🌙 深色</button>
+        <button class="theme-btn" data-theme="auto">🔄 自动</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 统计信息 -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-number">256</div>
+      <div class="stat-label">总颜色</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">54</div>
+      <div class="stat-label">背景色 (Bg)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">62</div>
+      <div class="stat-label">文字色 (Text)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">59</div>
+      <div class="stat-label">边框色 (Border)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">62</div>
+      <div class="stat-label">图标色 (Icon)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">19</div>
+      <div class="stat-label">按钮色 (Btn)</div>
+    </div>
+  </div>
+
+  <!-- 背景色 -->
+  <div class="section">
+    <h2>🎨 背景色 (Background Colors)</h2>
+    <p class="section-desc">54 个背景色变量 · 包含品牌色、功能色、辅助色和透明度变量</p>
+
+    <div class="subsection">
+      <h3>默认背景色 (Default)</h3>
+      <div class="color-grid" id="bg-default"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>品牌色 (Brand)</h3>
+      <div class="color-grid" id="bg-brand"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>功能色 (Functional)</h3>
+      <div class="color-grid" id="bg-functional"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>辅助色 (Utils)</h3>
+      <div class="color-grid" id="bg-utils"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>透明度颜色 (Transparency)</h3>
+      <div class="color-grid" id="bg-transp"></div>
+    </div>
+  </div>
+
+  <!-- 文字色 -->
+  <div class="section">
+    <h2>📝 文字色 (Text Colors)</h2>
+    <p class="section-desc">62 个文字色变量 · 多层级文字颜色系统</p>
+
+    <div class="subsection">
+      <h3>默认文字色 (Default)</h3>
+      <div class="color-grid" id="text-default"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>品牌色 (Brand)</h3>
+      <div class="color-grid" id="text-brand"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>功能色 (Functional)</h3>
+      <div class="color-grid" id="text-functional"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>辅助色 (Utils)</h3>
+      <div class="color-grid" id="text-utils"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>透明度颜色 (Transparency)</h3>
+      <div class="color-grid" id="text-transp"></div>
+    </div>
+  </div>
+
+  <!-- 边框色 -->
+  <div class="section">
+    <h2>🔲 边框色 (Border Colors)</h2>
+    <p class="section-desc">59 个边框色变量 · 完整的边框颜色体系</p>
+
+    <div class="subsection">
+      <h3>默认边框色 (Default)</h3>
+      <div class="color-grid" id="border-default"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>品牌色 (Brand)</h3>
+      <div class="color-grid" id="border-brand"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>功能色 (Functional)</h3>
+      <div class="color-grid" id="border-functional"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>辅助色 (Utils)</h3>
+      <div class="color-grid" id="border-utils"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>透明度颜色 (Transparency)</h3>
+      <div class="color-grid" id="border-transp"></div>
+    </div>
+  </div>
+
+  <!-- 图标色 -->
+  <div class="section">
+    <h2>🎯 图标色 (Icon Colors)</h2>
+    <p class="section-desc">62 个图标色变量 · 图标专用颜色系统</p>
+
+    <div class="subsection">
+      <h3>默认图标色 (Default)</h3>
+      <div class="color-grid" id="icon-default"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>品牌色 (Brand)</h3>
+      <div class="color-grid" id="icon-brand"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>功能色 (Functional)</h3>
+      <div class="color-grid" id="icon-functional"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>辅助色 (Utils)</h3>
+      <div class="color-grid" id="icon-utils"></div>
+    </div>
+
+    <div class="subsection">
+      <h3>透明度颜色 (Transparency)</h3>
+      <div class="color-grid" id="icon-transp"></div>
+    </div>
+  </div>
+
+  <!-- 按钮色 -->
+  <div class="section">
+    <h2>🔘 按钮色 (Button Colors)</h2>
+    <p class="section-desc">19 个按钮色变量 · 按钮专用颜色</p>
+
+    <div class="subsection">
+      <div class="color-grid" id="btn-all"></div>
+    </div>
+  </div>
+
+  <script>
+    // ===== 主题切换 =====
+    const themeBtns = document.querySelectorAll('.theme-btn');
+    const html = document.documentElement;
+
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.dataset.theme;
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+
+        themeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // 重新渲染所有颜色
+        renderAllColors();
+      });
+    });
+
+    // 恢复保存的主题
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    themeBtns.forEach(btn => {
+      if (btn.dataset.theme === savedTheme) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // ===== 颜色数据和渲染 =====
+    function getColorValue(varName) {
+      return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+    }
+
+    function createColorCard(name, varName) {
+      const value = getColorValue(varName);
+      return `
+        <div class="color-card">
+          <div class="color-swatch" data-color="${value}">
+            <div class="color-swatch-inner" style="background-color: var(${varName})"></div>
+          </div>
+          <div class="color-info">
+            <div class="color-name">${name}</div>
+            <div class="color-value">${value}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderColors(containerId, colors) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      container.innerHTML = colors.map(name => {
+        const varName = `--yds-${name}`;
+        return createColorCard(name, varName);
+      }).join('');
+    }
+
+    function renderAllColors() {
+      // 背景色
+      renderColors('bg-default', [
+        'bg-default-white', 'bg-default-gray', 'bg-default-black', 'bg-default-disabled'
+      ]);
+      renderColors('bg-brand', [
+        'bg-brand-default', 'bg-brand-default02', 'bg-brand-secondary'
+      ]);
+      renderColors('bg-functional', [
+        'bg-positive-default', 'bg-positive-secondary',
+        'bg-warning-default', 'bg-warning-secondary',
+        'bg-danger-default', 'bg-danger-secondary'
+      ]);
+      renderColors('bg-utils', [
+        'bg-utils-01-default', 'bg-utils-01-default02', 'bg-utils-01-default03', 'bg-utils-01-secondary', 'bg-utils-01-tertiary',
+        'bg-utils-02-default', 'bg-utils-02-secondary',
+        'bg-utils-03-default', 'bg-utils-03-secondary',
+        'bg-utils-04-default', 'bg-utils-04-secondary',
+        'bg-utils-05-default', 'bg-utils-05-secondary',
+        'bg-utils-06-default', 'bg-utils-06-secondary',
+        'bg-utils-07-default', 'bg-utils-07-secondary'
+      ]);
+      renderColors('bg-transp', [
+        'bg-transp-black-4%', 'bg-transp-black-8%', 'bg-transp-black-16%', 'bg-transp-black-24%',
+        'bg-transp-black-50%', 'bg-transp-black-60%', 'bg-transp-black-85%', 'bg-transp-black-95%',
+        'bg-transp-white-4%', 'bg-transp-white-8%', 'bg-transp-white-16%', 'bg-transp-white-24%',
+        'bg-transp-white-50%', 'bg-transp-white-60%', 'bg-transp-white-85%', 'bg-transp-white-95%',
+        'bg-transp-brand-4%', 'bg-transp-brand-8%', 'bg-transp-brand-16%', 'bg-transp-brand-24%',
+        'bg-transp-brand-50%', 'bg-transp-brand-60%', 'bg-transp-brand-85%', 'bg-transp-brand-95%'
+      ]);
+
+      // 文字色
+      renderColors('text-default', [
+        'text-default-default', 'text-default-secondary', 'text-default-tertiary', 'text-default-disabled', 'text-default-white'
+      ]);
+      renderColors('text-brand', [
+        'text-brand-default', 'text-brand-default02', 'text-brand-default03', 'text-brand-secondary', 'text-brand-tertiary'
+      ]);
+      renderColors('text-functional', [
+        'text-positive-default', 'text-positive-default02', 'text-positive-secondary',
+        'text-warning-default', 'text-warning-secondary',
+        'text-danger-default', 'text-danger-secondary', 'text-danger-tertiary'
+      ]);
+      renderColors('text-utils', [
+        'text-utils-01-default', 'text-utils-01-default02', 'text-utils-01-secondary', 'text-utils-01-tertiary',
+        'text-utils-02-default', 'text-utils-02-default02', 'text-utils-02-secondary',
+        'text-utils-03-default', 'text-utils-03-default02', 'text-utils-03-secondary',
+        'text-utils-04-default', 'text-utils-04-default02', 'text-utils-04-secondary',
+        'text-utils-05-default', 'text-utils-05-default02', 'text-utils-05-secondary',
+        'text-utils-06-default', 'text-utils-06-secondary',
+        'text-utils-07-default', 'text-utils-07-secondary'
+      ]);
+      renderColors('text-transp', [
+        'text-transp-black-4%', 'text-transp-black-8%', 'text-transp-black-16%', 'text-transp-black-24%',
+        'text-transp-black-50%', 'text-transp-black-60%', 'text-transp-black-85%', 'text-transp-black-95%',
+        'text-transp-white-4%', 'text-transp-white-8%', 'text-transp-white-16%', 'text-transp-white-24%',
+        'text-transp-white-50%', 'text-transp-white-60%', 'text-transp-white-85%', 'text-transp-white-95%',
+        'text-transp-brand-4%', 'text-transp-brand-8%', 'text-transp-brand-16%', 'text-transp-brand-24%',
+        'text-transp-brand-50%', 'text-transp-brand-60%', 'text-transp-brand-85%', 'text-transp-brand-95%'
+      ]);
+
+      // 边框色
+      renderColors('border-default', [
+        'border-default-default', 'border-default-secondary', 'border-default-tertiary', 'border-default-white'
+      ]);
+      renderColors('border-brand', [
+        'border-brand-default', 'border-brand-secondary'
+      ]);
+      renderColors('border-functional', [
+        'border-positive-default', 'border-positive-secondary', 'border-positive-tertiary',
+        'border-warning-default', 'border-warning-secondary',
+        'border-danger-default', 'border-danger-secondary', 'border-danger-tertiary'
+      ]);
+      renderColors('border-utils', [
+        'border-utils-01-default', 'border-utils-01-secondary', 'border-utils-01-tertiary',
+        'border-utils-02-default', 'border-utils-02-secondary', 'border-utils-02-tertiary',
+        'border-utils-03-default', 'border-utils-03-secondary', 'border-utils-03-tertiary',
+        'border-utils-04-default', 'border-utils-04-secondary', 'border-utils-04-tertiary',
+        'border-utils-05-default', 'border-utils-05-secondary', 'border-utils-05-tertiary',
+        'border-utils-06-default', 'border-utils-06-secondary', 'border-utils-06-tertiary',
+        'border-utils-07-default', 'border-utils-07-secondary', 'border-utils-07-tertiary'
+      ]);
+      renderColors('border-transp', [
+        'border-transp-black-4%', 'border-transp-black-8%', 'border-transp-black-16%', 'border-transp-black-24%',
+        'border-transp-black-50%', 'border-transp-black-60%', 'border-transp-black-85%', 'border-transp-black-95%',
+        'border-transp-white-4%', 'border-transp-white-8%', 'border-transp-white-16%', 'border-transp-white-24%',
+        'border-transp-white-50%', 'border-transp-white-60%', 'border-transp-white-85%', 'border-transp-white-95%',
+        'border-transp-brand-4%', 'border-transp-brand-8%', 'border-transp-brand-16%', 'border-transp-brand-24%',
+        'border-transp-brand-50%', 'border-transp-brand-60%', 'border-transp-brand-85%', 'border-transp-brand-95%'
+      ]);
+
+      // 图标色
+      renderColors('icon-default', [
+        'icon-default-default', 'icon-default-secondary', 'icon-default-tertiary', 'icon-default-tertiary02', 'icon-default-white'
+      ]);
+      renderColors('icon-brand', [
+        'icon-brand-default', 'icon-brand-default02', 'icon-brand-secondary'
+      ]);
+      renderColors('icon-functional', [
+        'icon-positive-default', 'icon-positive-secondary', 'icon-positive-tertiary',
+        'icon-warning-default', 'icon-warning-secondary', 'icon-warning-tertiary',
+        'icon-danger-default', 'icon-danger-secondary', 'icon-danger-tertiary'
+      ]);
+      renderColors('icon-utils', [
+        'icon-utils-01-default', 'icon-utils-01-default02', 'icon-utils-01-secondary', 'icon-utils-01-tertiary',
+        'icon-utils-02-default', 'icon-utils-02-secondary', 'icon-utils-02-tertiary',
+        'icon-utils-03-default', 'icon-utils-03-secondary', 'icon-utils-03-tertiary',
+        'icon-utils-04-default', 'icon-utils-04-secondary', 'icon-utils-04-tertiary',
+        'icon-utils-05-default', 'icon-utils-05-secondary', 'icon-utils-05-tertiary',
+        'icon-utils-06-default', 'icon-utils-06-secondary', 'icon-utils-06-tertiary',
+        'icon-utils-07-default', 'icon-utils-07-secondary', 'icon-utils-07-tertiary'
+      ]);
+      renderColors('icon-transp', [
+        'icon-transp-black-4%', 'icon-transp-black-8%', 'icon-transp-black-16%', 'icon-transp-black-24%',
+        'icon-transp-black-50%', 'icon-transp-black-60%', 'icon-transp-black-85%', 'icon-transp-black-95%',
+        'icon-transp-white-4%', 'icon-transp-white-8%', 'icon-transp-white-16%', 'icon-transp-white-24%',
+        'icon-transp-white-50%', 'icon-transp-white-60%', 'icon-transp-white-85%', 'icon-transp-white-95%',
+        'icon-transp-brand-4%', 'icon-transp-brand-8%', 'icon-transp-brand-16%', 'icon-transp-brand-24%',
+        'icon-transp-brand-50%', 'icon-transp-brand-60%', 'icon-transp-brand-85%', 'icon-transp-brand-95%'
+      ]);
+
+      // 按钮色
+      renderColors('btn-all', [
+        'btn-bg-brand-default', 'btn-bg-brand-secondary', 'btn-bg-default-default',
+        'btn-bg-default-secondary', 'btn-bg-default-white', 'btn-text-brand-default',
+        'btn-text-default-default', 'btn-text-default-disabled', 'btn-text-default-disabled02',
+        'btn-text-default-secondary', 'btn-text-default-tertiary', 'btn-text-default-white',
+        'btn-border-brand-default', 'btn-border-default-default', 'btn-border-default-secondary',
+        'btn-border-default-white', 'btn-icon-brand-default', 'btn-icon-default-default',
+        'btn-icon-default-white'
+      ]);
+    }
+
+    // 初始化渲染
+    renderAllColors();
+
+    // 复制颜色值
+    document.addEventListener('click', (e) => {
+      const swatch = e.target.closest('.color-swatch');
+      if (swatch) {
+        const color = swatch.dataset.color;
+        navigator.clipboard.writeText(color).then(() => {
+          showToast();
+        });
+      }
+    });
+
+    // 显示提示
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
