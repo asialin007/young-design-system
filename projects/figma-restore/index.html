@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>示意还原 - 主页面</title>
+  <link rel="stylesheet" href="../../css/index.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--yds-font-family-base);
+      background-color: var(--yds-bg-default-gray);
+      color: var(--yds-text-default-default);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--yds-spacing-48) var(--yds-spacing-24);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: var(--yds-spacing-48);
+    }
+
+    .title {
+      font-size: var(--yds-font-size-18);
+      font-weight: var(--yds-font-weight-medium);
+      margin-bottom: var(--yds-spacing-12);
+    }
+
+    .subtitle {
+      font-size: var(--yds-font-size-14);
+      color: var(--yds-text-default-secondary);
+    }
+
+    .viewport-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--yds-spacing-24);
+      margin-bottom: var(--yds-spacing-48);
+    }
+
+    .viewport-card {
+      background-color: var(--yds-bg-default-white);
+      padding: var(--yds-spacing-24);
+      border-radius: 0;
+      text-align: center;
+      text-decoration: none;
+      color: var(--yds-text-default-default);
+      transition: transform 0.2s;
+    }
+
+    .viewport-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .viewport-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--yds-spacing-16);
+      background-color: var(--yds-bg-default-gray);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .viewport-title {
+      font-size: var(--yds-font-size-15);
+      font-weight: var(--yds-font-weight-medium);
+      margin-bottom: var(--yds-spacing-8);
+    }
+
+    .viewport-size {
+      font-size: var(--yds-font-size-12);
+      color: var(--yds-text-default-secondary);
+    }
+
+    .info {
+      background-color: var(--yds-bg-default-white);
+      padding: var(--yds-spacing-24);
+      border-radius: 0;
+    }
+
+    .info-title {
+      font-size: var(--yds-font-size-15);
+      font-weight: var(--yds-font-weight-medium);
+      margin-bottom: var(--yds-spacing-12);
+    }
+
+    .info-text {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-secondary);
+      line-height: var(--yds-line-height-18);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">年轻版设计系统 2.0</h1>
+      <p class="subtitle">示意还原 - 响应式组件演示</p>
+    </div>
+
+    <div class="viewport-links">
+      <!-- 移动端 -->
+      <a href="./mobile.html" class="viewport-card">
+        <div class="viewport-icon">
+          <img src="../../../icons/y_icon_line_device_mobile.svg" alt="移动端" class="yds-icon" style="width: 32px; height: 32px;">
+        </div>
+        <h3 class="viewport-title">移动端视图</h3>
+        <p class="viewport-size">375 × 667</p>
+      </a>
+
+      <!-- 平板 -->
+      <a href="./tablet.html" class="viewport-card">
+        <div class="viewport-icon">
+          <img src="../../../icons/y_icon_line_device_tablet.svg" alt="平板" class="yds-icon" style="width: 32px; height: 32px;">
+        </div>
+        <h3 class="viewport-title">平板视图</h3>
+        <p class="viewport-size">768 × 1024</p>
+      </a>
+
+      <!-- 桌面 -->
+      <a href="./desktop.html" class="viewport-card">
+        <div class="viewport-icon">
+          <img src="../../../icons/y_icon_line_device_desktop.svg" alt="桌面" class="yds-icon" style="width: 32px; height: 32px;">
+        </div>
+        <h3 class="viewport-title">桌面视图</h3>
+        <p class="viewport-size">1440 × 900</p>
+      </a>
+    </div>
+
+    <div class="info">
+      <h2 class="info-title">项目说明</h2>
+      <p class="info-text">
+        本项目展示了年轻版设计系统 2.0 的响应式组件实现。
+        包含三个断点：移动端（375px）、平板（768px）、桌面（1440px）。
+        所有组件均使用设计系统提供的 CSS 变量和组件类，确保视觉一致性和代码可维护性。
+        点击上方卡片查看不同断点的演示效果。
+      </p>
+    </div>
+  </div>
+</body>
+</html>

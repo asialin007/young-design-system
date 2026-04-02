@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>示意还原 - 平板</title>
+  <link rel="stylesheet" href="../../css/index.css">
+  <style>
+    /* 平板专用样式 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--yds-font-family-base);
+      background-color: var(--yds-bg-default-white);
+      color: var(--yds-text-default-default);
+    }
+
+    /* 页面容器 */
+    .tablet-container {
+      width: 768px;
+      min-height: 1024px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* 导航栏 */
+    .tablet-navbar {
+      height: 56px;
+      background-color: var(--yds-bg-default-white);
+      border-bottom: 1px solid var(--yds-bg-transp-black-8-pct);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--yds-spacing-24);
+    }
+
+    .tablet-navbar__back {
+      width: 24px;
+      height: 24px;
+    }
+
+    .tablet-navbar__title {
+      font-size: var(--yds-font-size-15);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+    }
+
+    .tablet-navbar__action {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* 内容区域 */
+    .tablet-content {
+      padding: var(--yds-spacing-24);
+    }
+
+    /* 标题区域 */
+    .tablet-title {
+      font-size: var(--yds-font-size-16);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+      margin-bottom: var(--yds-spacing-24);
+    }
+
+    /* 栅格布局 */
+    .tablet-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--yds-grid-gap);
+      margin-bottom: var(--yds-spacing-32);
+    }
+
+    /* 栅格单元格 */
+    .tablet-grid__cell {
+      background-color: var(--yds-bg-default-gray);
+      height: 100px;
+      border-radius: 0; /* 直角 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-secondary);
+    }
+
+    /* 栅格单元格内容 */
+    .tablet-grid__cell-content {
+      padding: 0 var(--yds-spacing-8);
+      width: 100%;
+      text-align: center;
+    }
+
+    /* 按钮区域 */
+    .tablet-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--yds-spacing-16);
+      margin-top: var(--yds-spacing-32);
+    }
+
+    /* 信息文本 */
+    .tablet-info {
+      font-size: var(--yds-font-size-14);
+      color: var(--yds-text-default-secondary);
+      margin-top: var(--yds-spacing-24);
+      line-height: var(--yds-line-height-20);
+    }
+
+    /* 两列布局 */
+    .tablet-two-column {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--yds-spacing-24);
+      margin-top: var(--yds-spacing-32);
+    }
+  </style>
+</head>
+<body>
+  <div class="tablet-container">
+    <!-- 导航栏 -->
+    <nav class="tablet-navbar">
+      <img src="../../../icons/y_icon_line_direction_arrow_left.svg" alt="返回" class="tablet-navbar__back yds-icon">
+      <span class="tablet-navbar__title">示意还原</span>
+      <img src="../../../icons/y_icon_line_system_menu.svg" alt="菜单" class="tablet-navbar__action yds-icon">
+    </nav>
+
+    <!-- 内容区域 -->
+    <div class="tablet-content">
+      <h1 class="tablet-title">年轻版设计系统 2.0 - 平板视图</h1>
+
+      <!-- 栅格演示 -->
+      <div class="tablet-grid">
+        <!-- 12 列栅格 - 第一行：3个4列 -->
+        <div class="tablet-grid__cell" style="grid-column: span 4;">
+          <div class="tablet-grid__cell-content">4列</div>
+        </div>
+        <div class="tablet-grid__cell" style="grid-column: span 4;">
+          <div class="tablet-grid__cell-content">4列</div>
+        </div>
+        <div class="tablet-grid__cell" style="grid-column: span 4;">
+          <div class="tablet-grid__cell-content">4列</div>
+        </div>
+
+        <!-- 12 列栅格 - 第二行：2个6列 -->
+        <div class="tablet-grid__cell" style="grid-column: span 6;">
+          <div class="tablet-grid__cell-content">6列</div>
+        </div>
+        <div class="tablet-grid__cell" style="grid-column: span 6;">
+          <div class="tablet-grid__cell-content">6列</div>
+        </div>
+
+        <!-- 12 列栅格 - 第三行：3列+9列 -->
+        <div class="tablet-grid__cell" style="grid-column: span 3;">
+          <div class="tablet-grid__cell-content">3列</div>
+        </div>
+        <div class="tablet-grid__cell" style="grid-column: span 9;">
+          <div class="tablet-grid__cell-content">9列</div>
+        </div>
+      </div>
+
+      <!-- 两列布局：按钮和信息 -->
+      <div class="tablet-two-column">
+        <!-- 左列：按钮 -->
+        <div>
+          <h2 style="font-size: var(--yds-font-size-14); margin-bottom: var(--yds-spacing-16);">按钮组件</h2>
+          <div class="tablet-buttons">
+            <button class="yds-button yds-button--xl yds-button--black">
+              主要按钮
+            </button>
+            <button class="yds-button yds-button--xl yds-button--brand">
+              品牌按钮
+            </button>
+            <button class="yds-button yds-button--large yds-button--black">
+              大按钮
+            </button>
+            <button class="yds-button yds-button--medium yds-button--black">
+              中按钮
+            </button>
+          </div>
+        </div>
+
+        <!-- 右列：信息 -->
+        <div>
+          <h2 style="font-size: var(--yds-font-size-14); margin-bottom: var(--yds-spacing-16);">设计说明</h2>
+          <p class="tablet-info">
+            年轻版设计系统 2.0 采用扁平化设计理念，强调极简主义和功能性。
+            所有组件均使用直角边框，无阴影效果，确保视觉清晰度和一致性。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

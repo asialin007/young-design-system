@@ -1,0 +1,16 @@
+{
+  "name": "@vipshop/young-design-system-tests",
+  "version": "1.0.0",
+  "description": "年轻版设计系统视觉回归测试",
+  "scripts": {
+    "test": "playwright test",
+    "test:update": "playwright test --update-snapshots",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "playwright": "^1.42.1"
+  }
+}

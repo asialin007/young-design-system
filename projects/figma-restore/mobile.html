@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>示意还原 - 移动端</title>
+  <link rel="stylesheet" href="../../css/index.css">
+  <style>
+    /* 移动端专用样式 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--yds-font-family-base);
+      background-color: var(--yds-bg-default-white);
+      color: var(--yds-text-default-default);
+    }
+
+    /* 页面容器 */
+    .mobile-container {
+      width: 375px;
+      min-height: 667px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* 导航栏 */
+    .mobile-navbar {
+      height: 44px;
+      background-color: var(--yds-bg-default-white);
+      border-bottom: 1px solid var(--yds-bg-transp-black-8-pct);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--yds-spacing-12);
+    }
+
+    .mobile-navbar__back {
+      width: 24px;
+      height: 24px;
+    }
+
+    .mobile-navbar__title {
+      font-size: var(--yds-font-size-14);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+    }
+
+    .mobile-navbar__action {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* 内容区域 */
+    .mobile-content {
+      padding: var(--yds-spacing-16);
+    }
+
+    /* 标题区域 */
+    .mobile-title {
+      font-size: var(--yds-font-size-15);
+      font-weight: var(--yds-font-weight-medium);
+      color: var(--yds-text-default-default);
+      margin-bottom: var(--yds-spacing-16);
+    }
+
+    /* 栅格布局 */
+    .mobile-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--yds-grid-gap);
+      margin-bottom: var(--yds-spacing-24);
+    }
+
+    /* 栅格单元格 */
+    .mobile-grid__cell {
+      background-color: var(--yds-bg-default-gray);
+      height: 80px;
+      border-radius: 0; /* 直角 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--yds-font-size-12);
+      color: var(--yds-text-default-secondary);
+    }
+
+    /* 栅格单元格内容 */
+    .mobile-grid__cell-content {
+      padding: 0 var(--yds-spacing-8);
+      width: 100%;
+      text-align: center;
+    }
+
+    /* 按钮区域 */
+    .mobile-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--yds-spacing-12);
+      margin-top: var(--yds-spacing-24);
+    }
+
+    /* 信息文本 */
+    .mobile-info {
+      font-size: var(--yds-font-size-13);
+      color: var(--yds-text-default-secondary);
+      margin-top: var(--yds-spacing-16);
+      line-height: var(--yds-line-height-18);
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- 导航栏 -->
+    <nav class="mobile-navbar">
+      <img src="../../../icons/y_icon_line_direction_arrow_left.svg" alt="返回" class="mobile-navbar__back yds-icon">
+      <span class="mobile-navbar__title">示意还原</span>
+      <img src="../../../icons/y_icon_line_system_menu.svg" alt="菜单" class="mobile-navbar__action yds-icon">
+    </nav>
+
+    <!-- 内容区域 -->
+    <div class="mobile-content">
+      <h1 class="mobile-title">年轻版设计系统 2.0</h1>
+
+      <!-- 栅格演示 -->
+      <div class="mobile-grid">
+        <!-- 12 列栅格 - 第一行 -->
+        <div class="mobile-grid__cell" style="grid-column: span 4;">
+          <div class="mobile-grid__cell-content">4列</div>
+        </div>
+        <div class="mobile-grid__cell" style="grid-column: span 4;">
+          <div class="mobile-grid__cell-content">4列</div>
+        </div>
+        <div class="mobile-grid__cell" style="grid-column: span 4;">
+          <div class="mobile-grid__cell-content">4列</div>
+        </div>
+
+        <!-- 12 列栅格 - 第二行 -->
+        <div class="mobile-grid__cell" style="grid-column: span 6;">
+          <div class="mobile-grid__cell-content">6列</div>
+        </div>
+        <div class="mobile-grid__cell" style="grid-column: span 6;">
+          <div class="mobile-grid__cell-content">6列</div>
+        </div>
+
+        <!-- 12 列栅格 - 第三行 -->
+        <div class="mobile-grid__cell" style="grid-column: span 12;">
+          <div class="mobile-grid__cell-content">12列（全宽）</div>
+        </div>
+      </div>
+
+      <!-- 按钮演示 -->
+      <div class="mobile-buttons">
+        <button class="yds-button yds-button--xl yds-button--black">
+          主要按钮（黑色）
+        </button>
+        <button class="yds-button yds-button--xl yds-button--brand">
+          品牌按钮
+        </button>
+        <button class="yds-button yds-button--large yds-button--black">
+          大按钮
+        </button>
+        <button class="yds-button yds-button--medium yds-button--black">
+          中按钮
+        </button>
+      </div>
+
+      <!-- 信息文本 -->
+      <p class="mobile-info">
+        这是年轻版设计系统 2.0 的示意还原页面。所有组件均使用设计系统提供的 CSS 变量和组件类，确保视觉一致性和代码可维护性。
+      </p>
+    </div>
+  </div>
+</body>
+</html>
